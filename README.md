@@ -14,6 +14,14 @@ cd karten-werk-django
 ### Start the development environment
 
 Create virtual python environment:
+You can get the path to your python executable with this commands:
+
+```
+python
+>>> import os
+>>> import sys
+>>> os.path.dirname(sys.executable)
+```
 
 ```
 pip install virtualenv
