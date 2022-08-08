@@ -1,0 +1,21 @@
+<!-- prettier-ignore -->
+
+{% extends "kartenwerk/base.html" %} 
+
+{% block title %} Angebote{% endblock %} 
+
+{% block content %}
+{% load static %} 
+Angebot Detail
+{% if angebot %}
+<section>
+  {{ angebot.name }} <br />
+  {{angebot.kurzbeschrieb}} <br />
+  <img
+    style="max-width: 300px"
+    src="{% static 'kartenwerk/img/'|add:angebot.bild %}"
+  />
+</section>
+{% else %}
+<p>Es ist kein Angebot vorhanden</p>
+{% endif %} {% endblock %}

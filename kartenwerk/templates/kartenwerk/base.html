@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Karten-Werk GmbH{% endblock %}</title>
+    <!--
+    <link rel="icon"href="{% static 'stundenerfassung/img/favicon.ico' %}">
+    -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'kartenwerk/css/styles.css' %}"
+    />
+  </head>
+  <body>
+    <header>
+      <h2>Hello from the Header</h2>
+      <a href="{% url 'kartenwerk:index' %}">HOME</a>
+      <a href="{% url 'kartenwerk:angebot' %}">Angebote</a>
+      <a href="{% url 'kartenwerk:referenzen' %}">Referenzen</a>
+      <a href="{% url 'kartenwerk:about' %}">Über uns</a>
+      <hr />
+    </header>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <footer>
+      <hr />
+      <h2>Hello from the Footer</h2>
+    </footer>
+  </body>
+</html>
