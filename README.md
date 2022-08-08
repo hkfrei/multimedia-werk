@@ -14,6 +14,14 @@ cd karten-werk-django
 ### Start the development environment
 
 Create virtual python environment:
+You can get the path to your python executable with this commands:
+
+```
+python
+>>> import os
+>>> import sys
+>>> os.path.dirname(sys.executable)
+```
 
 ```
 pip install virtualenv
@@ -50,6 +58,6 @@ The following variables need to be defined:
 
 ### Start the server
 
-- make sure you are in the _geourbackend_ folder (the one which has the _manage.py_ file)
+- make sure you are in the _karten-werk-django_ folder (the one which has the _manage.py_ file)
 - from there call `python manage.py runserver` from within you console.
 - open (http://localhost:8000/)[http://localhost:8000/] to see the site running.
