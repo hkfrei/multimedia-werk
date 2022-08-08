@@ -9,25 +9,46 @@
     <!--
     <link rel="icon"href="{% static 'stundenerfassung/img/favicon.ico' %}">
     -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'kartenwerk/css/styles.css' %}"
-    />
+    <link rel="stylesheet" type="text/css" href="{% static 'kartenwerk/css/reset.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'kartenwerk/css/styles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'kartenwerk/css/navigation.css' %}"/>
+    
   </head>
   <body>
-    <header>
-      <h2>Hello from the Header</h2>
-      <a href="{% url 'kartenwerk:index' %}">HOME</a>
-      <a href="{% url 'kartenwerk:angebot' %}">Angebote</a>
-      <a href="{% url 'kartenwerk:referenzen' %}">Referenzen</a>
-      <a href="{% url 'kartenwerk:about' %}">Über uns</a>
-      <hr />
-    </header>
+    
+      <header class="site-head" role="banner">
+        <a href="#main-content" class="skip-link">Skip to content</a>
+        <div class="wrapper">
+          <div class="site-head__inner">
+            <a href="/" aria-label="Karten-Werk home" class="site-head__brand">
+              <img src="{% static 'kartenwerk/img/Kartenwerk_K_black-white.png' %}" alt="Karten-Werk logo" />
+            </a>
+            <burger-menu max-width="600">
+              <nav class="navigation" aria-label="primary">
+                <ul role="list">
+                  <li>
+                    <a href="{% url 'kartenwerk:index' %}">Home</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'kartenwerk:angebot' %}">Angebot</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'kartenwerk:referenzen' %}">Referenzen</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'kartenwerk:about' %}">Über uns</a>
+                  </li>
+                </ul>
+              </nav>
+            </burger-menu>
+          </div>
+        </div>
+      </header> 
     <div id="content">{% block content %}{% endblock %}</div>
     <footer>
       <hr />
       <h2>Hello from the Footer</h2>
     </footer>
+    <script type="module" src="{% static 'kartenwerk/js/index.mjs' %}"></script>
   </body>
 </html>
