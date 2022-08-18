@@ -9,25 +9,75 @@
     <!--
     <link rel="icon"href="{% static 'stundenerfassung/img/favicon.ico' %}">
     -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'kartenwerk/css/styles.css' %}"
-    />
+    <link rel="stylesheet" type="text/css" href="{% static 'kartenwerk/css/reset.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'kartenwerk/css/styles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'kartenwerk/css/navigation.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'kartenwerk/css/footer.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
   <body>
-    <header>
-      <h2>Hello from the Header</h2>
-      <a href="{% url 'kartenwerk:index' %}">HOME</a>
-      <a href="{% url 'kartenwerk:angebot' %}">Angebote</a>
-      <a href="{% url 'kartenwerk:referenzen' %}">Referenzen</a>
-      <a href="{% url 'kartenwerk:about' %}">Über uns</a>
-      <hr />
-    </header>
+    
+  <header class="site-head" role="banner">
+        <a href="#main-content" class="skip-link">Skip to content</a>
+        <div class="wrapper">
+          <div class="site-head__inner">
+            <a href="/" aria-label="Karten-Werk home" class="site-head__brand">
+              <img src="{% static 'kartenwerk/img/Kartenwerk_K_black-white.png' %}" alt="Karten-Werk logo" />
+            </a>
+            <burger-menu max-width="600">
+              <nav class="navigation" aria-label="primary">
+                <ul role="list">
+                  <li>
+                    <a href="{% url 'kartenwerk:index' %}">Home</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'kartenwerk:angebot' %}">Angebot</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'kartenwerk:referenzen' %}">Referenzen</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'kartenwerk:about' %}">Über uns</a>
+                  </li>
+                </ul>
+              </nav>
+            </burger-menu>
+          </div>
+        </div>
+  </header> 
     <div id="content">{% block content %}{% endblock %}</div>
-    <footer>
-      <hr />
-      <h2>Hello from the Footer</h2>
-    </footer>
+  <footer class="site-foot" role="banner">
+      <div class="wrapper">
+          <div class="foot-head__inner">
+              <a href="#" aria-label="Karten-Werk home" class="foot-head__brand">
+                  <img src="{% static 'kartenwerk/img/Kartenwerk_K_bw.png' %}" alt="Karten-Werk logo"/></a>
+                      <div class="foot-adress">
+                          <h4>Karten-Werk GmbH</h4>
+                          <p>Böschacherstrasse 82 <br>
+                          8624 Grüt<br>
+                          +41 79 360 72 83<br>
+                          hkfrei(at)karten-werk.ch</p>
+                      </div>
+      <nav class="nav-container">
+          <ul role="list">
+              <li><a href="{% url 'kartenwerk:index' %}">Home</a></li>
+              <li><a href="{% url 'kartenwerk:angebot' %}">Angebot</a></li>
+              <li><a href="{% url 'kartenwerk:referenzen' %}">Referenzen</a></li>
+              <li><a href="{% url 'kartenwerk:about' %}">About</a></li>
+              <li><a href="#">Blog</a></li>
+              </ul>
+      </nav>
+          <div class="so-me-container">
+              <a href="#"><i class="fa fa-github"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-youtube"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+          </div>
+          </div>
+      </div>
+  </footer>
+    <script type="module" src="{% static 'kartenwerk/js/index.mjs' %}"></script>
   </body>
 </html>
