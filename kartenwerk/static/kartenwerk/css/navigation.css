@@ -84,7 +84,8 @@ a {
 	border-top: 5px solid var(--color-primary);
 	border-bottom: 5px solid var(--color-white);
 	color: var(--color-light);
-	line-height: 1.1;
+	position: fixed;
+	width: 100%;
 }
 
 .site-head :focus {
