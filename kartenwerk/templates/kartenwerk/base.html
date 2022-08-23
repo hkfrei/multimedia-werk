@@ -63,7 +63,55 @@
       </div>
     </header>
     <div id="content">{% block content %}{% endblock %}</div>
-    <footer>hello from the footer!</footer>
+    <footer>
+      <div class="container">
+        <div class="content__footer">
+          <div class="profil">
+            <div class="logo__area">
+              <img src="/images/Kartenwerk_K_bw.png" alt="Logo Footer">
+              <span class="logo__name">Karten-Werk GmbH</span>
+            </div>
+            <div class="desc__area">
+              <p>Böschacherstrasse 82 | 8624 Grüt<br>
+              +41 79 360 72 83 | hkfrei(at)karten-werk.ch</p>
+            </div>
+            <div class="social__media">
+              <a href="#"><i class='bx bxl-github'></i></a>
+              <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+              <a href="#"><i class='bx bxl-twitter'></i></a>
+              <a href="#"><i class='bx bxl-youtube'></i></a>
+            </div>
+          </div>
+          <div class="nav__area">
+            <ul class="nav__header">
+              <li class="nav__name">Angebot</li>
+              <li><a href="#">Web Mapping Applikationen</a></li>
+              <li><a href="#">Geo-Daten Infrastruktur</a></li>
+              <li><a href="#">Drohnenbefliegung</a></li>
+              <li><a href="#">GIS Support</a></li>
+            </ul>
+            <ul class="nav__header">
+              <li class="nav__name">Company</li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Kontakt</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <div class="footer__bottom">
+          <div class="copy__right">
+            <i class='bx bxs-copyright'></i>
+            <span>2022 Karten-Werk GmbH</span>
+          </div>
+          <div class="tou">
+            <a href="#">Nutzungsbedingungen</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="{% static 'kartenwerk/js/index.mjs' %}"></script>
   </body>
 </html>
