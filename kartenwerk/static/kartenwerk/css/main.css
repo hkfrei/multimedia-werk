@@ -199,7 +199,7 @@ a {
 }
 
 .burger-menu[enabled="true"] .burger-menu__panel {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	padding: 5rem 1.5rem 2rem 1.5rem;
@@ -263,6 +263,59 @@ a {
 ============================================ */
 
 /* ============================================
+| FULL BLEED BACKGROUND START
+============================================ */
+
+.full-bleed {
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+}
+
+/**
+   * FLUID TYPE
+   *
+   * Scale text based on viewport and the following variables. Props should be unitless, but will be converted
+   * to REM units. E.G '1' will be converted to '1rem'
+   *
+   * --fluid-type-min-size: The smallest font size. Default 1
+   * --fluid-type-max-size: The largest font size: Default 2
+   * --fluid-type-min-screen: The smallest viewport size that this works for: Default 20
+   * --fluid-type-max-screen: The largest viewport size that this works for: Default 88
+   */
+.fluid-type {
+	--fluid-type-min-size: 1;
+	--fluid-type-max-size: 2;
+	--fluid-type-min-screen: 20;
+	--fluid-type-max-screen: 88;
+
+	/* We multiply by 1rem to essentially stick a rem unit to a number. */
+	font-size: calc(
+		 (var(--fluid-type-min-size) * 1rem) +
+			(
+				var(--fluid-type-max-size) - var(--fluid-type-min-size)
+			) * (100vw - (var(--fluid-type-min-screen) * 1rem)) / (var(--fluid-type-max-screen) -
+					var(--fluid-type-min-screen))
+	);
+}
+
+/*
+  * SET LOCKS ON ELEMENTS
+  */
+h1.fluid-type {
+	--fluid-type-min-size: 2;
+	--fluid-type-max-size: 4;
+}
+
+h2.fluid-type {
+	--fluid-type-min-size: 1.5;
+	--fluid-type-max-size: 2.2;
+}
+
+/* ============================================
+| FULL BLEED BACKGROUND END
+============================================ */
+
+/* ============================================
 | FOOTER START
 ============================================ */
 
@@ -286,8 +339,8 @@ footer {
 }
 
 .container {
-	max-width: 1200px;
-	padding: 1.5rem 3rem;
+	max-width: 65rem;
+	padding: 1.5rem 1.25rem;
 	margin: auto;
 	outline: #88c4c9;
 }
@@ -297,6 +350,10 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1rem;
+}
+
+.profil {
+	padding-right: 40px;
 }
 
 .profil .logo__area {
@@ -399,7 +456,7 @@ hr {
 	font-size: .7rem;
 }
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 767px) {
 	.content__footer {
 		flex-wrap: wrap;
 		justify-content: left;

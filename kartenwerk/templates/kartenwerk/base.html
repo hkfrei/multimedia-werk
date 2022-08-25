@@ -54,6 +54,20 @@
         </div>
       </div>
     </header>
+    <figure class="[ full-bleed ] [ feature-figure ]">
+          <img 
+            src="{% static 'kartenwerk/img/kartenwerk-bg-1200.png' %}" 
+
+            srcset="{% static 'kartenwerk/img/kartenwerk-bg-2200.png' %} 2200w,
+                    {% static 'kartenwerk/img/kartenwerk-bg-1400.png' %} 1400w,
+                    {% static 'kartenwerk/img/kartenwerk-bg-1200.png' %} 1200w,
+                    {% static 'kartenwerk/img/kartenwerk-bg-800.png' %} 800w,
+                    {% static 'kartenwerk/img/kartenwerk-bg-600.png' %} 600w"
+            sizes="100vw"
+            alt="low-angle photography of trees" 
+          />
+          <figcaption>A full bleed image, Hero-Media</figcaption>
+        </figure>
     <div id="content">{% block content %}{% endblock %}</div>
     <footer>
       <div class="container">
