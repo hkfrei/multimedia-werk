@@ -92,8 +92,8 @@ a {
 	max-width: 65rem;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 
 .flow > * + * {
@@ -334,6 +334,43 @@ h2.fluid-type {
 ============================================ */
 
 /* ============================================
+| SECTION PROFIL START
+============================================ */
+main {
+	max-width: 65rem;
+	padding: 1.5rem 2rem;
+}
+
+.heading {
+	font-size: 4em;
+	margin-top: 2rem;
+	padding-bottom: 1rem;
+	line-height: 1.1em;
+}
+
+h2 {
+	font-size: 2em;
+	margin-bottom: 4rem;
+	line-height: 1.2em;
+}
+
+section {
+	display: grid;
+	gap: 1.5em;
+	grid-template-columns: 1fr 1fr;
+}
+
+.profil__pic {
+	width: 100px;
+	margin-bottom: 1rem;
+	border-radius: 100%;
+}
+
+/* ============================================
+| SECTION PROFIL END
+============================================ */
+
+/* ============================================
 | FOOTER START
 ============================================ */
 
@@ -358,7 +395,7 @@ footer {
 
 .container {
 	max-width: 65rem;
-	padding: 1.5rem 1.25rem;
+	padding: 1.5rem 2rem;
 	margin: auto;
 	outline: #88c4c9;
 }
