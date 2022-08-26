@@ -1,5 +1,5 @@
 /* ============================================
-| GLOBAL-CSS START
+| GLOBAL START
 ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
@@ -32,7 +32,7 @@ body {
 }
 
 /* ============================================
-| GLOBAL-CSS END
+| GLOBAL END
 ============================================ */
 
 /* ============================================
@@ -263,12 +263,30 @@ a {
 ============================================ */
 
 /* ============================================
-| FULL BLEED BACKGROUND START
+| HERO-BACKGROUND START
 ============================================ */
 
 .full-bleed {
 	width: 100vw;
 	margin-left: calc(50% - 50vw);
+}
+
+.feature-figure img {
+	max-height: 25rem;
+	object-fit: cover;
+	padding-top: 95px;
+}
+
+.feature-figure img {
+	width: 100%;
+	box-shadow: 0 0 20px hsl(0deg 0% 0% / 20%);
+}
+
+@supports (object-fit: cover) {
+	.feature-figure img {
+		max-height: 25rem;
+		object-fit: cover;
+	}
 }
 
 /**
@@ -312,7 +330,7 @@ h2.fluid-type {
 }
 
 /* ============================================
-| FULL BLEED BACKGROUND END
+| HERO-BACKGROUND END
 ============================================ */
 
 /* ============================================
@@ -482,6 +500,12 @@ hr {
 		justify-content: center;
 	}
 	.tou {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 642px) {
+	.nav__area {
 		display: none;
 	}
 }
