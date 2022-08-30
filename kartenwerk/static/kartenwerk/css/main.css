@@ -15,20 +15,20 @@
 	--color-secondary-shade: #bda349;
 }
 
-/* * {
-  font-family: 'Roboto';
-  --clr-primary: #88c4c9;
-  --clr-secondary: #e4ce80;
-  --clr-dark: #383838;
-  --clr-light: #f2f2f2;
-} */
-
 body {
 	font-family: "Roboto", sans-serif;
 }
 
+p {
+	font-size: clamp(.8rem, -0.875rem + 8.333vw, 1rem);
+}
+
 #content {
-	padding-top: 95px;
+	max-width: 65rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 
 /* ============================================
@@ -238,8 +238,8 @@ a {
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel > * {
 	transform: translateY(0);
 	opacity: 1;
-	transition: transform 500ms cubic-bezier(0.17, 0.67, 0, 0.87) 700ms,
-		opacity 500ms ease 800ms;
+	transition: transform 200ms cubic-bezier(0.17, 0.67, 0, 0.87) 200ms,
+		opacity 200ms ease 200ms;
 }
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__bar::before {
@@ -316,19 +316,6 @@ a {
 	);
 }
 
-/*
-  * SET LOCKS ON ELEMENTS
-  */
-h1.fluid-type {
-	--fluid-type-min-size: 2;
-	--fluid-type-max-size: 4;
-}
-
-h2.fluid-type {
-	--fluid-type-min-size: 1.5;
-	--fluid-type-max-size: 2.2;
-}
-
 /* ============================================
 | HERO-BACKGROUND END
 ============================================ */
@@ -336,39 +323,101 @@ h2.fluid-type {
 /* ============================================
 | SECTION PROFIL START
 ============================================ */
-main {
-	max-width: 65rem;
-	padding: 1.5rem 2rem;
-}
 
 .heading {
-	font-size: 4em;
+	font-size: clamp(1.5rem, -0.875rem + 8.333vw, 4.5rem);
 	margin-top: 2rem;
 	padding-bottom: 1rem;
 	line-height: 1.1em;
 }
 
-h2 {
-	font-size: 2em;
-	margin-bottom: 4rem;
+.sub__heading {
+	font-size: clamp(1rem, -0.2805rem + 5.4634vw, 2rem);
+	margin-bottom: 2rem;
 	line-height: 1.2em;
 }
 
 section {
 	display: grid;
 	gap: 1.5em;
+	margin-top: 4rem;
 	grid-template-columns: 1fr 1fr;
+	padding-bottom: 3rem;
 }
 
 .profil__pic {
 	width: 100px;
-	margin-bottom: 1rem;
+	max-width: 130px;
+	min-width: 50px;
 	border-radius: 100%;
+}
+
+.header__profil {
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	margin-bottom: 1rem;
+}
+
+span.names {
+	padding-left: 1rem;
+	align-content: center;
+	padding-right: 1rem;
+}
+
+.column__names p {
+	padding: .8rem 1rem;
+}
+
+.header__profil blockquote {
+	font-size: .9em;
+	padding-right: 1rem;
+	align-items: center;
+	justify-content: center;
 }
 
 /* ============================================
 | SECTION PROFIL END
 ============================================ */
+
+/* ============================================
+| FIGURE HERO-VIDEO START
+============================================ */
+.video__bg {
+	max-height: 35rem;
+	object-fit: cover;
+}
+/* ============================================
+| FIGURE HERO-VIDEO END
+============================================ */
+
+/* ============================================
+| OFFER START
+============================================ */
+
+/* ============================================
+| OFFER END
+============================================ */
+.offer {
+	margin: 2rem 0;
+}
+
+h2 .heading .offer {
+	color: red;
+}
+
+.sub__heading.offer {
+	color: blue;
+	margin-bottom: 1rem;
+}
+
+button.offer {
+	background-color: var(--color-primary-shade);
+	border: none;
+	padding: 1rem 2rem;
+	color: white;
+	font-size: 1.1rem;
+	font-weight: 500;
+}
 
 /* ============================================
 | FOOTER START
@@ -544,6 +593,19 @@ hr {
 @media screen and (max-width: 642px) {
 	.nav__area {
 		display: none;
+	}
+	section.column {
+		display: grid;
+		gap: 1.5em;
+		margin-top: 4rem;
+		grid-template-columns: 1fr;
+	}
+
+	#content {
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 }
 
