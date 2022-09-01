@@ -5,19 +5,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 :root {
-	--color-white: rgb(255, 255, 255);
-	--color-light: #f8f9fb;
-	--color-light-shade: #b4b4b4;
-	--color-dark: #2e2e2e;
-	--color-primary: #88c4c9;
-	--color-primary-shade: #439aa3;
-	--color-secondary: #e4ce80;
-	--color-secondary-shade: #bda349;
+	--color-light-50: #fff;
+	--color-light-100: #f8f9fb;
+	--color-light-200: #b4b4b4;
+	--color-light-300: #9d9d9d;
+	--color-light-400: #808080;
+	--color-dark-50: #7c7c7c;
+	--color-dark-100: #707070;
+	--color-dark-200: #5f5f5f;
+	--color-dark-300: #3f3f3f;
+	--color-dark-400: #2c2c2c;
+	--color-primary-50: #8cced4;
+	--color-primary-100: #88c4c9;
+	--color-primary-200: #49aab3;
+	--color-primary-300: #439aa3;
+	--color-primary-400: #24808a;
+	--color-secondary-50: #e4ce80;
+	--color-secondary-100: #dec469;
+	--color-secondary-200: #d4b33d;
+	--color-secondary-300: #c9a830;
 }
 
 body {
 	font-family: "Roboto", sans-serif;
-	background-color: var(--color-light);
+	background-color: var(--color-light-100);
 }
 
 p {
@@ -42,7 +53,7 @@ p {
 =============================================*/
 
 a {
-	color: var(--color-dark);
+	color: var(--color-dark-300);
 }
 
 :focus {
@@ -63,8 +74,8 @@ a {
 .skip-link {
 	display: inline-block;
 	padding: 0.7rem 1rem 0.5rem 1rem;
-	background: var(--color-dark);
-	color: var(--color-dark);
+	background: var(--color-dark-400);
+	color: var(--color-dark-400);
 	text-decoration: none;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -74,8 +85,8 @@ a {
 }
 
 .skip-link:hover {
-	background: var(--color-dark);
-	color: var(--color-dark);
+	background: var(--color-dark-400);
+	color: var(--color-dark-400);
 }
 
 .skip-link:not(:focus) {
@@ -104,16 +115,16 @@ a {
 
 .site-head {
 	padding: 0.6rem 0;
-	background: var(--color-light);
-	border-top: 5px solid var(--color-primary);
-	border-bottom: 5px solid var(--color-light);
+	background: var(--color-light-100);
+	border-top: 5px solid var(--color-primary-200);
+	border-bottom: 5px solid var(--color-light-100);
 	color: var(--color-light);
 	position: fixed;
 	width: 100%;
 }
 
 .site-head :focus {
-	outline-color: var(--color-dark);
+	outline-color: var(--color-dark-400);
 }
 
 .site-head__inner {
@@ -145,11 +156,11 @@ a {
 	font-weight: 600;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: var(--color-dark);
+	color: var(--color-dark-300);
 }
 
 .navigation a:hover {
-	color: var(--color-light);
+	color: var(--color-dark-100);
 }
 
 .burger-menu__trigger {
@@ -162,8 +173,8 @@ a {
 	display: block;
 	width: 24px;
 	height: 3px;
-	background: var(--color-light);
-	border: 1px solid var(--color-light);
+	background: var(--color-dark-300);
+	border: 1px solid var(--color-dark-300);
 	position: absolute;
 	border-radius: 3px;
 	left: 50%;
@@ -209,7 +220,7 @@ a {
 	height: 100%;
 	visibility: hidden;
 	opacity: 0;
-	background: var(--color-primary);
+	background: var(--color-primary-50);
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
@@ -404,17 +415,17 @@ span.names {
 }
 
 button.offer {
-	background-color: var(--color-primary-shade);
+	background-color: var(--color-primary-200);
 	border: none;
 	padding: 1rem 2rem;
 	color: white;
 	font-size: 1.1rem;
 	font-weight: 500;
-	border-radius: 8px;
+	border-radius: 6px;
 }
 
 button.offer:hover {
-	background-color: #e4ce80;
+	background-color: var(--color-secondary-100);
 	color: #2e2e2e;
 }
 
@@ -436,8 +447,8 @@ a {
 
 footer {
 	margin-top: auto;
-	background-color: var(--color-dark);
-	border-top: 5px solid var(--color-primary);
+	background-color: var(--color-dark-400);
+	border-top: 5px solid var(--color-primary-200);
 	transition: background .3s linear;
 }
 
@@ -495,7 +506,7 @@ footer {
 }
 
 .social__media a:hover {
-	color: var(--color-primary);
+	color: var(--color-primary-200);
 }
 
 .nav__area {
@@ -524,7 +535,7 @@ li.nav__name {
 }
 
 .nav__header li a:hover {
-	color: var(--color-primary);
+	color: var(--color-primary-200);
 }
 
 hr {
@@ -634,7 +645,7 @@ header.angebot {
 }
 
 .card {
-	background: white;
+	background: var(--color-light-50);
 	padding: 1rem;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
 	border-radius: .25rem;
@@ -682,19 +693,21 @@ section.meta {
 }
 
 .btn {
-	background: var(--color-primary);
+	background: var(--color-primary-200);
+	color: var(--color-light-100);
 	border: none;
 	border-radius: .25em;
 	font-size: 1rem;
 	margin-bottom: .5rem;
 	margin-top: .5rem;
-	padding: .5em .75em;
+	padding: .5em 1em;
 	cursor: pointer;
 }
 
 .btn:hover,
 .btn:focus {
-	background: hsl(185 40% 55%);
+	background: var(--color-secondary-100);
+	color: var(--color-dark-400);
 }
 
 /* ============================================
