@@ -6,7 +6,7 @@
 
 :root {
 	--color-white: rgb(255, 255, 255);
-	--color-light: #d6d6d6;
+	--color-light: #f8f9fb;
 	--color-light-shade: #b4b4b4;
 	--color-dark: #2e2e2e;
 	--color-primary: #88c4c9;
@@ -17,10 +17,12 @@
 
 body {
 	font-family: "Roboto", sans-serif;
+	background-color: var(--color-light);
 }
 
 p {
-	font-size: clamp(.8rem, -0.875rem+ 8.333vw, 1rem);
+	font-size: clamp(.9rem, -2.3149rem + 8.8398vw, 1rem);
+	font-weight: 300;
 }
 
 #content {
@@ -102,9 +104,9 @@ a {
 
 .site-head {
 	padding: 0.6rem 0;
-	background: var(--color-white);
+	background: var(--color-light);
 	border-top: 5px solid var(--color-primary);
-	border-bottom: 5px solid var(--color-white);
+	border-bottom: 5px solid var(--color-light);
 	color: var(--color-light);
 	position: fixed;
 	width: 100%;
@@ -337,7 +339,7 @@ a {
 	line-height: 1.2em;
 }
 
-section {
+section.column {
 	display: grid;
 	gap: 1.5em;
 	margin-top: 4rem;
@@ -401,15 +403,6 @@ span.names {
 	margin: 2rem 0;
 }
 
-h2 .heading .offer {
-	color: red;
-}
-
-.sub__heading.offer {
-	color: blue;
-	margin-bottom: 1rem;
-}
-
 button.offer {
 	background-color: var(--color-primary-shade);
 	border: none;
@@ -417,6 +410,12 @@ button.offer {
 	color: white;
 	font-size: 1.1rem;
 	font-weight: 500;
+	border-radius: 8px;
+}
+
+button.offer:hover {
+	background-color: #e4ce80;
+	color: #2e2e2e;
 }
 
 /* ============================================
@@ -611,4 +610,93 @@ hr {
 
 /* ============================================
 | FOOTER END
+============================================ */
+
+/* ============================================
+| ANGEBOT START
+============================================ */
+header.angebot {
+	padding-bottom: 2.5em;
+}
+
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 1rem;
+	align-items: flex-start;
+	padding-bottom: 2.5em;
+}
+
+@media only screen and (min-width: 996px) {
+	.card-grid {
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	}
+}
+
+.card {
+	background: white;
+	padding: 1rem;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+	border-radius: .25rem;
+	overflow: hidden;
+	max-width: 500px;
+}
+
+.card-img {
+	display: block;
+	width: 100%;
+	margin-bottom: 1rem;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	max-height: 200px;
+	object-position: center;
+	overflow: hidden;
+}
+
+/* .card:hover > .card-img {
+	transform: scale(1.1);
+	transition: ease-in-out 600ms;
+} */
+
+.card-header {
+	font-weight: 600;
+	font-size: 1.5rem;
+	margin-bottom: .5rem;
+}
+
+section.meta {
+	font-weight: 300;
+	font-size: .8rem;
+	/* margin-bottom: .3rem; */
+}
+
+.card-body {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-size: .9rem;
+	padding-right: .5rem;
+}
+
+.card-footer {
+	margin-top: 1rem;
+}
+
+.btn {
+	background: var(--color-primary);
+	border: none;
+	border-radius: .25em;
+	font-size: 1rem;
+	margin-bottom: .5rem;
+	margin-top: .5rem;
+	padding: .5em .75em;
+	cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+	background: hsl(185 40% 55%);
+}
+
+/* ============================================
+| ANGEBOT END
 ============================================ */

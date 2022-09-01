@@ -6,8 +6,10 @@
 
 {% block content %}
 {% load static %} 
+<header>
  <h1 class="heading">Willkommen bei Karten-Werk.</h1>
       <h2 class="sub__heading">Wir sind die Hardwaterbrothers und Karten-Profis!</h2>
+</header>
       <main>
        <section class="column">
         <div class="column__names">
@@ -46,7 +48,9 @@
       <h2 class=" [ heading ] [ h2__offer ] ">Wir sind die Karten-Profis.</h2>
       <h3 class=" [ sub__heading ] [ h3__offer ] ">Web Mapping Applikationen und Fernerkundung mit Drohne.</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias mollitia, iure officiis ipsum deleniti sint molestias atque sit fugiat. Earum!Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias mollitia, iure officiis ipsum deleniti sint molestias atque sit fugiat.</p>
-        <button class="offer">Zu den Angeboten</button>
+      <a href="{% url 'kartenwerk:angebot' %}">
+      <button class="offer">Zu den Angeboten</button>
+      </a>
       </div>
 </main>
 {% if angebote %}
