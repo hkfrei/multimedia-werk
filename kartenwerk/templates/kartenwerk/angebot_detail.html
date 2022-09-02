@@ -6,16 +6,233 @@
 
 {% block content %}
 {% load static %} 
-Angebot Detail
+<header class="angebot">
+ <h1 class="heading">Fernerkundung mit Drohne</h1>
+      <h2 class="sub__heading">FLUG & RESULTATE</h2>
+      <p>Die Drohne fliegt autonom, wird aber vom Boden laufend kontrolliert. Die Software zeigt verschiedenste Parameter wie Batterieverbrauch, Windgeschwindigkeit oder die verbleibende Zeit bis zum Ende der Mission an. Mit einem einzigen Flug, können verschiedenste Geodaten wie z.B. das Oberflächenmodell, das Orthofoto oder der Vegetationsindex (NDVI) erzeugt werden.</p>
+      <h2 class="sub__heading">FLUGPLANUNG</h2>
+      <p>Ein Drohnenflug beginnt am Bildschirm. Mit spezieller Software wird der Flug im Detail geplant und auf die gewünschten Resultate optimiert. Zudem müssen Abklärungen zu Einschränkungen und Flugverbotszonen gemacht werden.</p>
+</header>
+
+  <figure>
+        <div class="hero">
+          <video class="[ video__bg ] [ full-bleed ] [ feature-figure ]" autoplay muted loop>
+            <source src="{% static 'kartenwerk/img/Karten-Werk_Drohnenflug_Uetliberg.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+      </figure>
+<h2 class="heading">Kurzbeschrieb Resultate</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, illo hic maiores architecto ratione accusamus voluptates provident rem molestiae amet?</p>
+<div class="card-grid">
+<div class="card">
+        <div class="card-video">
+            <iframe width="543" height="306" src="https://www.youtube.com/embed/TNzq8sV4r9I" title="Orthofoto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-header">Orthomosaik Raster</div>
+        <section class="meta">
+        <div class="meta-date">Formate: .geoTiff, KML tiles</div>
+        <div class="meta-kategorie">Ein aus den einzelnen Aufnahmen zusammengesetztes Luftbild.</div>
+        </section>
+        
+        <div class="card-body">
+        <p>Verwendung: Als top aktuelle Basiskarte in GIS oder Web Applikationen. Zur visuellen Lokalisation von Naturereignissen wie Hangrutschungen oder Sturmschäden</p>
+        </div>
+
+        <div class="card-footer">
+          <a href="#">
+            <button class="btn">Berechnungsbsp</button>
+          </a>
+        </div>   
+</div>
+<div class="card">
+        <div class="card-video">
+            <iframe width="543" height="306" src="https://www.youtube.com/embed/EIybe4TqaI0" title="Vegetationsindex NDVI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-header">Vegetationsindex</div>
+        <section class="meta">
+        <div class="meta-date">Formate: .geoTiff, .shp</div>
+        <div class="meta-kategorie">Mittels verschiedener Spektralbänder erstellter Vegetationsindex (NDVI).</div>
+        </section>
+        
+        <div class="card-body">
+        <p>Verwendung: zur Visualisierung von gestressten Pflanzen. Kann auch zur Bekämpfung von Borkenkäferbefall verwendet werden.</p>
+        </div>
+
+        <div class="card-footer">
+          <a href="#">
+            <button class="btn">Berechnungsbsp</button>
+          </a>
+        </div>   
+</div>
+<div class="card">
+        <div class="card-video">
+            <iframe width="543" height="306" src="https://www.youtube.com/embed/pDv1aDKTuag" title="3D Punktwolke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-header">3D Punktwolke</div>
+        <section class="meta">
+        <div class="meta-date">Formate: .las, .laz, .ply, ascii</div>
+        <div class="meta-kategorie">Mittels Fotogrammetrie, wird aus den überlappenden Bildern eine 3D Punktwolke generiert</div>
+        </section>
+        
+        <div class="card-body">
+        <p>Verwendung: 3D Visualisierungen, Videos oder als Input für 3D Drucker.</p>
+        </div>
+
+        <div class="card-footer">
+          <a href="#">
+            <button class="btn">Berechnungsbsp</button>
+          </a>
+        </div>   
+</div>
+<div class="card">
+        <div class="card-video">
+            <iframe width="543" height="306" src="https://www.youtube.com/embed/N7PIzbgSgZw" title="3D Mesh mit Textur" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-header">3D Mesh mit Textur</div>
+        <section class="meta">
+        <div class="meta-date">Formate: .obj</div>
+        <div class="meta-kategorie">Repräsentation der Landschaft in 3D mit Hilfe von Dreiecksvermaschung welche zusätzlich mit der Textur der Bilder versehen wird.</div>
+        </section>
+        
+        <div class="card-body">
+        <p>Verwendung: 3D Visualisierungen, Videos, Sketchfab</p>
+        </div>
+
+        <div class="card-footer">
+          <a href="#">
+            <button class="btn">Berechnungsbsp</button>
+          </a>
+        </div>   
+</div>
+
+</div>
+
+<h2 class="heading">Preispläne und Angebote</h2>
+<p>Beim Basic Angebot ist sowohl A, wie auch B inbegriffen. Beim Premium Angebot kommt C und D dazu
+und für individuelle Wünsche können wir jederzeit einen massgeschneiderten Auftrag gemäss Ihren Wünschen zusammenstellen. </p>
+
+  <section class="wrapper__price-comparison">
+    <div class="price-comparison">
+        <div class="price-column">
+            <div class="price-header">
+                <div class="price">
+                    <div class="chf-sign">CHF</div>
+                    25
+                    <div class="pro-ha">/ha</div>
+                </div>
+                <div class="plan-name">Basic</div>
+            </div>
+            <div class="divider"></div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature A
+            </div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature B
+            </div>
+            <div class="feature inactive">
+                <img src="{% static 'kartenwerk/img/x-square.svg' %}"> 
+                Feature C
+            </div>
+            <div class="feature inactive">
+                <img src="{% static 'kartenwerk/img/x-square.svg' %}"> 
+                Feature D
+            </div>
+            <div class="feature inactive">
+                <img src="{% static 'kartenwerk/img/x-square.svg' %}"> 
+                Feature E
+            </div>
+            <div class="feature inactive">
+                <img src="{% static 'kartenwerk/img/x-square.svg' %}"> 
+                Feature F
+            </div>
+            <button class="cta">Jetzt Buchen</button>
+        </div>
+        <div class="price-column popular">
+            <div class="price-header">
+                <div class="price">
+                    <div class="chf-sign">CHF</div>
+                    50
+                    <div class="pro-ha">/ha</div>
+                </div>
+                <div class="plan-name">Premium</div>
+            </div>
+            <div class="divider"></div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature A
+            </div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature B
+            </div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature C
+            </div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature D
+            </div>
+            <div class="feature inactive popular">
+                <img src="{% static 'kartenwerk/img/x-square.svg' %}"> 
+                Feature E
+            </div>
+            <div class="feature inactive popular">
+                <img src="{% static 'kartenwerk/img/x-square.svg' %}"> 
+                Feature F
+            </div>
+            <button class="cta">Jetzt Buchen</button>
+
+        </div>
+        <div class="price-column">
+            <div class="price-header">
+                <div class="price">
+                    <div class="chf-sign"></div>
+                    Custom
+                    <div class="pro-ha"></div>
+                </div>
+                <div class="plan-name">Individueller Preisplan</div>
+            </div>
+            <div class="divider"></div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature A
+            </div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature B
+            </div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature C
+            </div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature D
+            </div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature E
+            </div>
+            <div class="feature">
+                <img src="{% static 'kartenwerk/img/check-circle.svg' %}">
+                Feature F
+            </div>
+            <button class="cta">Jetzt Buchen</button>
+        </div>
+        </div>
+    </section>
 {% if angebot %}
-<section>
+<!-- <section>
   {{ angebot.name }} <br />
   {{angebot.kurzbeschrieb}} <br />
   <img
     style="max-width: 300px"
     src="{% static 'kartenwerk/img/'|add:angebot.bild %}"
   />
-</section>
+</section> -->
 {% else %}
 <p>Es ist kein Angebot vorhanden</p>
 {% endif %} {% endblock %}
