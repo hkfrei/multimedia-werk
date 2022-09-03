@@ -722,14 +722,14 @@ section.meta {
 ============================================ */
 section.wrapper__price-comparison {
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 }
 
 .price-comparison {
 	display: flex;
-	justify-content: center;
-	align-items: stretch;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	margin: 1rem;
 	width: 100%;
 	padding-top: 3rem;
@@ -742,18 +742,28 @@ section.wrapper__price-comparison {
 	padding: 2rem;
 	flex-grow: 1;
 	flex-basis: 0;
-	max-width: 275px;
+	min-width: 275px;
 	border-radius: 8px;
 }
 
 .price-column.popular {
-	background-color: var(--color-dark-50);
+	background-color: var(--color-light-400);
 	box-shadow: 0 7px 30px rgba(52, 13, 135, 0.2);
 	color: white;
 	margin-top: -1.5rem;
 	padding-top: 3.5rem;
 	margin-bottom: -1.5rem;
 	padding-bottom: 3.5rem;
+	min-width: 350px;
+}
+
+@media (max-width: 995px) {
+	.price-column.popular {
+		margin: 0;
+	}
+	.price-comparison {
+		gap: 1rem;
+	}
 }
 
 .price-column:first-child {
@@ -793,7 +803,7 @@ section.wrapper__price-comparison {
 
 .plan-name {
 	/* text-transform: uppercase; */
-	font-size: .9rem;
+	font-size: 1.2rem;
 	margin-top: 1rem;
 	margin-bottom: 0;
 }
@@ -834,7 +844,7 @@ section.wrapper__price-comparison {
 
 .cta {
 	border: none;
-	background-color: var(--color-secondary-100);
+	background-color: var(--color-light-400);
 	color: white;
 	width: 100%;
 	padding: .75rem 1rem;
@@ -848,7 +858,7 @@ section.wrapper__price-comparison {
 
 .price-column.popular .cta {
 	background-color: white;
-	color: var(--color-secondary-100);
+	color: var(--color-dark-200);
 }
 
 .cta:hover,
