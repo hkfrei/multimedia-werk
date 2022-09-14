@@ -6,8 +6,8 @@ from django.db import models
 class Angebot(models.Model):
     name = models.CharField(
         "Angebot Name", max_length=100, default="Angebotname")
-    kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
     subtitel = models.TextField("Subtitel", default="Subtitel")
+    kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
     video = models.CharField(
         'Video Name (aus static Ordner)', max_length=50, blank=True)
     cards = models.ManyToManyField("Card", blank=True)
@@ -20,9 +20,9 @@ class Angebot(models.Model):
 
 
 class Angebotbeispiel(models.Model):
-    bildname = models.CharField("Bildname", max_length=50)
     titel = models.CharField("Title", max_length=100, default="Title")
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
+    bildname = models.CharField("Bildname", max_length=50)
     angebot = models.ForeignKey("Angebot", on_delete=models.CASCADE)
 
     class Meta:
@@ -34,9 +34,9 @@ class Angebotbeispiel(models.Model):
 
 class Card(models.Model):
     titel = models.CharField("Titel", max_length=100, default="Titel")
-    kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
     subtitel = models.TextField("Subtitel", default="Subtitel")
     metadaten = models.TextField("Metadaten", blank=True)
+    kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
     video = models.CharField('Video ID', max_length=50, blank=True)
 
     class Meta:
