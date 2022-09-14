@@ -10,6 +10,7 @@ class Angebot(models.Model):
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
     video = models.CharField(
         'Video Name (aus static Ordner)', max_length=50, blank=True)
+    bild = models.CharField("Bild", max_length=100, default="gis.webp")
     cards = models.ManyToManyField("Card", blank=True)
 
     class Meta:
