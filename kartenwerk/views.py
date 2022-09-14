@@ -3,10 +3,8 @@ from .models import Angebot
 # Create your views here.
 
 
-class HomeView(ListView):
-    model = Angebot
+class HomeView(TemplateView):
     template_name = "kartenwerk/index.html"
-    context_object_name = "angebote"
 
 
 class AngebotList(ListView):
