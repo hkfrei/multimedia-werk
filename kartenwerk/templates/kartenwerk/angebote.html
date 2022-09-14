@@ -5,46 +5,36 @@
 {% block title %} Angebote{% endblock %} 
 
 {% block content %}
-{% load static %} 
+{% load static %}
 <header class="angebot">
- <h1 class="heading">Angebot</h1>
-      <h2 class="sub__heading">Progressive Web Apps, Geoinformatik und Fernerkundung "Made in Switzerland".</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum natus distinctio, harum vitae modi quidem voluptatibus rem dicta perspiciatis, at dolorum error expedita corporis nisi quia vel molestias iure nulla quis dolor velit voluptatem iusto itaque? Necessitatibus, veniam aliquid, magnam autem suscipit aperiam illo omnis recusandae facere rerum ab nam.</p>
+  <h1 class="heading">Angebot</h1>
+  <h2 class="sub__heading">
+    Progressive Web Apps, Geoinformatik und Fernerkundung "Made in Switzerland".
+  </h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum natus
+    distinctio, harum vitae modi quidem voluptatibus rem dicta perspiciatis, at
+    dolorum error expedita corporis nisi quia vel molestias iure nulla quis
+    dolor velit voluptatem iusto itaque? Necessitatibus, veniam aliquid, magnam
+    autem suscipit aperiam illo omnis recusandae facere rerum ab nam.
+  </p>
 </header>
 {% if angebote %}
 <div class="card-grid">
   {% for angebot in angebote %}
-    <div class="card">
-        <div class="card-img">
-            <img src="{% static 'kartenwerk/img/'|add:angebot.bild %}" alt="">
-        </div>
-        <div class="card-header">{{ angebot.name }}</div>
-        <!-- <section class="meta">
-        <div class="meta-date">2014 bis heute</div>
-        <div class="meta-kategorie">Kategorie: Web-Mapping</div>
-        </section> -->
-        
-        <div class="card-body">
-            {{angebot.kurzbeschrieb}}
-        </div>
-
-        <div class="card-footer">
-          <a href="{% url 'kartenwerk:angebot_detail' angebot.id %}">
-            <button class="btn">Mehr Infos</button>
-          </a>
-        </div>   
+  <div class="card">
+    <div class="card-img">
+      <img src="{% static 'kartenwerk/img/'|add:angebot.bild %}" alt="" />
     </div>
-  <!-- <section>
-    {{ angebot.name }}
-    <a href="{% url 'kartenwerk:angebot_detail' angebot.id %}">Details</a>
-    <br />
-    {{angebot.kurzbeschrieb}} <br />
-    <img
-      style="max-width: 200px"
-      src="{% static 'kartenwerk/img/'|add:angebot.bild %}"
-    />
-  </section> -->
+    <div class="card-header">{{ angebot.name }}</div>
+    <div class="card-body">{{angebot.kurzbeschrieb}}</div>
 
+    <div class="card-footer">
+      <a href="{% url 'kartenwerk:angebot_detail' angebot.id %}">
+        <button class="btn">Mehr Infos</button>
+      </a>
+    </div>
+  </div>
   {% endfor %}
 </div>
 {% else %}
