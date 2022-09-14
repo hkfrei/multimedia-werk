@@ -26,7 +26,9 @@
     <div class="card-img">
       <img src="{% static 'kartenwerk/img/'|add:angebot.bild %}" alt="" />
     </div>
-    <div class="card-header">{{ angebot.name }}</div>
+    <div class="card-header">
+      {{ angebot.name }}<br /><small>{{angebot.subtitel}}</small>
+    </div>
     <div class="card-body">{{angebot.kurzbeschrieb}}</div>
 
     <div class="card-footer">
