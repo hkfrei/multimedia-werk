@@ -8,9 +8,9 @@ class Angebot(models.Model):
         "Angebot Name", max_length=100, default="Angebotname")
     subtitel = models.CharField("Subtitel", max_length=100, default="Subtitel")
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
-    angebot_cards_titel = models.CharField(
+    cards_titel = models.CharField(
         "Angebot Cards Titel", max_length=100, default="Angebot Cards Titel")
-    angebot_cards_beschrieb = models.TextField(
+    cards_beschrieb = models.TextField(
         "Angebot Cards Beschrieb", default="Angebot Cards Beschrieb")
     video = models.CharField(
         'Video Name (aus static Ordner)', max_length=50, blank=True)
