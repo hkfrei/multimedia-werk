@@ -26,11 +26,10 @@
     </video>
   </div>
 </figure>
-<h2 class="heading">Kurzbeschrieb Resultate</h2>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, illo hic
-  maiores architecto ratione accusamus voluptates provident rem molestiae amet?
-</p>
+<header class="angebot">
+  <h2 class="sub__heading">{{angebot.cards_titel}}</h2>
+  <p>{{angebot.cards_beschrieb}}</p>
+</header>
 <div class="card-grid">
   {% for card in angebot.cards.all %}
   <div class="card">
@@ -61,6 +60,11 @@
   </div>
   {% endfor %}
 </div>
+<section><h2 class="heading">Einsatzbeispiele</h2></section>
+{% for beispiel in angebot.angebotbeispiel_set.all %}
+<img src="{% static 'kartenwerk/img/'|add:beispiel.bild %}" />
+<h3>{{beispiel.titel}}</h3>
+{{beispiel.kurzbeschrieb}} {% endfor %}
 
 <h2 class="heading">Preispläne und Angebote</h2>
 <p>
