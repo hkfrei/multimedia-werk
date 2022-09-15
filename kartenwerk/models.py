@@ -16,6 +16,7 @@ class Angebot(models.Model):
         'Video Name (aus static Ordner)', max_length=50, blank=True)
     bild = models.CharField("Bild", max_length=100, default="gis.webp")
     cards = models.ManyToManyField("Card", blank=True)
+    preise = models.ManyToManyField("Preisplan", blank=True)
 
     class Meta:
         verbose_name_plural = "Angebote"
@@ -49,3 +50,30 @@ class Card(models.Model):
 
     def __str__(self):
         return self.titel
+
+
+class Preisplan(models.Model):
+    order = models.IntegerField("Order", default=1)
+    name = models.CharField("Name", max_length=50, default="Preisplan Name")
+    preis = models.CharField("Preis", max_length=50)
+    einheit = models.CharField("Einheit", max_length=50)
+    popular = models.BooleanField("Populär", default=False)
+    features = models.ManyToManyField("Preisplanfeature", blank=True)
+
+    class Meta:
+        verbose_name_plural = "Preispläne"
+        ordering = ['order']
+
+    def __str__(self):
+        return self.name
+
+
+class Preisplanfeature(models.Model):
+    name = models.CharField("Titel", max_length=100)
+    aktiv = models.BooleanField("Aktiv", default=True)
+
+    class Meta:
+        verbose_name_plural = "Preisplan Features"
+
+    def __str__(self):
+        return self.name + " | aktiv = " + str(self.aktiv)

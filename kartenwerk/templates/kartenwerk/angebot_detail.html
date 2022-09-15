@@ -75,114 +75,26 @@
 
 <section class="wrapper__price-comparison">
   <div class="price-comparison">
-    <div class="price-column">
+    {% for preisplan in angebot.preise.all %}
+    <div class="price-column {% if preisplan.popular %}popular {% endif %}">
       <div class="price-header">
         <div class="price">
           <div class="chf-sign">CHF</div>
-          25
-          <div class="pro-ha">/ha</div>
+          {{preisplan.preis}}
+          <div class="pro-ha">/{{preisplan.einheit}}</div>
         </div>
-        <div class="plan-name">Basic</div>
+        <div class="plan-name">{{preisplan.name}}</div>
       </div>
       <div class="divider"></div>
+      {% for feature in preisplan.features.all %}
       <div class="feature">
         <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature A
+        {{feature.name}}
       </div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature B
-      </div>
-      <div class="feature inactive">
-        <img src="{% static 'kartenwerk/img/x-square.svg' %}" />
-        Feature C
-      </div>
-      <div class="feature inactive">
-        <img src="{% static 'kartenwerk/img/x-square.svg' %}" />
-        Feature D
-      </div>
-      <div class="feature inactive">
-        <img src="{% static 'kartenwerk/img/x-square.svg' %}" />
-        Feature E
-      </div>
-      <div class="feature inactive">
-        <img src="{% static 'kartenwerk/img/x-square.svg' %}" />
-        Feature F
-      </div>
+      {% endfor %}
       <button class="cta">Jetzt Buchen</button>
     </div>
-    <div class="price-column popular">
-      <div class="price-header">
-        <div class="price">
-          <div class="chf-sign">CHF</div>
-          50
-          <div class="pro-ha">/ha</div>
-        </div>
-        <div class="plan-name">Premium</div>
-      </div>
-      <div class="divider"></div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature A more Text
-      </div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature B more Text
-      </div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature C
-      </div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature D
-      </div>
-      <div class="feature inactive popular">
-        <img src="{% static 'kartenwerk/img/x-square.svg' %}" />
-        Feature E
-      </div>
-      <div class="feature inactive popular">
-        <img src="{% static 'kartenwerk/img/x-square.svg' %}" />
-        Feature F
-      </div>
-      <button class="cta">Jetzt Buchen</button>
-    </div>
-    <div class="price-column">
-      <div class="price-header">
-        <div class="price">
-          <div class="chf-sign"></div>
-          Custom
-          <div class="pro-ha"></div>
-        </div>
-        <div class="plan-name">Individueller Preisplan</div>
-      </div>
-      <div class="divider"></div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature A Lorem ipsum dolor sit amet consectetur.
-      </div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature B
-      </div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature C
-      </div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature D
-      </div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature E
-      </div>
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        Feature F
-      </div>
-      <button class="cta">Jetzt Buchen</button>
-    </div>
+    {%endfor %}
   </div>
 </section>
 {% else %}
