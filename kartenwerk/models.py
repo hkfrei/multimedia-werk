@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Angebot(models.Model):
+    order = models.IntegerField("Order", default=1)
     name = models.CharField(
         "Angebot Name", max_length=100, default="Angebotname")
     subtitel = models.CharField("Subtitel", max_length=100, default="Subtitel")
@@ -20,6 +21,7 @@ class Angebot(models.Model):
 
     class Meta:
         verbose_name_plural = "Angebote"
+        ordering = ["order"]
 
     def __str__(self):
         return self.name
