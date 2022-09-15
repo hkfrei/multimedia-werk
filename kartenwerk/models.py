@@ -6,7 +6,7 @@ from django.db import models
 class Angebot(models.Model):
     name = models.CharField(
         "Angebot Name", max_length=100, default="Angebotname")
-    subtitel = models.TextField("Subtitel", default="Subtitel")
+    subtitel = models.CharField("Subtitel", max_length=100, default="Subtitel")
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
     angebot_cards_titel = models.CharField(
         "Angebot Cards Titel", max_length=100, default="Angebot Cards Titel")
