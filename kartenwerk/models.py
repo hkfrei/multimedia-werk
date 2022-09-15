@@ -79,3 +79,18 @@ class Preisplanfeature(models.Model):
 
     def __str__(self):
         return self.name + " | aktiv = " + str(self.aktiv)
+
+
+class Testimonial(models.Model):
+    firma = models.CharField("Titel", max_length=100)
+    name = models.CharField("Name", max_length=50)
+    vorname = models.CharField("Vorname", max_length=50)
+    position = models.CharField("Position", max_length=100)
+    text = models.TextField("Testimonial Text")
+    angebot = models.ForeignKey("Angebot", on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = "Testimonials"
+
+    def __str__(self):
+        return self.firma + ", " + self.name + " " + self.vorname

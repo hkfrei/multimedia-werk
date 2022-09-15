@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Angebot, Angebotbeispiel, Card, Preisplan, Preisplanfeature
+from .models import Angebot, Angebotbeispiel, Card, Preisplan, Preisplanfeature, Testimonial
 
 # Register your models here.
 admin.site.register([Angebot, Angebotbeispiel, Card,
-                    Preisplan, Preisplanfeature])
+                    Preisplan, Preisplanfeature, Testimonial])

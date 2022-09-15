@@ -97,6 +97,18 @@
     {%endfor %}
   </div>
 </section>
+<section>
+  <h2 class="heading">Das sagen unsere Kunden</h2>
+  {% for testimonial in angebot.testimonial_set.all %}
+  <div>{{testimonial.text}}</div>
+  <div>
+    <i
+      >{{testimonial.vorname}} {{testimonial.name}} ({{testimonial.position}}),
+      {{testimonial.firma}}</i
+    >
+  </div>
+  {% endfor%}
+</section>
 {% else %}
 <p>Es ist kein Angebot vorhanden</p>
 {% endif %} {% endblock %}
