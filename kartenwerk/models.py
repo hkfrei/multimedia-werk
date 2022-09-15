@@ -8,6 +8,10 @@ class Angebot(models.Model):
         "Angebot Name", max_length=100, default="Angebotname")
     subtitel = models.TextField("Subtitel", default="Subtitel")
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
+    angebot_cards_titel = models.CharField(
+        "Angebot Cards Titel", max_length=100, default="Angebot Cards Titel")
+    angebot_cards_beschrieb = models.TextField(
+        "Angebot Cards Beschrieb", default="Angebot Cards Beschrieb")
     video = models.CharField(
         'Video Name (aus static Ordner)', max_length=50, blank=True)
     bild = models.CharField("Bild", max_length=100, default="gis.webp")
@@ -23,7 +27,7 @@ class Angebot(models.Model):
 class Angebotbeispiel(models.Model):
     titel = models.CharField("Title", max_length=100, default="Title")
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
-    bildname = models.CharField("Bildname", max_length=50)
+    bild = models.CharField("Bildname", max_length=50)
     angebot = models.ForeignKey("Angebot", on_delete=models.CASCADE)
 
     class Meta:
