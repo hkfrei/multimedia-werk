@@ -5,6 +5,32 @@
 {% block title %} Referenzen{% endblock %} 
 
 {% block content %}
-{% load static %} 
-Referenzen... 
-{% endblock %}
+{% load static %}
+<header class="angebot">
+  <h1 class="heading">Referenzen</h1>
+  <h2 class="sub__heading">
+    Nachfolgend finden sie eine Auswahl unserer Projekte
+  </h2>
+</header>
+{% for referenz in referenzen %}
+<!-- prettier-ignore -->
+{% if not referenz.video %}
+<img src="{% static 'kartenwerk/img/'|add:referenz.bild %}" />
+{% endif %}
+<h2>{{referenz.titel}}</h2>
+<h3 class="referenz__title">Auftraggeber:</h3>
+<div>
+  <img
+    class="stakeholder__logo"
+    src="{% static 'kartenwerk/img/'|add:referenz.stakeholder.logo %}"
+    alt="logo"
+  />
+</div>
+{{referenz.kurzbeschrieb}}
+<h4 class="referenz__title">Nachfolgend ein kurzes Projektvideo</h4>
+<video class="[ video__bg ] [ referenz__video ]" autoplay muted loop>
+  <source src="{% static 'kartenwerk/video/'|add:referenz.video %}" />
+  type="video/mp4" />
+</video>
+
+{% endfor %} {% endblock %}
