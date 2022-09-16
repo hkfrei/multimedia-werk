@@ -27,14 +27,17 @@ class Angebot(models.Model):
         return self.name
 
 
-class Angebotbeispiel(models.Model):
+class Referenz(models.Model):
     titel = models.CharField("Title", max_length=100, default="Title")
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
-    bild = models.CharField("Bildname", max_length=50)
+    bild = models.CharField("Bild", max_length=50)
+    video = models.CharField("Video", max_length=50)
     angebot = models.ForeignKey("Angebot", on_delete=models.CASCADE)
+    stakeholder = models.ForeignKey(
+        "Stakeholder", on_delete=models.CASCADE, null=True)
 
     class Meta:
-        verbose_name_plural = "Angebotsbeispiele"
+        verbose_name_plural = "Referenzen"
 
     def __str__(self):
         return self.titel
@@ -82,15 +85,27 @@ class Preisplanfeature(models.Model):
 
 
 class Testimonial(models.Model):
+    text = models.TextField("Testimonial Text")
+    angebot = models.ForeignKey("Angebot", on_delete=models.CASCADE)
+    stakeholder = models.ForeignKey(
+        "Stakeholder", on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        verbose_name_plural = "Testimonials"
+
+    def __str__(self):
+        return self.text
+
+
+class Stakeholder(models.Model):
+    logo = models.CharField("Logo", max_length=100)
     firma = models.CharField("Titel", max_length=100)
     name = models.CharField("Name", max_length=50)
     vorname = models.CharField("Vorname", max_length=50)
     position = models.CharField("Position", max_length=100)
-    text = models.TextField("Testimonial Text")
-    angebot = models.ForeignKey("Angebot", on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name_plural = "Testimonials"
+        verbose_name_plural = "Stakeholders"
 
     def __str__(self):
         return self.firma + ", " + self.name + " " + self.vorname
