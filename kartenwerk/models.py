@@ -99,7 +99,7 @@ class Testimonial(models.Model):
 
 class Stakeholder(models.Model):
     logo = models.CharField("Logo", max_length=100)
-    firma = models.CharField("Titel", max_length=100)
+    firma = models.CharField("Firma", max_length=100)
     name = models.CharField("Name", max_length=50)
     vorname = models.CharField("Vorname", max_length=50)
     position = models.CharField("Position", max_length=100)
