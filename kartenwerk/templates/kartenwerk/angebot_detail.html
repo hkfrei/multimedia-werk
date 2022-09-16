@@ -61,16 +61,25 @@
   {% endfor %}
 </div>
 <section><h2 class="heading">Einsatzbeispiele</h2></section>
-{% for beispiel in angebot.angebotbeispiel_set.all %}
-<img src="{% static 'kartenwerk/img/'|add:beispiel.bild %}" />
-<h3>{{beispiel.titel}}</h3>
-{{beispiel.kurzbeschrieb}} {% endfor %}
+{% for referenz in angebot.referenz_set.all %}
+<!-- prettier-ignore -->
+{% if not referenz.video %}
+<img src="{% static 'kartenwerk/img/'|add:referenz.bild %}" />
+{% endif %}
+<h3>{{referenz.titel}}</h3>
+{{referenz.kurzbeschrieb}}
+<video class="[ video__bg ] [ referenz__video ]" autoplay muted loop>
+  <source src="{% static 'kartenwerk/video/'|add:referenz.video %}" />
+  type="video/mp4" />
+</video>
 
-<h2 class="heading">Preispläne und Angebote</h2>
+{% endfor %}
+
+<h2 class="heading">Preise</h2>
 <p>
-  Beim Basic Angebot ist sowohl A, wie auch B inbegriffen. Beim Premium Angebot
-  kommt C und D dazu und für individuelle Wünsche können wir jederzeit einen
-  massgeschneiderten Auftrag gemäss Ihren Wünschen zusammenstellen.
+  Nachfolgend finden Sie Preisinformationen zum Angebot {{angebot.name}}. <br />
+  Für individuelle Wünsche können wir jederzeit einen massgeschneiderten Auftrag
+  gemäss Ihren Wünschen zusammenstellen.
 </p>
 
 <section class="wrapper__price-comparison">
@@ -100,12 +109,20 @@
 <section>
   <h2 class="heading">Das sagen unsere Kunden</h2>
   {% for testimonial in angebot.testimonial_set.all %}
+  <div>
+    <img
+      class="stakeholder__logo"
+      src="{% static 'kartenwerk/img/'|add:testimonial.stakeholder.logo %}"
+      alt="logo"
+    />
+  </div>
   <div>{{testimonial.text}}</div>
   <div>
-    <i
-      >{{testimonial.vorname}} {{testimonial.name}} ({{testimonial.position}}),
-      {{testimonial.firma}}</i
-    >
+    <i>
+      {{testimonial.stakeholder.vorname}} {{testimonial.stakeholder.name}}
+      ({{testimonial.stakeholder.position}})<br />
+      {{testimonial.stakeholder.firma}}
+    </i>
   </div>
   {% endfor%}
 </section>
