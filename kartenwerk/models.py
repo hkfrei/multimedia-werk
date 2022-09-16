@@ -28,10 +28,10 @@ class Angebot(models.Model):
 
 
 class Referenz(models.Model):
-    titel = models.CharField("Title", max_length=100, default="Title")
+    titel = models.CharField("Titel", max_length=100, default="Title")
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
-    bild = models.CharField("Bild", max_length=50)
-    video = models.CharField("Video", max_length=50)
+    bild = models.CharField("Bild", max_length=50, blank=True)
+    video = models.CharField("Video", max_length=50, blank=True)
     angebot = models.ForeignKey("Angebot", on_delete=models.CASCADE)
     stakeholder = models.ForeignKey(
         "Stakeholder", on_delete=models.CASCADE, null=True)
