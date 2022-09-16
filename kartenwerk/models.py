@@ -9,13 +9,13 @@ class Angebot(models.Model):
         "Angebot Name", max_length=100, default="Angebotname")
     subtitel = models.CharField("Subtitel", max_length=100, default="Subtitel")
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
+    bild = models.CharField("Bild", max_length=100, default="gis.webp")
+    video = models.CharField(
+        'Video Name (aus static Ordner)', max_length=50, blank=True)
     cards_titel = models.CharField(
         "Angebot Cards Titel", max_length=100, default="Angebot Cards Titel")
     cards_beschrieb = models.TextField(
         "Angebot Cards Beschrieb", default="Angebot Cards Beschrieb")
-    video = models.CharField(
-        'Video Name (aus static Ordner)', max_length=50, blank=True)
-    bild = models.CharField("Bild", max_length=100, default="gis.webp")
     cards = models.ManyToManyField("Card", blank=True)
     preise = models.ManyToManyField("Preisplan", blank=True)
 
