@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Karten-Werk GmbH{% endblock %}</title>
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!--
     <link rel="icon"href="{% static 'stundenerfassung/img/favicon.ico' %}">
     -->
@@ -20,7 +23,6 @@
       type="text/css"
       href="{% static 'kartenwerk/css/main.css' %}"
     />
-
   </head>
   <body>
     <header class="site-head" role="banner">
@@ -55,17 +57,16 @@
       </div>
     </header>
     <figure class="[ full-bleed ] [ feature-figure ]">
-          <img 
-            src="{% static 'kartenwerk/img/kartenwerk-bg-1200.png' %}" 
-
-            srcset="{% static 'kartenwerk/img/kartenwerk-bg-2200.png' %} 2200w,
+      <img
+        src="{% static 'kartenwerk/img/kartenwerk-bg-1200.png' %}"
+        srcset="{% static 'kartenwerk/img/kartenwerk-bg-2200.png' %} 2200w,
                     {% static 'kartenwerk/img/kartenwerk-bg-1400.png' %} 1400w,
                     {% static 'kartenwerk/img/kartenwerk-bg-1200.png' %} 1200w,
                     {% static 'kartenwerk/img/kartenwerk-bg-800.png' %} 800w,
                     {% static 'kartenwerk/img/kartenwerk-bg-600.png' %} 600w"
-            sizes="100vw"
-            alt="Karten-Werk Artwork" 
-          />
+        sizes="100vw"
+        alt="Karten-Werk Artwork"
+      />
     </figure>
     <div id="content">{% block content %}{% endblock %}</div>
     <footer>
@@ -73,18 +74,23 @@
         <div class="content__footer">
           <div class="profil">
             <div class="logo__area">
-              <img src="{% static 'kartenwerk/img/Kartenwerk_K_white-black.png' %}" alt="Logo Footer">
+              <img
+                src="{% static 'kartenwerk/img/Kartenwerk_K_white-black.png' %}"
+                alt="Logo Footer"
+              />
               <span class="logo__name">Karten-Werk GmbH</span>
             </div>
             <div class="desc__area">
-              <p>Böschacherstrasse 82 | 8624 Grüt<br>
-              +41 79 360 72 83 | hkfrei(at)karten-werk.ch</p>
+              <p>
+                Böschacherstrasse 82 | 8624 Grüt<br />
+                +41 79 360 72 83 | hkfrei(at)karten-werk.ch
+              </p>
             </div>
             <div class="social__media">
-              <a href="#"><i class='bx bxl-github'></i></a>
-              <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-              <a href="#"><i class='bx bxl-twitter'></i></a>
-              <a href="#"><i class='bx bxl-youtube'></i></a>
+              <a href="#"><i class="bx bxl-github"></i></a>
+              <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+              <a href="#"><i class="bx bxl-twitter"></i></a>
+              <a href="#"><i class="bx bxl-youtube"></i></a>
             </div>
           </div>
           <div class="nav__area">
@@ -98,15 +104,15 @@
             <ul class="nav__header">
               <li class="nav__name">Company</li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="{% url 'kartenwerk:blog' %}">Blog</a></li>
               <li><a href="#">Kontakt</a></li>
             </ul>
           </div>
         </div>
-        <hr>
+        <hr />
         <div class="footer__bottom">
           <div class="copy__right">
-            <i class='bx bxs-copyright'></i>
+            <i class="bx bxs-copyright"></i>
             <span>2022 Karten-Werk GmbH</span>
           </div>
           <div class="tou">
