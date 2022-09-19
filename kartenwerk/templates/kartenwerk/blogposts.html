@@ -1,0 +1,29 @@
+<!-- prettier-ignore -->
+
+{% extends "kartenwerk/base.html" %} 
+
+{% block title %} Blog{% endblock %} 
+
+{% block content %}
+{% load static %}
+<header class="angebot">
+  <h1 class="heading">Blog</h1>
+  <h2 class="sub__heading">
+    Nachfolgend finden sie eine Übersicht über unsere Blogbeiträge.
+  </h2>
+</header>
+{% for post in blogposts %}
+<!-- prettier-ignore -->
+<div>Datum: {{post.datum}}</div>
+<div>
+  Posted by: {{post.verfasser.name}} {{post.verfasser.vorname}}
+  ({{post.verfasser.position}})
+</div>
+<h2><a href="{{post.url}}">{{post.titel}}</a></h2>
+<img src="{% static 'kartenwerk/img/'|add:post.teaser_img %}" />
+<h4>Kurzbeschrieb</h4>
+<div>{{post.kurzbeschrieb}}</div>
+<div>
+  <a href="{{post.url}}">{{post.url}}</a>
+  <div>{% endfor %} {% endblock %}</div>
+</div>
