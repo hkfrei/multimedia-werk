@@ -1,5 +1,5 @@
 from django.views.generic import ListView, TemplateView, DetailView
-from .models import Angebot, Referenz
+from .models import Angebot, Blogpost, Referenz
 # Create your views here.
 
 
@@ -26,3 +26,9 @@ class ReferenzenView(ListView):
 
 class AboutView(TemplateView):
     template_name = "kartenwerk/about.html"
+
+
+class Blogposts(ListView):
+    model = Blogpost
+    template_name = "kartenwerk/blogposts.html"
+    context_object_name = "blogposts"
