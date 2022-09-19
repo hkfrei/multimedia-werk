@@ -109,3 +109,18 @@ class Stakeholder(models.Model):
 
     def __str__(self):
         return self.firma + ", " + self.name + " " + self.vorname
+
+
+class Blogpost(models.Model):
+    titel = models.CharField("Title", max_length=100)
+    kurzbeschrieb = models.TextField("Kurzbeschrieb")
+    datum = models.DateField("Publizierungsdatum")
+    teaser_img = models.CharField("Vorschaubild", max_length=100)
+    verfasser = models.ForeignKey("Stakeholder", on_delete=models.CASCADE)
+    url = models.URLField("URL zum Post")
+
+    class Meta:
+        verbose_name_plural = "Blogposts"
+
+    def __str__(self):
+        return self.titel
