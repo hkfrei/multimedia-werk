@@ -24,6 +24,16 @@
   --color-secondary-100: #dec469;
   --color-secondary-200: #d4b33d;
   --color-secondary-300: #c9a830;
+
+  --gap-heading-s: 0.5rem;
+  --gap-heading-m: 1rem;
+  --gap-heading-l: 1.7rem;
+  --gap-subheading-s: 0.5rem;
+  --gap-subheading-m: 1rem;
+  --gap-subheading-l: 1.7rem;
+  --gap-txt-kurzbeschrieb-s: 0.5rem;
+  --gap-txt-kurzbeschrieb-s: 1rem;
+  --gap-txt-kurzbeschrieb-l: 1.7rem;
 }
 
 body {
