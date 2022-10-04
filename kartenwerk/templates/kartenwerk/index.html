@@ -3,9 +3,9 @@
 {% extends "kartenwerk/base.html" %} 
 
 {% block title %} Index {% endblock %} 
-
-{% block content %}
-{% load static %}
+{% block bordertop %}
+<div class="site-head__bordertop-default"></div>
+{% endblock %} {% block content %} {% load static %}
 <header>
   <h1 class="heading">Willkommen bei Karten-Werk.</h1>
   <h2 class="sub__heading">
@@ -45,7 +45,7 @@
         />
         <span class="names">
           <h4>David Schaer</h4>
-          <blockquote>Marketing Fuzzi und Farbkasten-Enthusiast</blockquote>
+          <blockquote>Design und Cinematographie</blockquote>
         </span>
       </div>
       <p>
@@ -85,9 +85,18 @@
       ipsum dolor sit amet consectetur adipisicing elit. Alias mollitia, iure
       officiis ipsum deleniti sint molestias atque sit fugiat.
     </p>
-    <a href="{% url 'kartenwerk:angebot' %}">
+    <div class="button-container-main">
+      <a href="{% url 'kartenwerk:angebot' %}">
+        <button class="[ button ] [ button-primary ]" role="button">
+          Zu den Angeboten
+        </button>
+      </a>
+    </div>
+    <!-- <a href="{% url 'kartenwerk:angebot' %}">
       <button class="offer">Zu den Angeboten</button>
-    </a>
+    </a> -->
   </div>
 </main>
+{% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-default"></div>
 {% endblock %}
