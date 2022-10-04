@@ -3,34 +3,68 @@
 {% extends "kartenwerk/base.html" %} 
 
 {% block title %} Referenzen{% endblock %} 
-
-{% block content %}
-{% load static %}
+{% block bordertop %}
+<div class="site-head__bordertop-default"></div>
+{% endblock %} {% block content %} {% load static %}
 <header class="angebot">
   <h1 class="heading">Referenzen</h1>
   <h2 class="sub__heading">
-    Nachfolgend finden sie eine Auswahl unserer Projekte
+    Nachfolgend finden Sie eine Auswahl unserer Projekte
   </h2>
 </header>
-{% for referenz in referenzen %}
-<!-- prettier-ignore -->
-{% if not referenz.video %}
+<div class="card-grid-referenzen">
+  {% for referenz in referenzen %}
+  <!-- prettier-ignore -->
+  <!-- {% if not referenz.video %}
 <img src="{% static 'kartenwerk/img/'|add:referenz.bild %}" />
-{% endif %}
-<h2>{{referenz.titel}}</h2>
-<h3 class="referenz__title">Auftraggeber:</h3>
-<div>
-  <img
-    class="stakeholder__logo"
-    src="{% static 'kartenwerk/img/'|add:referenz.stakeholder.logo %}"
-    alt="logo"
-  />
-</div>
-{{referenz.kurzbeschrieb}}
-<h4 class="referenz__title">Nachfolgend ein kurzes Projektvideo</h4>
-<video class="[ video__bg ] [ referenz__video ]" autoplay muted loop>
-  <source src="{% static 'kartenwerk/video/'|add:referenz.video %}" />
-  type="video/mp4" />
-</video>
+{% endif %} -->
+  <div class="card-referenzen">
+    <h2>{{referenz.titel}}</h2>
+    <!-- <h3 class="referenz__title">Auftraggeber:</h3> -->
+    <!-- <div id="card-heading"> -->
+    <div>
+      <img
+        class="stakeholder__logo"
+        src="{% static 'kartenwerk/img/'|add:referenz.stakeholder.logo %}"
+        alt="logo"
+      />
+    </div>
+    <!-- <div class="testimonial">
+        <i class="card-ref__text-credit">
+          {{testimonial.stakeholder.vorname}} {{testimonial.stakeholder.name}}
+          ({{testimonial.stakeholder.position}})<br />
+          {{testimonial.stakeholder.firma}}
+        </i>
+      </div> -->
+    <!-- </div> #cardheading-->
+    <section class="kurzbeschrieb-ref">{{referenz.kurzbeschrieb}}</section>
+    <!-- <h4 class="referenz__title">Hier eine kleine Projektübersicht</h4> -->
+    {% if referenz.bild %}
+    <img
+      class="card-referenzen-img"
+      src="{% static 'kartenwerk/img/'|add:referenz.bild %}"
+    />
+    {% endif %}
+    <!-- <h4 class="referenz__title">Nachfolgend ein kurzes Projektvideo</h4> -->
+    {% if referenz.video %}
 
-{% endfor %} {% endblock %}
+    <iframe
+      class="video"
+      src="https://www.youtube.com/embed/{{referenz.video}}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
+    {% endif %}
+    <!-- <video class="[ video__bg ] [ referenz__video ]" autoplay muted loop>
+      <source src="{% static 'kartenwerk/video/'|add:referenz.video %}" />
+      type="video/mp4" />
+    </video> -->
+  </div>
+  {% endfor %}
+</div>
+{% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-default"></div>
+{% endblock %}
