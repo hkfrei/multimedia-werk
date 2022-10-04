@@ -27,6 +27,7 @@
   <body>
     <header class="site-head" role="banner">
       <a href="#main-content" class="skip-link">Skip to content</a>
+      {% block bordertop %}{% endblock %}
       <div class="wrapper">
         <div class="site-head__inner">
           <a href="/" aria-label="Karten-Werk home" class="site-head__brand">
@@ -70,6 +71,7 @@
     </figure>
     <div id="content">{% block content %}{% endblock %}</div>
     <footer>
+      {% block borderbottom %}{% endblock %}
       <div class="container">
         <div class="content__footer">
           <div class="profil">
