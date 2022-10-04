@@ -3,10 +3,9 @@
 {% extends "kartenwerk/base.html" %} 
 
 {% block title %} Angebote{% endblock %} 
-
-{% block content %}
-{% load static %}
-{% if angebot %}
+{% block bordertop %}
+<div class="site-head__bordertop-gold"></div>
+{% endblock %} {% block content %} {% load static %} {% if angebot %}
 <header class="angebot">
   <h1 class="heading">{{angebot.name}}</h1>
   <h2 class="sub__heading">{{angebot.subtitel}}</h2>
@@ -27,23 +26,21 @@
   </div>
 </figure>
 <header class="angebot">
-  <h2 class="sub__heading">{{angebot.cards_titel}}</h2>
+  <h2 class="heading">{{angebot.cards_titel}}</h2>
   <p>{{angebot.cards_beschrieb}}</p>
 </header>
 <div class="card-grid">
   {% for card in angebot.cards.all %}
   <div class="card">
-    <div class="card-video">
-      <iframe
-        width="100%"
-        height="250"
-        src="https://www.youtube.com/embed/{{card.video}}"
-        title="{{card.titel}}"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
+    <iframe
+      class="video"
+      src="https://www.youtube.com/embed/{{card.video}}"
+      title="{{card.titel}}"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
     <div class="card-header">{{card.titel}}</div>
     <section class="meta">
       <div class="meta-date">{{card.metadaten}}</div>
@@ -52,33 +49,75 @@
     <div class="card-body">
       <p>{{card.kurzbeschrieb}}</p>
     </div>
-    <div class="card-footer">
-      <a href="#">
-        <button class="btn">Berechnungsbsp</button>
+    <!-- <div class="card-footer">
+      <a href="{% url 'kartenwerk:angebot' %}">
+        <button class="[ button ] [ button-secondary ]" role="button">
+          Beispiel
+        </button>
       </a>
+    </div> -->
+  </div>
+  {% endfor %}
+  <!-- <div class="modal" id="modal">
+    <h2>Modal titel</h2>
+    <img src="{% static 'kartenwerk/img/gis.webp' %}" alt="Beispiel" />
+  </div> -->
+</div>
+{% if angebot.referenz_set.all %}
+<header class="angebot">
+  <h2 class="heading">Referenzen</h2>
+  <p>Nachfolgend finden Sie eledigte Aufträge zum Angebot {{angebot.name}}.</p>
+</header>
+<div class="card-grid-referenzen">
+  {% for referenz in angebot.referenz_set.all %}
+  <!-- prettier-ignore -->
+  <div class="card-referenzen">
+    <h2>{{referenz.titel}}</h2>
+    <!-- <h3 class="referenz__title">Auftraggeber:</h3> -->
+    <div>
+      <img
+        class="stakeholder__logo"
+        src="{% static 'kartenwerk/img/'|add:referenz.stakeholder.logo %}"
+        alt="logo"
+      />
+    </div>
+    <section class="kurzbeschrieb-ref">{{referenz.kurzbeschrieb}}</section>
+    {% if referenz.bild %}
+    <!-- <h4 class="referenz__title">Hier eine kleine Projektübersicht</h4> -->
+    <img class="card-referenzen-img" src="{% static 'kartenwerk/img/'|add:referenz.bild %}" />
+    {% endif %}
+    {% if referenz.video %}
+    <!-- <h4 class="referenz__title">Nachfolgend ein kurzes Projektvideo</h4> -->
+    
+      <iframe
+        class="video"
+        src="https://www.youtube.com/embed/{{referenz.video}}"
+        title="{referenz.titel}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+   
+    {% endif %}
+    <!-- <video class="[ video__bg ] [ referenz__video ]" autoplay muted loop>
+      <source src="{% static 'kartenwerk/video/'|add:referenz.video %}" />
+      type="video/mp4" />
+    </video> -->
+    <div class="button-container">
+        <a href="{% url 'kartenwerk:referenzen' %}">
+          <button class="[ button ] [ button-secondary ]" role="button">
+            Alle Referenzen
+          </button>
+        </a>
     </div>
   </div>
   {% endfor %}
 </div>
-<section><h2 class="heading">Einsatzbeispiele</h2></section>
-{% for referenz in angebot.referenz_set.all %}
-<!-- prettier-ignore -->
-{% if not referenz.video %}
-<img src="{% static 'kartenwerk/img/'|add:referenz.bild %}" />
 {% endif %}
-<h3>{{referenz.titel}}</h3>
-{{referenz.kurzbeschrieb}}
-<video class="[ video__bg ] [ referenz__video ]" autoplay muted loop>
-  <source src="{% static 'kartenwerk/video/'|add:referenz.video %}" />
-  type="video/mp4" />
-</video>
-
-{% endfor %}
-
 <h2 class="heading">Preise</h2>
 <p>
-  Nachfolgend finden Sie Preisinformationen zum Angebot {{angebot.name}}. <br />
-  Für individuelle Wünsche können wir jederzeit einen massgeschneiderten Auftrag
+  Nachfolgend finden Sie Preisinformationen zum Angebot {{angebot.name}}. Für
+  individuelle Wünsche können wir jederzeit einen massgeschneiderten Auftrag
   gemäss Ihren Wünschen zusammenstellen.
 </p>
 
@@ -101,31 +140,45 @@
         {{feature.name}}
       </div>
       {% endfor %}
-      <button class="cta">Jetzt Buchen</button>
+      <div class="button-container">
+        <a href="#">
+          <button class="[ button ] [ button-secondary ]" role="button">
+            Jetzt buchen
+          </button>
+        </a>
+      </div>
     </div>
     {%endfor %}
   </div>
 </section>
 <section>
+  {% if angebot.testimonial_set.all %}
   <h2 class="heading">Das sagen unsere Kunden</h2>
   {% for testimonial in angebot.testimonial_set.all %}
-  <div>
-    <img
-      class="stakeholder__logo"
-      src="{% static 'kartenwerk/img/'|add:testimonial.stakeholder.logo %}"
-      alt="logo"
-    />
-  </div>
-  <div>{{testimonial.text}}</div>
-  <div>
-    <i>
-      {{testimonial.stakeholder.vorname}} {{testimonial.stakeholder.name}}
-      ({{testimonial.stakeholder.position}})<br />
-      {{testimonial.stakeholder.firma}}
-    </i>
-  </div>
-  {% endfor%}
+  <blockquote class="blockquote__testimonial blockquote--bordered">
+    <div>
+      <img
+        class="testimonial__logo"
+        src="{% static 'kartenwerk/img/'|add:testimonial.stakeholder.logo %}"
+        alt="logo"
+      />
+    </div>
+
+    <div class="blockquote__text blockquote--quoted">{{testimonial.text}}</div>
+
+    <div class="blockquote__credit">
+      <i class="blockquote__text--credit">
+        {{testimonial.stakeholder.vorname}} {{testimonial.stakeholder.name}}
+        ({{testimonial.stakeholder.position}})<br />
+        {{testimonial.stakeholder.firma}}
+      </i>
+    </div>
+  </blockquote>
+
+  {% endfor%} {% endif %}
 </section>
 {% else %}
 <p>Es ist kein Angebot vorhanden</p>
-{% endif %} {% endblock %}
+{% endif %} {% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-gold"></div>
+{% endblock %}
