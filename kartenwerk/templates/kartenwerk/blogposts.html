@@ -3,35 +3,45 @@
 {% extends "kartenwerk/base.html" %} 
 
 {% block title %} Blog{% endblock %} 
-
-{% block content %}
-{% load static %}
+{% block bordertop %}
+<div class="site-head__bordertop-red"></div>
+{% endblock %} {% block content %} {% load static %}
 <header class="angebot">
   <h1 class="heading">Blog</h1>
   <h2 class="sub__heading">
-    Nachfolgend finden sie eine Übersicht über unsere Blogbeiträge.
+    Nachfolgend finden Sie eine Übersicht über unsere Blogbeiträge.
   </h2>
 </header>
-{% for post in blogposts %}
+<main class="blog__container">
+  <div class="blog__grid">
+    {% for post in blogposts %}
 
-<main class="blog__grid">
-  <section class="blog__card">
-    <div class="blog__card-header">
-      <img src="{% static 'kartenwerk/img/'|add:post.teaser_img %}" />
-    </div>
-    <div class="blog__card-body">
-      <h2><a href="{{post.url}}">{{post.titel}}</a></h2>
-      <div>Datum: {{post.datum}}</div>
-      <div>
-        Posted by: {{post.verfasser.name}} {{post.verfasser.vorname}}
-        ({{post.verfasser.position}})
+    <section class="blog__card">
+      <div class="blog__card-header">
+        <img
+          src="{% static 'kartenwerk/img/'|add:post.teaser_img %}"
+          class="blog__card-img"
+        />
       </div>
-    </div>
-    <div class="blog__card-footer">
-      <h4>Kurzbeschrieb</h4>
-      <div>{{post.kurzbeschrieb}}</div>
-      <a href="{{post.url}}">{{post.url}}</a>
-    </div>
-  </section>
+      <div class="blog__card-body">
+        <h2 class="blog__titel"><a href="{{post.url}}">{{post.titel}}</a></h2>
+        <div class="blog__meta">
+          <div>Datum: {{post.datum}}</div>
+          <div>
+            Posted by: {{post.verfasser.name}} {{post.verfasser.vorname}}
+            ({{post.verfasser.position}})
+          </div>
+        </div>
+      </div>
+      <div class="blog__card-footer">
+        <div class="kurzbeschrieb">{{post.kurzbeschrieb}}</div>
+        <a href="{{post.url}}" class="blog__card-cta">Zum Post</a>
+      </div>
+    </section>
+
+    {% endfor %}
+  </div>
 </main>
-{% endfor %} {% endblock %}
+{% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-red"></div>
+{% endblock %}
