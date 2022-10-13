@@ -22,21 +22,22 @@
     <h2>{{referenz.titel}}</h2>
     <!-- <h3 class="referenz__title">Auftraggeber:</h3> -->
     <!-- <div id="card-heading"> -->
-    <div>
-      <img
-        class="stakeholder__logo"
-        src="{% static 'kartenwerk/img/'|add:referenz.stakeholder.logo %}"
-        alt="logo"
-      />
+    <div class="wrapper__card-referenzen">
+      <div>
+        <img
+          class="stakeholder__logo"
+          src="{% static 'kartenwerk/img/'|add:referenz.stakeholder.logo %}"
+          alt="logo"
+        />
+      </div>
+      <div class="testimonial">
+        <i class="card-ref__text-credit">
+          {{referenz.stakeholder.vorname}} {{referenz.stakeholder.name}}
+          ({{referenz.stakeholder.position}})<br />
+          {{referenz.stakeholder.firma}}
+        </i>
+      </div>
     </div>
-    <div class="testimonial">
-      <i class="card-ref__text-credit">
-        {{referenz.stakeholder.vorname}} {{referenz.stakeholder.name}}
-        ({{referenz.stakeholder.position}})<br />
-        {{referenz.stakeholder.firma}}
-      </i>
-    </div>
-
     <section class="kurzbeschrieb-ref">{{referenz.kurzbeschrieb}}</section>
     <!-- <h4 class="referenz__title">Hier eine kleine Projektübersicht</h4> -->
     {% if referenz.bild %}
