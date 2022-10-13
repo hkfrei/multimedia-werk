@@ -536,9 +536,9 @@ section.column {
 }
 
 .header__profil {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 span.names {
@@ -1087,10 +1087,8 @@ img.referenz-bild {
 | STAKEHOLDER START
 ============================================ */
 .stakeholder__logo {
-  box-shadow: var(--box-shadow-100);
-  padding: 10px;
-  margin: 1em 0 2em 0;
   max-width: 150px;
+  padding-right: 2rem;
 }
 /* ============================================
 | STAKEHOLDER END
@@ -1100,7 +1098,7 @@ img.referenz-bild {
 | TESTIMONIAL START
 ============================================ */
 .testimonial__logo {
-  width: 150px;
+  width: 125px;
   padding: 0.5rem 0 1rem 0;
 }
 
@@ -1179,10 +1177,11 @@ i.blockquote__text--credit::before {
   /* max-width: 600px; */
 }
 
-#card-heading {
+.wrapper__card-referenzen {
   display: flex;
   flex-flow: row;
-  padding: 1rem;
+  padding: 1rem 0;
+  align-items: center;
 }
 
 .card-referenzen-img {
@@ -1224,7 +1223,7 @@ i.blockquote__text--credit::before {
 section.kurzbeschrieb-ref {
   font-weight: 300;
   font-size: 0.9rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0 2rem 0;
   /* margin-bottom: .3rem; */
 }
 
@@ -1234,6 +1233,7 @@ section.kurzbeschrieb-ref {
   }
   .stakeholder__logo {
     max-width: 100px;
+    padding-right: 1rem;
   }
 }
 
