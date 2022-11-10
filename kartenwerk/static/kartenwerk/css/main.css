@@ -34,6 +34,9 @@
   --color-alt-blue-100: #3574d2;
   --color-alt-blue-200: #275dad;
 
+  --error-color: #f00e0e;
+  --valid-color: #0add0a;
+
   --gap-heading-s: 0.5rem;
   --gap-heading-m: 1rem;
   --gap-heading-l: 1.7rem;
@@ -839,7 +842,7 @@ section.meta {
   margin-top: 1.5rem;
 }
 
-/* .btn {
+.btn {
   background: var(--color-primary-200);
   color: var(--color-light-100);
   border: none;
@@ -855,7 +858,7 @@ section.meta {
 .btn:focus {
   background: var(--color-secondary-100);
   color: var(--color-dark-400);
-} */
+}
 
 /* ============================================
 | ANGEBOTE END
@@ -864,6 +867,17 @@ section.meta {
 /* ============================================
 | DETAIL PAGES START
 ============================================ */
+
+/* === PRICE CARD START ===  */
+
+.price-feature {
+  flex-grow: 1;
+}
+
+.button-stretched {
+  width: 100%;
+}
+
 section.wrapper__price-comparison {
   display: flex;
   align-items: center;
@@ -884,6 +898,8 @@ section.wrapper__price-comparison {
   background-color: white;
   box-shadow: 0 7px 30px rgba(52, 31, 97, 0.1);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   flex-basis: 0;
   min-width: 275px;
@@ -1009,6 +1025,8 @@ section.wrapper__price-comparison {
 .cta:focus {
   transform: scale(1.1);
 }
+
+/* === PRICE CARD END === */
 
 /* === CARD START === */
 
