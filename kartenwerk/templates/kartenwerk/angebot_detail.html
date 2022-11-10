@@ -134,15 +134,17 @@
         <div class="plan-name">{{preisplan.name}}</div>
       </div>
       <div class="divider"></div>
+      <section class="price-feature">
       {% for feature in preisplan.features.all %}
       <div class="feature">
         <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
         {{feature.name}}
       </div>
       {% endfor %}
+      </section>
       <div class="button-container">
         <a href="#">
-          <button class="[ button ] [ button-secondary ]" role="button">
+          <button class="[ button ] [ button-secondary ] [ button-stretched ]" role="button">
             Jetzt buchen
           </button>
         </a>
@@ -151,34 +153,38 @@
     {%endfor %}
   </div>
 </section>
-<section>
-  {% if angebot.testimonial_set.all %}
-  <h2 class="heading">Das sagen unsere Kunden</h2>
-  {% for testimonial in angebot.testimonial_set.all %}
-  <blockquote class="blockquote__testimonial blockquote--bordered">
-    <div>
-      <img
-        class="testimonial__logo"
-        src="{% static 'kartenwerk/img/'|add:testimonial.stakeholder.logo %}"
-        alt="logo"
-      />
-    </div>
 
-    <div class="blockquote__text blockquote--quoted">{{testimonial.text}}</div>
+  <section>
+    {% if angebot.testimonial_set.all %}
+    <h2 class="heading">Das sagen unsere Kunden</h2>
+    {% for testimonial in angebot.testimonial_set.all %}
+    <blockquote class="blockquote__testimonial blockquote--bordered">
+      <div>
+        <img
+          class="testimonial__logo"
+          src="{% static 'kartenwerk/img/'|add:testimonial.stakeholder.logo %}"
+          alt="logo"
+        />
+      </div>
 
-    <div class="blockquote__credit">
-      <i class="blockquote__text--credit">
-        {{testimonial.stakeholder.vorname}} {{testimonial.stakeholder.name}}
-        ({{testimonial.stakeholder.position}})<br />
-        {{testimonial.stakeholder.firma}}
-      </i>
-    </div>
-  </blockquote>
+      <div class="blockquote__text blockquote--quoted">
+        {{testimonial.text}}
+      </div>
 
-  {% endfor%} {% endif %}
-</section>
-{% else %}
-<p>Es ist kein Angebot vorhanden</p>
-{% endif %} {% endblock %} {% block borderbottom %}
-<div class="site-head__bordertop-gold"></div>
-{% endblock %}
+      <div class="blockquote__credit">
+        <i class="blockquote__text--credit">
+          {{testimonial.stakeholder.vorname}} {{testimonial.stakeholder.name}}
+          ({{testimonial.stakeholder.position}})<br />
+          {{testimonial.stakeholder.firma}}
+        </i>
+      </div>
+    </blockquote>
+
+    {% endfor%} {% endif %}
+  </section>
+  {% else %}
+  <p>Es ist kein Angebot vorhanden</p>
+  {% endif %} {% endblock %} {% block borderbottom %}
+  <div class="site-head__bordertop-gold"></div>
+  {% endblock %}
+</div>
