@@ -49,19 +49,8 @@
     <div class="card-body">
       <p>{{card.kurzbeschrieb}}</p>
     </div>
-    <!-- <div class="card-footer">
-      <a href="{% url 'kartenwerk:angebot' %}">
-        <button class="[ button ] [ button-secondary ]" role="button">
-          Beispiel
-        </button>
-      </a>
-    </div> -->
   </div>
   {% endfor %}
-  <!-- <div class="modal" id="modal">
-    <h2>Modal titel</h2>
-    <img src="{% static 'kartenwerk/img/gis.webp' %}" alt="Beispiel" />
-  </div> -->
 </div>
 {% if angebot.referenz_set.all %}
 <header class="angebot">
