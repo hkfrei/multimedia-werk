@@ -1,0 +1,45 @@
+<!-- prettier-ignore -->
+
+{% extends "kartenwerk/base.html" %} 
+
+{% block title %}Kontakt{% endblock %} 
+{% block bordertop %}
+<div class="site-head__bordertop-red"></div>
+{% endblock %} {% block content %} {% load static %}
+<header class="angebot">
+  <h1 class="heading">Nachricht</h1>
+  <h2 class="sub__heading">
+    Bitte füllen sie die Felder aus und klicken sie auf den senden Button.
+  </h2>
+  Angebot: {{angebot.name}} <br />
+  Preisplan: {{preisplan.name}}
+</header>
+<main>
+  <form action="" method="post">
+    {% csrf_token %} {{ form.non_field_errors }}
+    <div>{{ form.name.label_tag }}</div>
+    <div>{{ form.name }}</div>
+    <div>{{ form.vorname.label_tag }}</div>
+    <div>{{ form.vorname }}</div>
+    <div>{{ form.email.label_tag }}</div>
+    <div>{{ form.email }}</div>
+    <div>{{ form.nachricht.label_tag }}</div>
+    <div>{{ form.nachricht }}</div>
+
+    <!-- back and save buttons -->
+    <div>
+      <a
+        href="{% url 'kartenwerk:angebot_detail' angebot.id %}"
+        class="btn btn-light"
+      >
+        Zurück</a
+      >
+    </div>
+    <div>
+      <button class="btn" type="submit">Senden</button>
+    </div>
+  </form>
+</main>
+{% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-red"></div>
+{% endblock %}
