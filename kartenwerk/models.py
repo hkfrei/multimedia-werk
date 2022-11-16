@@ -124,3 +124,19 @@ class Blogpost(models.Model):
 
     def __str__(self):
         return self.titel
+
+
+class Message(models.Model):
+    name = models.CharField("Name", max_length=100)
+    vorname = models.CharField("Vorname", max_length=100)
+    email = models.EmailField("E-Mail")
+    nachricht = models.TextField("Nachricht", blank=True)
+    datum = models.DateField("Publizierungsdatum")
+    angebot = models.ForeignKey("Angebot", on_delete=models.CASCADE)
+    preisplan = models.ForeignKey("Preisplan", on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = "Nachrichten"
+
+    def __str__(self):
+        return str(self.datum) + ": " + self.name + " " + self.vorname
