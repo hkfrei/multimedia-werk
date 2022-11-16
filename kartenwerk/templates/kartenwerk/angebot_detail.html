@@ -132,7 +132,7 @@
       {% endfor %}
       </section>
       <div class="button-container">
-        <a href="#">
+        <a href="{% url 'kartenwerk:preisplan_message' angebot_id=angebot.id preisplan_id=preisplan.id %}">
           <button class="[ button ] [ button-secondary ] [ button-stretched ]" role="button">
             Jetzt buchen
           </button>
