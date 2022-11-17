@@ -127,3 +127,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# E-Mail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'asmtp.mail.hostpoint.ch'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'info@karten-werk.ch'
+EMAIL_HOST_PASSWORD = '3Kp?P-qq!Ds!8qFh3xN8'
+EMAIL_USE_TLS = True
