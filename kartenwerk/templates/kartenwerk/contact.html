@@ -4,42 +4,64 @@
 
 {% block title %}Kontakt{% endblock %} 
 {% block bordertop %}
-<div class="site-head__bordertop-red"></div>
-{% endblock %} {% block content %} {% load static %}
-<header class="angebot">
-  <h1 class="heading">Nachricht</h1>
-  <h2 class="sub__heading">
-    Bitte füllen sie die Felder aus und klicken sie auf den senden Button.
-  </h2>
-  Angebot: {{angebot.name}} <br />
-  Preisplan: {{preisplan.name}}
-</header>
-<main>
-  <form action="" method="post">
-    {% csrf_token %} {{ form.non_field_errors }}
-    <div>{{ form.name.label_tag }}</div>
-    <div>{{ form.name }}</div>
-    <div>{{ form.vorname.label_tag }}</div>
-    <div>{{ form.vorname }}</div>
-    <div>{{ form.email.label_tag }}</div>
-    <div>{{ form.email }}</div>
-    <div>{{ form.nachricht.label_tag }}</div>
-    <div>{{ form.nachricht }}</div>
+<div class="site-head__bordertop-gold"></div>
+{% endblock %} {% block content %} {% load static %} {% if email_error %}
+<h3 class="error">{{email_error}}</h3>
+{% endif %}
 
-    <!-- back and save buttons -->
-    <div>
-      <a
-        href="{% url 'kartenwerk:angebot_detail' angebot.id %}"
-        class="btn btn-light"
-      >
-        Zurück</a
-      >
-    </div>
-    <div>
-      <button class="btn" type="submit">Senden</button>
-    </div>
-  </form>
-</main>
+<div class="container-contact">
+  <div class="contact-box">
+    <h1 class="heading">Kontakt</h1>
+    <h2 class="sub-heading">
+      Vielen Dank für Ihr Interesse an unserem Angebot.
+    </h2>
+    <p>
+      Untenstehend sehen Sie das gewählte Produkt mit Preisplan. Wir erarbeiten
+      nun eine Offerte und melden uns innerhalb 3 Arbeitstagen bei Ihnen. Falls
+      Sie eine Frage oder einen Hinweis für uns haben, schreiben Sie uns doch
+      eine Nachricht - wir freuen uns auf jedes Feedback.
+    </p>
+    <section class="meta-contact">
+      <p class="meta-contact">Angebot: {{angebot.name}}</p>
+      <p class="meta-contact">Preisplan: {{preisplan.name}}</p>
+    </section>
+    <section class="contact-form">
+      <form action="" method="post">
+        {% csrf_token %} {{ form.non_field_errors }}
+        <div>{{ form.name.label_tag }}</div>
+        <div>{{ form.name }}</div>
+        <div>{{ form.vorname.label_tag }}</div>
+        <div>{{ form.vorname }}</div>
+        <div>{{ form.email.label_tag }}</div>
+        <div>{{ form.email }}</div>
+        <div>{{ form.nachricht.label_tag }}</div>
+        <div>{{ form.nachricht }}</div>
+
+        <!-- back and save buttons -->
+        <div class="button-wrapper">
+          <div class="button-container">
+            <a href="{% url 'kartenwerk:angebot_detail' angebot.id %}">
+              <button class="[ button ] [ button-secondary ]" role="button">
+                Zurück
+              </button>
+            </a>
+          </div>
+          <div class="button-container">
+            <a href="{% url 'kartenwerk:angebot_detail' angebot.id %}">
+              <button
+                class="[ button ] [ button-secondary ]"
+                type="submit"
+                role="button"
+              >
+                Senden
+              </button>
+            </a>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>
 {% endblock %} {% block borderbottom %}
-<div class="site-head__bordertop-red"></div>
+<div class="site-head__bordertop-gold"></div>
 {% endblock %}
