@@ -4,32 +4,37 @@
 
 {% block title %} Kontakt{% endblock %} 
 {% block bordertop %}
-<div class="site-head__bordertop-red"></div>
+<div class="site-head__bordertop-gold"></div>
 {% endblock %} {% block content %} {% load static %}
-<header class="angebot">
-  <h1 class="heading">Danke für Ihre Nachricht!</h1>
-  <h2 class="sub__heading">Wir werden uns in Kürze bei ihnen melden.</h2>
-</header>
-<div><strong>Ihre Angaben:</strong></div>
+<hgroup class="success">
+  <h1 class="success">Danke für Ihre Nachricht!</h1>
+  <h2 class="success">Wir werden uns in Kürze bei Ihnen melden.</h2>
+</hgroup>
 <main>
-  Name: {{message.name}}<br />
-  Vorname: {{message.vorname}}<br />
-  E-Mail: {{message.email}}<br />
-  Nachricht: {{message.nachricht}}<br />
-  Angebot: {{message.angebot.name}} <br />
-  Preisplan: {{message.preisplan.name}} <br />
+  <section class="meta-contact-success">
+    <p class="meta-contact">Angebot: {{message.angebot.name}}</p>
+    <p class="meta-contact">Preisplan: {{message.preisplan.name}}</p>
+  </section>
 
+  <h3 class="success">Ihre Angaben:</h3>
+  <section class="declaration">
+    <p>Name: {{message.name}}</p>
+    <p>Vorname: {{message.vorname}}</p>
+    <p>E-Mail: {{message.email}}</p>
+    <p>Nachricht: {{message.nachricht}}</p>
+  </section>
   <!-- back button -->
-
-  <div style="margin: 20px 0">
-    <a
-      href="{% url 'kartenwerk:angebot_detail' message.angebot.id %}"
-      class="btn"
-    >
-      Zurück zum Angebot
+  <div class="button-container">
+    <a href="{% url 'kartenwerk:angebot_detail' message.angebot.id %}">
+      <button
+        class="[ button ] [ button-secondary ] [ margin-l ]"
+        role="button"
+      >
+        Zurück zum Angebot
+      </button>
     </a>
   </div>
 </main>
 {% endblock %} {% block borderbottom %}
-<div class="site-head__bordertop-red"></div>
+<div class="site-head__bordertop-gold"></div>
 {% endblock %}
