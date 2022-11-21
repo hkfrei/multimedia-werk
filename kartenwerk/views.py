@@ -1,5 +1,7 @@
 from django.views.generic import ListView, TemplateView, DetailView, CreateView
 from django.urls import reverse
+from django.core.mail import send_mail
+from django.shortcuts import render
 from datetime import datetime
 from .models import Angebot, Blogpost, Referenz, Preisplan, Message
 from .forms import MessageForm
@@ -60,6 +62,30 @@ class Contact(CreateView):
             pk=self.kwargs['preisplan_id'])
         self.object.datum = datetime.today()
         self.object.save()
+        email_message = "Dies ist eine Nachricht von der Karten-Werk Website. \n \n" \
+            + "Datum: " + str(self.object.datum.day) + "."\
+            + str(self.object.datum.month) + "." \
+            + str(self.object.datum.year) + "\n" \
+            + "Produkt: " + self.object.angebot.name + "\n" \
+            + "Preisplan: " + self.object.preisplan.name + "\n \n" \
+            + "Name: " + str(form.cleaned_data.get("name")) + "\n"\
+            + "Vorname: " + str(form.cleaned_data.get("vorname")) + "\n" \
+            + "Email: " + form.cleaned_data.get("email") + "\n \n"\
+            + "Nachricht: \n" \
+            + form.cleaned_data.get("nachricht")
+        try:
+            send_mail(
+                'Karten-Werk Website',
+                email_message,
+                'info@karten-werk.ch', ['hkfrei@karten-werk.ch',
+                                        form.cleaned_data.get("email")],
+                fail_silently=False
+            )
+        except:
+            context = self.get_context_data()
+            context["email_error"] = "Es gab einen Fehler beim E-Mail Versand. \n Bitte versuchen sie es nochmals oder treten sie telefonisch mit uns in Kontakt."
+            return render(self.request, template_name=self.template_name, context=context)
+
         return super().form_valid(form)
 
 
@@ -67,12 +93,10 @@ class SuccessMessage(TemplateView):
     template_name = "kartenwerk/preisplan_success_message.html"
 
     def get_context_data(self, **kwargs):
-        print(self.kwargs)
-        print(Message.objects.get(pk=self.kwargs['message_id']))
         context = super().get_context_data(**kwargs)
-        context['message'] = Message.objects.get(pk=self.kwargs['message_id'])
+        context["message"] = Message.objects.get(pk=self.kwargs["message_id"])
         return context
 
     def get_success_url(self):
-        message = Message.objects.get(pk=self.kwargs['message_id'])
+        message = Message.objects.get(pk=self.kwargs["message_id"])
         return reverse("kartenwerk:angebot_detail", kwargs={"pk": message.angebot.id})
