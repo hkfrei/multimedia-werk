@@ -34,8 +34,20 @@
         </div>
       </div>
       <div class="blog__card-footer">
-        <div class="kurzbeschrieb">{{post.kurzbeschrieb}}</div>
-        <a href="{{post.url}}" class="blog__card-cta">Zum Post</a>
+        <div class="[ kurzbeschrieb ] [ cutoff-text ]">
+          {{post.kurzbeschrieb}}
+        </div>
+        <input class="expand-btn" type="checkbox" />
+
+        <div class="button-container">
+          <a href="{{post.url}}">
+            <button class="[ button ] [ button-tertiary ]" role="button">
+              Zum Blogpost
+            </button>
+          </a>
+        </div>
+
+        <!-- <a href="{{post.url}}" class="blog__card-cta">Zum Post</a> -->
       </div>
     </section>
 
