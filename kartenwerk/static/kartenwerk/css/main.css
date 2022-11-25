@@ -255,16 +255,6 @@ a {
   outline-offset: 0.2rem;
 }
 
-/* @media (min-width: 40em) {
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-} */
-
 .skip-link {
   display: inline-block;
   padding: 0.7rem 1rem 0.5rem 1rem;
@@ -873,54 +863,6 @@ section.meta {
   color: var(--color-dark-400);
 }
 
-/* === CUTOFF START === */
-
-.cutoff-text {
-  --max-lines: 4;
-  --line-height: 1.5;
-
-  height: calc(var(--max-lines) * 1em * var(--line-height));
-  line-height: var(--line-height);
-
-  overflow: hidden;
-  position: relative;
-}
-
-.cutoff-text:has(+ .expand-btn:not(:checked)):before {
-  content: "";
-  position: absolute;
-  height: calc(1em * var(--line-height));
-  width: 100%;
-  bottom: 0;
-  pointer-events: none;
-}
-
-.expand-btn {
-  appearance: none;
-  cursor: pointer;
-  margin-top: 1rem;
-  font-size: 0.7em;
-  font-weight: 500;
-}
-
-.expand-btn:hover {
-  text-decoration: underline;
-}
-
-.expand-btn::before {
-  content: "weiterlesen";
-}
-
-.expand-btn:checked::before {
-  content: "schliessen";
-}
-
-.cutoff-text:has(+ .expand-btn:checked) {
-  height: auto;
-}
-
-/* === CUTOFF END === */
-
 /* === CARD END === */
 
 /* ============================================
@@ -1330,6 +1272,50 @@ h2.blog__titel {
   font-size: 14px;
   font-weight: 300;
 }
+
+/* === CUTOFF START === */
+
+.cutoff-text {
+  --max-lines: 4;
+  --line-height: 1.6;
+  height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+  overflow: hidden;
+}
+
+.cutoff-text:has(+ .expand-btn:not(:checked)):before {
+  content: "";
+  height: calc(1em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.expand-btn {
+  appearance: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
+.expand-btn:hover {
+  text-decoration: underline;
+}
+
+.expand-btn::before {
+  content: "weiterlesen";
+}
+
+.expand-btn:checked::before {
+  content: "schliessen";
+}
+
+.cutoff-text:has(+ .expand-btn:checked) {
+  height: auto;
+}
+
+/* === CUTOFF END === */
 
 /* ============================================
 | BLOG END
