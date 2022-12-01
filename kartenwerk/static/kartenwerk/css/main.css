@@ -37,6 +37,12 @@
   --error-color: #f00e0e;
   --valid-color: #0add0a;
 
+  --fs-xl: clamp(1.5rem, 8vw + 1rem, 10rem);
+  --fs-l: clamp(1rem, 4vw + 1rem, 4.7rem);
+  --fs-600: clamp(1.5rem, 6vw + 1rem, 8rem);
+  --fs-500: clamp(0.8rem, 2vw + 1rem, 4rem);
+  --fs-400: 1rem;
+
   --gap-heading-s: 0.5rem;
   --gap-heading-m: 1rem;
   --gap-heading-l: 1.7rem;
@@ -204,27 +210,33 @@ body {
   background-color: var(--color-light-100);
 }
 
+.heading-main {
+  font-size: var(--fs-xl);
+  margin: 2rem 0 1rem 0;
+  line-height: 1.1;
+}
+
+.sub__heading-main {
+  font-size: var(--fs-l);
+  margin: 1rem 0 1rem 0;
+  line-height: 1.2em;
+}
+
 .heading {
-  font-size: clamp(2rem, -0.2rem + 9vw, 5.6rem);
-  margin-top: 2rem;
-  padding-bottom: 1rem;
+  font-size: var(--fs-600);
+  margin: 2rem 0 1rem 0;
   line-height: 1.1em;
 }
 
 .sub__heading {
-  font-size: clamp(0.6rem, -0.1rem + 6vw, 2.7rem);
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  font-size: var(--fs-500);
+  margin: 1rem 0 1rem 0;
   line-height: 1.2em;
-}
-
-h2 {
-  line-height: 1.2;
-  padding-bottom: 1rem;
 }
 
 p {
   font-size: clamp(0.9rem, -2.3149rem + 8.8398vw, 1rem);
+  line-height: calc(1ex / 0.32);
   font-weight: 300;
   margin-bottom: 1rem;
   padding-top: 0.5rem;
@@ -540,6 +552,7 @@ section.column {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 span.names {
