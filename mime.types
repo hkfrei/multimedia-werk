@@ -1,0 +1,10 @@
+###############################################################################
+#
+#  MIME-TYPES and the extensions that represent them
+#
+#  This file is necessary, in order for uwgsi to server .mjs (js modules)
+#  Hint: the last line of the file must be empty.
+###############################################################################
+
+
+text/javascript 				mjs      
