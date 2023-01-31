@@ -55,6 +55,7 @@ The following variables need to be defined:
 - DB_HOST="database host"
 - DB_PORT="database port"
 - DB_TIME_ZONE="the time-zone of the database"
+- SECRET_KEY="Django secret key"
 
 ### Start the server
 
