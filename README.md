@@ -65,7 +65,12 @@ The following variables need to be defined:
 ### Deploy to Google Cloud Run
 
 1. Create a Docker Image and save in the Google Cloud:
+
+   ```
    gcloud builds submit --tag europe-west6-docker.pkg.dev/karten-werk-website/karten-werk-website/docker.latest
+   ```
 
 2. Deploy to Cloud Run
+   ```
    gcloud run deploy karten-werk-website --platform managed --region europe-west6 --image europe-west6-docker.pkg.dev/karten-werk-website/karten-werk-website/docker.latest:latest --set-secrets "DB_HOST=DB_HOST:latest,DB_PORT=DB_PORT:latest,DB_PASSWORD=DB_PASSWORD:latest,DB_NAME=DB_NAME:latest,DB_USER=DB_USER:latest,DB_PASSWORD=DB_PASSWORD:latest,SECRET_KEY=SECRET_KEY:latest, DB_TIME_ZONE=DB_TIME_ZONE:latest" --service-account cloudrun-serviceaccount@karten-werk-website.iam.gserviceaccount.com --allow-unauthenticated --max-instances=10 --memory=256Mi
+   ```
