@@ -514,6 +514,13 @@ a {
   }
 }
 
+@media (max-width: 750px) {
+  .video__bg.full-bleed {
+    display: none;
+    margin-bottom: -2rem;
+  }
+}
+
 /**
    * FLUID TYPE
    *
@@ -611,6 +618,7 @@ span.names {
   max-height: 35rem;
   object-fit: cover;
   margin-bottom: 2rem;
+  margin-top: 1.5rem;
 }
 /* ============================================
 | FIGURE HERO-VIDEO END
@@ -821,10 +829,6 @@ header.angebot {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(300px, 1fr)
-  );
   gap: 1rem;
   align-items: flex-start;
   padding-bottom: 2.5em;
@@ -837,6 +841,9 @@ header.angebot {
       minmax(400px, 1fr)
     );
   }
+  .card {
+    max-width: 100%;
+  }
 }
 
 .card {
@@ -845,8 +852,16 @@ header.angebot {
   box-shadow: 0 5px 5px hsl(0deg 0% 0% / 5%);
   border-radius: 0.25rem;
   overflow: hidden;
-  max-width: 600px;
 }
+
+/* === CARD FULL-WITH START === */
+
+.full-width {
+  max-width: 100%;
+  gap: 0;
+}
+
+/* === CARD FULL-WITH END === */
 
 .card-img {
   display: block;
