@@ -29,9 +29,9 @@
   <h2 class="heading">{{angebot.cards_titel}}</h2>
   <p>{{angebot.cards_beschrieb}}</p>
 </header>
-<div class="card-grid">
+<div class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
   {% for card in angebot.cards.all %}
-  <div class="card">
+  <div class="card {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
     <iframe
       class="video"
       src="https://www.youtube.com/embed/{{card.video}}"
