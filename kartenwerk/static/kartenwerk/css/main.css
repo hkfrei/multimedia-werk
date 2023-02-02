@@ -82,10 +82,7 @@
   padding: 0.6rem 0;
   border-top: 5px solid var(--color-tertiary-100);
 }
-.site-head__bordertop-pink {
-  padding: 0.6rem 0;
-  border-top: 5px solid var(--color-alt-200);
-}
+
 .site-head__bordertop-blue {
   padding: 0.6rem 0;
   border-top: 5px solid var(--color-alt-blue-50);
@@ -311,10 +308,6 @@ a {
   padding-right: 2rem;
 }
 
-.flow > * + * {
-  margin-top: var(--flow-space, 1em);
-}
-
 .site-head {
   padding: 0 0 0.6rem 0;
   background: var(--color-light-100);
@@ -406,7 +399,7 @@ a {
 .burger-menu[enabled="true"] .burger-menu__trigger {
   display: block;
   width: 2rem;
-  height: 2rem; /* Nice big tap target */
+  height: 2rem;
   position: relative;
   z-index: 1;
   background: transparent;
@@ -521,37 +514,6 @@ a {
   }
 }
 
-/**
-   * FLUID TYPE
-   *
-   * Scale text based on viewport and the following variables. Props should be unitless, but will be converted
-   * to REM units. E.G '1' will be converted to '1rem'
-   *
-   * --fluid-type-min-size: The smallest font size. Default 1
-   * --fluid-type-max-size: The largest font size: Default 2
-   * --fluid-type-min-screen: The smallest viewport size that this works for: Default 20
-   * --fluid-type-max-screen: The largest viewport size that this works for: Default 88
-   */
-.fluid-type {
-  --fluid-type-min-size: 1;
-  --fluid-type-max-size: 2;
-  --fluid-type-min-screen: 20;
-  --fluid-type-max-screen: 88;
-
-  /* We multiply by 1rem to essentially stick a rem unit to a number. */
-  font-size: calc(
-    (var(--fluid-type-min-size) * 1rem) +
-      (
-        var(--fluid-type-max-size) -
-          var(--fluid-type-min-size)
-      ) * (100vw - (var(--fluid-type-min-screen) * 1rem)) /
-      (
-        var(--fluid-type-max-screen) -
-          var(--fluid-type-min-screen)
-      )
-  );
-}
-
 /* ============================================
 | HERO-BACKGROUND END
 ============================================ */
@@ -575,6 +537,11 @@ section.column {
   border-radius: 100%;
   will-change: transform;
   transition: transform 450ms;
+}
+
+.profil__name {
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .profil__pic:hover,
@@ -906,24 +873,6 @@ section.meta {
 
 .card-footer {
   margin-top: 1.5rem;
-}
-
-.btn {
-  background: var(--color-primary-200);
-  color: var(--color-light-100);
-  border: none;
-  border-radius: 0.25em;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  padding: 0.5em 1em;
-  cursor: pointer;
-}
-
-.btn:hover,
-.btn:focus {
-  background: var(--color-secondary-100);
-  color: var(--color-dark-400);
 }
 
 /* === CARD END === */
@@ -1267,29 +1216,6 @@ main.blog__container {
   padding-bottom: 2.5rem;
 }
 
-.blog__grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(335px, 1fr)
-  );
-  align-items: flex-start;
-  margin-left: auto;
-}
-
-.blog__card {
-  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 1em;
-  overflow: hidden;
-  border-radius: 30px;
-  text-align: center;
-  padding: 20px;
-  min-height: auto;
-  max-height: fit-content;
-  border-top: solid 3px var(--color-tertiary-50);
-}
-
 img.blog__card-img {
   width: 100%;
   display: block;
@@ -1337,55 +1263,6 @@ h2.blog__titel {
   line-height: 115%;
   padding: 1.5rem 0 1rem;
 }
-
-.blog__meta {
-  font-size: 14px;
-  font-weight: 300;
-}
-
-/* === CUTOFF START === */
-
-/* .cutoff-text {
-  --max-lines: 4;
-  --line-height: 1.6;
-  height: calc(var(--max-lines) * 1em * var(--line-height));
-  line-height: var(--line-height);
-  overflow: hidden;
-}
-
-.cutoff-text:has(+ .expand-btn:not(:checked)):before {
-  content: "";
-  height: calc(1em * var(--line-height));
-  width: 100%;
-  bottom: 0;
-  pointer-events: none;
-}
-
-.expand-btn {
-  appearance: none;
-  cursor: pointer;
-  margin-top: 1rem;
-  font-size: 0.7em;
-  font-weight: 500;
-}
-
-.expand-btn:hover {
-  text-decoration: underline;
-}
-
-.expand-btn::before {
-  content: "weiterlesen";
-}
-
-.expand-btn:checked::before {
-  content: "schliessen";
-}
-
-.cutoff-text:has(+ .expand-btn:checked) {
-  height: auto;
-} */
-
-/* === CUTOFF END === */
 
 /* ============================================
 | BLOG END
