@@ -2,8 +2,6 @@
 | GLOBAL START
 ============================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
-
 :root {
   --color-light-50: #fff;
   --color-light-100: #f8f9fb;
@@ -43,20 +41,61 @@
   --fs-500: clamp(0.8rem, 2vw + 1rem, 4rem);
   --fs-400: 1rem;
 
-  --gap-heading-s: 0.5rem;
-  --gap-heading-m: 1rem;
-  --gap-heading-l: 1.7rem;
-  --gap-subheading-s: 0.5rem;
-  --gap-subheading-m: 1rem;
-  --gap-subheading-l: 1.7rem;
-  --gap-txt-kurzbeschrieb-s: 0.5rem;
-  --gap-txt-kurzbeschrieb-s: 1rem;
-  --gap-txt-kurzbeschrieb-l: 1.7rem;
-
   --gradient: linear-gradient(170deg, #fff, #fff, #b0e8ed, #f4df92);
 
   --box-shadow-100: 0 0 20px hsl(0deg 0% 0% / 20%);
 }
+
+/* === FONT === */
+
+@font-face {
+  font-family: "robotoblack";
+  src: url({%static"kartenwerk/assets/fonts/roboto-black-webfont.woff2"%}) format("woff2"),
+    url({%static"kartenwerk/assets/fonts/roboto-black-webfont.woff"%}) format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "robotobold";
+  src: url({%static"kartenwerk/assets/fonts/roboto-bold-webfont.woff2"%}) format("woff2"),
+    url({%static"kartenwerk/assets/fonts/roboto-bold-webfont.woff"%}) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "robotomedium";
+  src: url({%static"kartenwerk/assets/fonts/roboto-medium-webfont.woff2"%})
+      format("woff2"),
+    url({%static"kartenwerk/assets/fonts/roboto-medium-webfont.woff"%}) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "robotoregular";
+  src: url({%static"kartenwerk/assets/fonts/roboto-regular-webfont.woff2"%})
+      format("woff2"),
+    url({%static"kartenwerk/assets/fonts/roboto-regular-webfont.woff"%}) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "robotolight";
+  src: url({%static"kartenwerk/assets/fonts/roboto-light-webfont.woff2"%}) format("woff2"),
+    url({%static"kartenwerk/assets/fonts/roboto-light-webfont.woff"%}) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === FONT END === */
 
 /* ============================================
 | GLOBAL CUSTOM COLORS START
@@ -217,8 +256,8 @@ body {
 }
 
 p {
-  font-size: clamp(0.9rem, -2.3149rem + 8.8398vw, 1rem);
   line-height: calc(1ex / 0.32);
+  font-family: "Roboto Light", sans;
   font-weight: 300;
   margin-bottom: 1rem;
   padding-top: 0.5rem;
