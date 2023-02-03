@@ -9,14 +9,17 @@
 <header class="angebot">
   <h1 class="heading">Angebot</h1>
   <h2 class="sub__heading">
-    Progressive Web Apps, Geoinformatik und Fernerkundung "Made in Switzerland".
+    Progressive Web Apps, Geoinformatik und Fernerkundung
+    "Made in Switzerland".
   </h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum natus
-    distinctio, harum vitae modi quidem voluptatibus rem dicta perspiciatis, at
-    dolorum error expedita corporis nisi quia vel molestias iure nulla quis
-    dolor velit voluptatem iusto itaque? Necessitatibus, veniam aliquid, magnam
-    autem suscipit aperiam illo omnis recusandae facere rerum ab nam.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Ipsum natus distinctio, harum vitae modi quidem
+    voluptatibus rem dicta perspiciatis, at dolorum error
+    expedita corporis nisi quia vel molestias iure nulla
+    quis dolor velit voluptatem iusto itaque?
+    Necessitatibus, veniam aliquid, magnam autem suscipit
+    aperiam illo omnis recusandae facere rerum ab nam.
   </p>
 </header>
 {% if angebote %}
@@ -24,24 +27,33 @@
   {% for angebot in angebote %}
   <div class="card">
     <div class="card-img">
-      <img src="{% static 'kartenwerk/img/'|add:angebot.bild %}" alt="" />
+      <img
+        src="{% static 'kartenwerk/img/'|add:angebot.bild %}"
+        alt=""
+      />
     </div>
     <div class="card-header">
-      {{ angebot.name }}<br /><small>{{angebot.subtitel}}</small>
+      {{ angebot.name }}<br /><small
+        >{{angebot.subtitel}}</small
+      >
     </div>
-    <div class="angebot-kurzbeschrieb">{{angebot.kurzbeschrieb}}</div>
+    <div class="angebot-kurzbeschrieb">
+      {{angebot.kurzbeschrieb}}
+    </div>
 
     <div class="card-footer">
       <div class="button-container">
-        <a href="{% url 'kartenwerk:angebot_detail' angebot.id %}">
-          <button class="[ button ] [ button-primary ]" role="button">
+        <a
+          href="{% url 'kartenwerk:angebot_detail' angebot.id %}"
+        >
+          <button
+            class="[ button ] [ button-primary ]"
+            role="button"
+          >
             Mehr Infos
           </button>
         </a>
       </div>
-      <!-- <a href="{% url 'kartenwerk:angebot_detail' angebot.id %}">
-        <button class="btn">Mehr Infos</button>
-      </a> -->
     </div>
   </div>
   {% endfor %}
