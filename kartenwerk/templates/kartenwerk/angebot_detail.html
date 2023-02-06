@@ -62,21 +62,13 @@
   <!-- prettier-ignore -->
   <div class="card-referenzen">
     <h2>{{referenz.titel}}</h2>
-    <!-- <h3 class="referenz__title">Auftraggeber:</h3> -->
-    <!-- <div>
-      <img
-        class="stakeholder__logo"
-        src="{% static 'kartenwerk/img/'|add:referenz.stakeholder.logo %}"
-        alt="logo"
-      />
-    </div> -->
+   
     <section class="kurzbeschrieb-ref">{{referenz.kurzbeschrieb}}</section>
     {% if referenz.bild %}
     <!-- <h4 class="referenz__title">Hier eine kleine Projektübersicht</h4> -->
     <img class="card-referenzen-img" src="{% static 'kartenwerk/img/'|add:referenz.bild %}" />
     {% endif %}
     {% if referenz.video %}
-    <!-- <h4 class="referenz__title">Nachfolgend ein kurzes Projektvideo</h4> -->
     
       <iframe
         class="video"
@@ -88,10 +80,6 @@
       ></iframe>
    
     {% endif %}
-    <!-- <video class="[ video__bg ] [ referenz__video ]" autoplay muted loop>
-      <source src="{% static 'kartenwerk/video/'|add:referenz.video %}" />
-      type="video/mp4" />
-    </video> -->
     <div class="button-container">
         <a href="{% url 'kartenwerk:referenzen' %}">
           <button class="[ button ] [ button-secondary ]" role="button">

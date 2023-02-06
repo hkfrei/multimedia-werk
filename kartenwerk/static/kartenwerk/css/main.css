@@ -84,15 +84,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Roboto Light";
-  src: url("/kartenwerk/assets/fonts/roboto-light-webfont.woff2") format("woff2"),
-    url("/kartenwerk/assets/fonts/roboto-light-webfont.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* === FONT END === */
 
 /* ============================================
@@ -835,11 +826,6 @@ header.angebot {
   overflow: hidden;
 }
 
-/* .card:hover > .card-img {
-	transform: scale(1.1);
-	transition: ease-in-out 600ms;
-} */
-
 .card-header {
   font-weight: 600;
   font-size: 1.5rem;
@@ -850,7 +836,6 @@ header.angebot {
 section.meta {
   font-weight: 300;
   font-size: 0.8rem;
-  /* margin-bottom: .3rem; */
 }
 
 .card-body p {
@@ -973,7 +958,6 @@ section.wrapper__price-comparison {
 }
 
 .plan-name {
-  /* text-transform: uppercase; */
   font-size: 1.2rem;
   margin-top: 1rem;
   margin-bottom: 0;
@@ -1122,12 +1106,6 @@ i.blockquote__text--credit::before {
   padding-bottom: 2.5em;
 }
 
-/* @media only screen and (min-width: 996px) {
-  .card-grid-referenzen {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  }
-} */
-
 .card-referenzen {
   background: var(--color-light-50);
   padding: 2rem 4rem 1rem 4rem;
@@ -1175,16 +1153,10 @@ i.blockquote__text--credit::before {
   padding-top: 1rem;
 }
 
-/* .card:hover > .card-img {
-	transform: scale(1.1);
-	transition: ease-in-out 600ms;
-} */
-
 section.kurzbeschrieb-ref {
   font-weight: 300;
   font-size: 0.9rem;
   padding: 1rem 0 2rem 0;
-  /* margin-bottom: .3rem; */
 }
 
 @media only screen and (max-width: 640px) {
@@ -1342,12 +1314,6 @@ h3.error {
   background-color: #fff;
   box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.1);
 }
-
-/* .contact-left {
-  height: 100%;
-  background: url("../img/kw-modal.webp") no-repeat center;
-  background-size: cover;
-} */
 
 .form-control {
   width: 100%;
