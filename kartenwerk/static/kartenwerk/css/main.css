@@ -49,47 +49,45 @@
 /* === FONT === */
 
 @font-face {
-  font-family: "robotoblack";
-  src: url({%static"kartenwerk/assets/fonts/roboto-black-webfont.woff2"%}) format("woff2"),
-    url({%static"kartenwerk/assets/fonts/roboto-black-webfont.woff"%}) format("woff");
+  font-family: "Roboto Black";
+  src: url("kartenwerk/assets/fonts/roboto-black-webfont.woff2") format("woff2"),
+    url("kartenwerk/assets/fonts/roboto-black-webfont.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "robotobold";
-  src: url({%static"kartenwerk/assets/fonts/roboto-bold-webfont.woff2"%}) format("woff2"),
-    url({%static"kartenwerk/assets/fonts/roboto-bold-webfont.woff"%}) format("woff");
+  font-family: "Roboto Bold";
+  src: url("kartenwerk/assets/fonts/roboto-bold-webfont.woff2") format("woff2"),
+    url("kartenwerk/assets/fonts/roboto-bold-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "robotomedium";
-  src: url({%static"kartenwerk/assets/fonts/roboto-medium-webfont.woff2"%})
-      format("woff2"),
-    url({%static"kartenwerk/assets/fonts/roboto-medium-webfont.woff"%}) format("woff");
+  font-family: "Roboto Medium";
+  src: url("kartenwerk/assets/fonts/roboto-medium-webfont.woff2") format("woff2"),
+    url("kartenwerk/assets/fonts/roboto-medium-webfont.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "robotoregular";
-  src: url({%static"kartenwerk/assets/fonts/roboto-regular-webfont.woff2"%})
-      format("woff2"),
-    url({%static"kartenwerk/assets/fonts/roboto-regular-webfont.woff"%}) format("woff");
+  font-family: "Roboto Regular";
+  src: url("kartenwerk/assets/fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("kartenwerk/assets/fonts/roboto-regular-webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "robotolight";
-  src: url({%static"kartenwerk/assets/fonts/roboto-light-webfont.woff2"%}) format("woff2"),
-    url({%static"kartenwerk/assets/fonts/roboto-light-webfont.woff"%}) format("woff");
+  font-family: "Roboto Light";
+  src: url("/kartenwerk/assets/fonts/roboto-light-webfont.woff2") format("woff2"),
+    url("/kartenwerk/assets/fonts/roboto-light-webfont.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
