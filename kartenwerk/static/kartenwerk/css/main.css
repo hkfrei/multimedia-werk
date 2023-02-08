@@ -49,11 +49,10 @@
 }
 
 /* === FONT === */
-
 @font-face {
   font-family: "Roboto Black";
-  src: url("kartenwerk/assets/fonts/roboto-black-webfont.woff2") format("woff2"),
-    url("kartenwerk/assets/fonts/roboto-black-webfont.woff") format("woff");
+  src: url("/static/kartenwerk/assets/fonts/roboto-black-webfont.woff2") format("woff2"),
+    url("/static/kartenwerk/assets/fonts/roboto-black-webfont.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -61,8 +60,8 @@
 
 @font-face {
   font-family: "Roboto Bold";
-  src: url("kartenwerk/assets/fonts/roboto-bold-webfont.woff2") format("woff2"),
-    url("kartenwerk/assets/fonts/roboto-bold-webfont.woff") format("woff");
+  src: url("/static/kartenwerk/assets/fonts/roboto-bold-webfont.woff2") format("woff2"),
+    url("/static/kartenwerk/assets/fonts/roboto-bold-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -70,8 +69,8 @@
 
 @font-face {
   font-family: "Roboto Medium";
-  src: url("kartenwerk/assets/fonts/roboto-medium-webfont.woff2") format("woff2"),
-    url("kartenwerk/assets/fonts/roboto-medium-webfont.woff") format("woff");
+  src: url("/static/kartenwerk/assets/fonts/roboto-medium-webfont.woff2") format("woff2"),
+    url("/static/kartenwerk/assets/fonts/roboto-medium-webfont.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -79,8 +78,8 @@
 
 @font-face {
   font-family: "Roboto Regular";
-  src: url("kartenwerk/assets/fonts/roboto-regular-webfont.woff2") format("woff2"),
-    url("kartenwerk/assets/fonts/roboto-regular-webfont.woff") format("woff");
+  src: url("/static/kartenwerk/assets/fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("/static/kartenwerk/assets/fonts/roboto-regular-webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1450,6 +1449,25 @@ label {
     font-weight: 400;
     font-size: 1em;
     color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .contact-box {
+    background-color: var(--color-dark-200);
+  }
+  label {
+    color: var(--color-light-200);
+  }
+  .form-control {
+    background-color: var(--color-dark-400);
+    color: var(--color-light-200);
+  }
+  .form-control:focus {
+    background-color: var(--color-dark-400);
+  }
+  .form-control:hover {
+    background-color: var(--color-dark-300);
   }
 }
 
