@@ -37,9 +37,9 @@
   --error-color: #f00e0e;
   --valid-color: #0add0a;
 
-  --fs-xl: clamp(1.5rem, 8vw + 1rem, 10rem);
-  --fs-l: clamp(1rem, 4vw + 1rem, 4.7rem);
-  --fs-600: clamp(1.5rem, 6vw + 1rem, 8rem);
+  --fs-xl: clamp(1.5rem, 7vw + 1rem, 9rem);
+  --fs-l: clamp(1rem, 3vw + 1rem, 4rem);
+  --fs-600: clamp(1.5rem, 4vw + 1rem, 6rem);
   --fs-500: clamp(0.8rem, 2vw + 1rem, 4rem);
   --fs-400: 1rem;
 
@@ -229,6 +229,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--color-light-100);
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
