@@ -51,13 +51,6 @@
 /* === FONT === */
 
 @font-face {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 300;
-  src: local("Lato-Black") url("/static/fonts/Lato/Lato-Black.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "Roboto-Black";
   font-weight: 900;
   font-style: normal;
@@ -270,8 +263,7 @@ body {
 
 p {
   line-height: calc(1ex / 0.32);
-  font-family: "Roboto Light", sans;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 1rem;
   padding-top: 0.5rem;
 }
