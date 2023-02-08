@@ -49,41 +49,49 @@
 }
 
 /* === FONT === */
-/* @font-face {
-  font-family: "Roboto Black";
-  src: url("/static/kartenwerk/assets/fonts/roboto-black-webfont.woff2") format("woff2"),
-    url("/static/kartenwerk/assets/fonts/roboto-black-webfont.woff") format("woff");
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  src: local("Lato-Black") url("/static/fonts/Lato/Lato-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Black";
   font-weight: 900;
   font-style: normal;
   font-display: swap;
+  src: local("Roboto-Black")
+    url("/static/kartenwerk/assets/fonts/roboto-black-webfont.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Roboto Bold";
-  src: url("/static/kartenwerk/assets/fonts/roboto-bold-webfont.woff2") format("woff2"),
-    url("/static/kartenwerk/assets/fonts/roboto-bold-webfont.woff") format("woff");
+  font-family: "Roboto-Bold";
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+  src: local("Roboto-Bold")
+    url("/static/kartenwerk/assets/fonts/roboto-bold-webfont.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Roboto Medium";
-  src: url("/static/kartenwerk/assets/fonts/roboto-medium-webfont.woff2") format("woff2"),
-    url("/static/kartenwerk/assets/fonts/roboto-medium-webfont.woff") format("woff");
+  font-family: "Roboto-Medium";
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+  src: local("Roboto-Medium")
+    url("/static/kartenwerk/assets/fonts/roboto-medium-webfont.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Roboto Regular";
-  src: url("/static/kartenwerk/assets/fonts/roboto-regular-webfont.woff2") format("woff2"),
-    url("/static/kartenwerk/assets/fonts/roboto-regular-webfont.woff") format("woff");
+  font-family: "Roboto-Regular";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-} */
+  src: local("Roboto-Regular")
+    url("/static/kartenwerk/assets/fonts/roboto-regular-webfont.woff2") format("woff2");
+}
 
 /* === FONT END === */
 
