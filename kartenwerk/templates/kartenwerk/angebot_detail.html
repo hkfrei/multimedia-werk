@@ -57,10 +57,10 @@
   <h2 class="heading">Referenzen</h2>
   <p>Nachfolgend finden Sie eledigte Aufträge zum Angebot {{angebot.name}}.</p>
 </header>
-<div class="card-grid-referenzen">
+<div class="card-grid">
   {% for referenz in angebot.referenz_set.all %}
   <!-- prettier-ignore -->
-  <div class="card-referenzen">
+  <div class="card">
     <h2>{{referenz.titel}}</h2>
    
     <section class="kurzbeschrieb-ref">{{referenz.kurzbeschrieb}}</section>

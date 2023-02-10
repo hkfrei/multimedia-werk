@@ -10,11 +10,11 @@
   <h1 class="heading">Referenzen</h1>
   <h2 class="sub__heading">Nachfolgend finden Sie eine Auswahl unserer Projekte</h2>
 </header>
-<div class="card-grid-referenzen">
+<div class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
   {% for referenz in referenzen %}
   <!-- prettier-ignore -->
 
-  <div class="card-referenzen">
+  <div class="card {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
     <h2>{{referenz.titel}}</h2>
     
     <div class="wrapper__card-referenzen">
@@ -45,7 +45,7 @@
     <iframe
       class="video"
       src="https://www.youtube.com/embed/{{referenz.video}}"
-      title="YouTube video player"
+      title="{{card.titel}}"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
