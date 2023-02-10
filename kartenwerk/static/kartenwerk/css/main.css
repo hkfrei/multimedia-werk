@@ -41,7 +41,6 @@
   --fs-l: clamp(1rem, 3vw + 1rem, 4rem);
   --fs-600: clamp(1.5rem, 4vw + 1rem, 6rem);
   --fs-500: clamp(0.8rem, 2vw + 1rem, 4rem);
-  --fs-400: 1rem;
 
   --gradient: linear-gradient(170deg, #fff, #fff, #b0e8ed, #f4df92);
 
@@ -84,6 +83,15 @@
   font-display: swap;
   src: local("Roboto-Regular")
     url("/static/kartenwerk/assets/fonts/roboto-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto-Light";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("Roboto-Light")
+    url("/static/kartenwerk/assets/fonts/roboto-light-webfont.woff2") format("woff2");
 }
 
 /* === FONT END === */
@@ -193,7 +201,7 @@
 ============================================ */
 
 .hero-figure img {
-  max-height: 35rem;
+  max-height: 30rem;
   object-fit: cover;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -205,7 +213,7 @@
 
 @supports (object-fit: cover) {
   .hero-figure img {
-    max-height: 35rem;
+    max-height: 30rem;
     object-fit: cover;
   }
 }
@@ -265,6 +273,7 @@ body {
 p {
   line-height: calc(1ex / 0.32);
   font-weight: 400;
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
   margin-bottom: 1rem;
   padding-top: 0.5rem;
 }
@@ -380,7 +389,7 @@ a {
 }
 
 .navigation a:hover {
-  color: var(--color-dark-100);
+  color: var(--color-light-400);
 }
 
 .burger-menu__trigger {
@@ -527,6 +536,7 @@ a {
 }
 
 .feature-figure img {
+  width: 100%;
   max-height: 25rem;
   object-fit: cover;
   padding-top: 95px;
@@ -539,12 +549,12 @@ a {
 
 @supports (object-fit: cover) {
   .feature-figure img {
-    max-height: 25rem;
+    max-height: 26rem;
     object-fit: cover;
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 767px) {
   .video__bg.full-bleed {
     display: none;
     margin-bottom: -2rem;
@@ -564,13 +574,11 @@ section.column {
   gap: 1.5em;
   margin-top: 4rem;
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .profil__pic {
-  width: 100px;
-  max-width: 130px;
-  min-width: 90px;
+  max-width: 120px;
   border-radius: 100%;
   will-change: transform;
   transition: transform 450ms;
@@ -611,6 +619,12 @@ span.names {
   justify-content: center;
 }
 
+@media (width <= 768px) {
+  section.column {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ============================================
 | SECTION PROFIL END
 ============================================ */
@@ -619,7 +633,7 @@ span.names {
 | FIGURE HERO-VIDEO START
 ============================================ */
 .video__bg {
-  max-height: 35rem;
+  max-height: 25rem;
   object-fit: cover;
   margin-bottom: 2rem;
   margin-top: 1.5rem;
@@ -734,7 +748,7 @@ li.nav__name {
 }
 
 .nav__header li a:hover {
-  color: var(--color-primary-200);
+  color: var(--color-light-400);
 }
 
 hr {
@@ -769,29 +783,7 @@ hr {
   font-size: 0.7rem;
 }
 
-@media screen and (max-width: 767px) {
-  .content__footer {
-    flex-wrap: wrap;
-    justify-content: left;
-  }
-
-  .nav__area {
-    flex-wrap: wrap;
-    justify-content: left;
-  }
-
-  .nav__header {
-    margin-left: 0;
-    margin-right: 40px;
-    padding-left: 0;
-  }
-
-  .social__media {
-    margin-bottom: 1rem;
-  }
-}
-
-@media screen and (max-width: 642px) {
+@media screen and (max-width: 750px) {
   .nav__area {
     display: none;
   }
@@ -817,9 +809,6 @@ hr {
 /* ============================================
 | ANGEBOTE START
 ============================================ */
-header.angebot {
-  padding-bottom: 2.5em;
-}
 
 /* === CARD START === */
 
@@ -1193,7 +1182,7 @@ i.blockquote__text--credit::before {
   box-shadow: 0 5px 5px hsl(0deg 0% 0% / 5%);
   border-radius: 0.25rem;
   overflow: hidden;
-  /* max-width: 600px; */
+  margin-top: 2rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1242,11 +1231,10 @@ i.blockquote__text--credit::before {
 
 section.kurzbeschrieb-ref {
   font-weight: 300;
-  font-size: 0.9rem;
   padding: 1rem 0 2rem 0;
 }
 
-@media only screen and (max-width: 640px) {
+@media (max-width: 767px) {
   .card-referenzen {
     padding: 1rem;
   }
@@ -1469,6 +1457,9 @@ label {
   }
   .form-control:hover {
     background-color: var(--color-dark-300);
+  }
+  p.meta-contact {
+    color: var(--color-dark-400);
   }
 }
 
