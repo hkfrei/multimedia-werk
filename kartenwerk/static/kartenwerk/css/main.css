@@ -1386,3 +1386,9 @@ section.meta-contact-success {
     color: #fff;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .feature-figure img {
+    max-height: 20rem;
+  }
+}
