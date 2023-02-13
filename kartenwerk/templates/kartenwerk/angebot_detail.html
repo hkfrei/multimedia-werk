@@ -20,7 +20,7 @@
       muted
       loop
     >
-      <source src="https://hochebene.ch/karten_werk_videos/{{angebot.video}}" />
+      <source src="{% static 'kartenwerk/video/'|add:angebot.video %}" />
       type="video/mp4" />
     </video>
   </div>
