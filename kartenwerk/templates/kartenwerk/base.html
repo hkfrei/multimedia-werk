@@ -94,6 +94,7 @@
       </div>
     </header>
     <figure class="[ full-bleed ] [ feature-figure ]">
+      <!-- prettier-ignore -->
       <img
         src="{% static 'kartenwerk/img/kartenwerk-bg-1200.webp' %}"
         srcset="    {% static 'kartenwerk/img/kartenwerk-bg-2200_x2.webp' %} 2400w,
@@ -104,6 +105,8 @@
                     {% static 'kartenwerk/img/kartenwerk-bg-600.webp' %} 600w"
         sizes="100vw"
         alt="Karten-Werk Artwork"
+        width="1100"
+        height="auto"
       />
     </figure>
     <div id="content">{% block content %}{% endblock %}</div>
