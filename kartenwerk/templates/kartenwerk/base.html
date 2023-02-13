@@ -14,6 +14,11 @@
     <title>{% block title %}Karten-Werk GmbH{% endblock %}</title>
 
     <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /> -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'kartenwerk/img/favicon.ico' %}"
+    />
 
     <link
       rel="stylesheet"
@@ -106,7 +111,7 @@
         sizes="100vw"
         alt="Karten-Werk Artwork"
         width="1100"
-        height="auto"
+        height="443"
       />
     </figure>
     <div id="content">{% block content %}{% endblock %}</div>
@@ -160,7 +165,10 @@
               </p>
             </div>
             <div class="social__media">
-              <a href="https://github.com/hkfrei">
+              <a
+                href="https://github.com/hkfrei"
+                aria-label="Github Seite Hanskaspar Frei"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -174,7 +182,10 @@
                   />
                 </svg>
               </a>
-              <a href="https://www.linkedin.com/in/hfr/">
+              <a
+                href="https://www.linkedin.com/in/hfr/"
+                aria-label="LinkedIn Seite von Hanskaspar Frei"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -188,7 +199,10 @@
                   />
                 </svg>
               </a>
-              <a href="https://twitter.com/">
+              <a
+                href="https://twitter.com/"
+                aria-label="Twitter Seite von Hanskaspar Frei"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -202,7 +216,10 @@
                   />
                 </svg>
               </a>
-              <a href="https://www.youtube.com/@karten-werk">
+              <a
+                href="https://www.youtube.com/@karten-werk"
+                aria-label="Youtube Seite von Karten-Werk GmbH"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -222,13 +239,19 @@
             <ul class="nav__header">
               <li class="nav__name">Angebot</li>
               <li>
-                <a href="#">Web Mapping Applikationen</a>
+                <a href="{% url 'kartenwerk:angebot_detail' 1 %}"
+                  >Web Mapping Applikationen</a
+                >
               </li>
               <li>
-                <a href="#">Geo-Daten Infrastruktur</a>
+                <a href="{% url 'kartenwerk:angebot_detail' 2 %}"
+                  >Geo-Daten Infrastruktur</a
+                >
               </li>
-              <li><a href="#">Drohnenbefliegung</a></li>
-              <li><a href="#">GIS Support</a></li>
+              <li>
+                <a href="{% url 'kartenwerk:angebot_detail' 3 %}">Drohnenbefliegung</a>
+              </li>
+              <li><a href="{% url 'kartenwerk:angebot_detail' 4 %}">GIS Support</a></li>
             </ul>
             <ul class="nav__header">
               <li class="nav__name">Company</li>
