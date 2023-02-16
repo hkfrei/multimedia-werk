@@ -29,16 +29,32 @@
   <h2 class="heading">{{angebot.cards_titel}}</h2>
   <p>{{angebot.cards_beschrieb}}</p>
 </header>
-<div class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
+<div
+  class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}"
+>
   {% for card in angebot.cards.all %}
   <div class="card {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
-
-    <div style="width: 100%; max-width: 550px; box-shadow: 6px 6px 10px hsl(206.5, 0%, 75%); margin: 2rem;">
-<div style="position: relative; padding-bottom: 56.15%; height: 0; overflow: hidden;">
-  <iframe 
-    style="position: absolute; top: 0; left:0; width: 100%; height: 100%; border: 0;"
-    loading="lazy";
-    srcdoc="<style>
+    <div style="width: 100%; box-shadow: 6px 6px 10px hsl(206.5, 0%, 75%)">
+      <div
+        style="
+          position: relative;
+          padding-bottom: 56.15%;
+          height: 0;
+          overflow: hidden;
+        "
+      >
+        <iframe
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+          "
+          loading="lazy"
+          ;
+          srcdoc="<style>
       * {
       padding: 0;
       margin: 0;
@@ -63,19 +79,18 @@
         transform: scale(1.2);
       }
     </style>
-    <a href='https://www.youtube.com/embed/{{card.video}}?autoplay=1'>
+    <a 
+      href='https://www.youtube.com/embed/{{card.video}}?autoplay=1'
+      onmouseover='this.click()'
+    >
       <img src='https://img.youtube.com/vi/{{card.video}}/hqdefault.jpg' alt='{card.titel}'>
       <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
     </a>
     "
-    src="https://www.youtube.com/embed/{{card.video}}"
-    title="{card.titel}"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
-</div>
-</div>
+        >
+        </iframe>
+      </div>
+    </div>
 
     <div class="card-header">{{card.titel}}</div>
     <section class="meta">
@@ -106,7 +121,7 @@
     {% endif %}
     {% if referenz.video %}
 
-    <div style="width: 100%; max-width: 550px; box-shadow: 6px 6px 10px hsl(206.5, 0%, 75%); margin: 2rem;">
+    <div style="width: 100%; box-shadow: 6px 6px 10px hsl(206.5, 0%, 75%);">
 <div style="position: relative; padding-bottom: 56.15%; height: 0; overflow: hidden;">
   <iframe 
     style="position: absolute; top: 0; left:0; width: 100%; height: 100%; border: 0;"
@@ -136,16 +151,14 @@
         transform: scale(1.2);
       }
     </style>
-    <a href='https://www.youtube.com/embed/{{referenz.video}}?autoplay=1'>
+    <a 
+      href='https://www.youtube.com/embed/{{referenz.video}}?autoplay=1'
+      onmouseover='this.click()'
+    >
       <img src='https://img.youtube.com/vi/{{referenz.video}}/hqdefault.jpg' alt='{referenz.titel}'>
       <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
     </a>
-    "
-    src="https://www.youtube.com/embed/{{referenz.video}}"
-    title="{referenz.titel}"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
+    ">
   </iframe>
 </div>
 </div>
@@ -183,16 +196,21 @@
       </div>
       <div class="divider"></div>
       <section class="price-feature">
-      {% for feature in preisplan.features.all %}
-      <div class="feature">
-        <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
-        {{feature.name}}
-      </div>
-      {% endfor %}
+        {% for feature in preisplan.features.all %}
+        <div class="feature">
+          <img src="{% static 'kartenwerk/img/check-circle.svg' %}" />
+          {{feature.name}}
+        </div>
+        {% endfor %}
       </section>
       <div class="button-container">
-        <a href="{% url 'kartenwerk:preisplan_message' angebot_id=angebot.id preisplan_id=preisplan.id %}">
-          <button class="[ button ] [ button-secondary ] [ button-stretched ]" role="button">
+        <a
+          href="{% url 'kartenwerk:preisplan_message' angebot_id=angebot.id preisplan_id=preisplan.id %}"
+        >
+          <button
+            class="[ button ] [ button-secondary ] [ button-stretched ]"
+            role="button"
+          >
             Jetzt buchen
           </button>
         </a>
@@ -202,37 +220,34 @@
   </div>
 </section>
 
-  <section>
-    {% if angebot.testimonial_set.all %}
-    <h2 class="heading">Das sagen unsere Kunden</h2>
-    {% for testimonial in angebot.testimonial_set.all %}
-    <blockquote class="blockquote__testimonial blockquote--bordered">
-      <div>
-        <img
-          class="testimonial__logo"
-          src="{% static 'kartenwerk/img/'|add:testimonial.stakeholder.logo %}"
-          alt="logo"
-        />
-      </div>
+<section>
+  {% if angebot.testimonial_set.all %}
+  <h2 class="heading">Das sagen unsere Kunden</h2>
+  {% for testimonial in angebot.testimonial_set.all %}
+  <blockquote class="blockquote__testimonial blockquote--bordered">
+    <div>
+      <img
+        class="testimonial__logo"
+        src="{% static 'kartenwerk/img/'|add:testimonial.stakeholder.logo %}"
+        alt="logo"
+      />
+    </div>
 
-      <div class="blockquote__text blockquote--quoted">
-        {{testimonial.text}}
-      </div>
+    <div class="blockquote__text blockquote--quoted">{{testimonial.text}}</div>
 
-      <div class="blockquote__credit">
-        <i class="blockquote__text--credit">
-          {{testimonial.stakeholder.vorname}} {{testimonial.stakeholder.name}}
-          ({{testimonial.stakeholder.position}})<br />
-          {{testimonial.stakeholder.firma}}
-        </i>
-      </div>
-    </blockquote>
+    <div class="blockquote__credit">
+      <i class="blockquote__text--credit">
+        {{testimonial.stakeholder.vorname}} {{testimonial.stakeholder.name}}
+        ({{testimonial.stakeholder.position}})<br />
+        {{testimonial.stakeholder.firma}}
+      </i>
+    </div>
+  </blockquote>
 
-    {% endfor%} {% endif %}
-  </section>
-  {% else %}
-  <p>Es ist kein Angebot vorhanden</p>
-  {% endif %} {% endblock %} {% block borderbottom %}
-  <div class="site-head__bordertop-gold"></div>
-  {% endblock %}
-</div>
+  {% endfor%} {% endif %}
+</section>
+{% else %}
+<p>Es ist kein Angebot vorhanden</p>
+{% endif %} {% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-gold"></div>
+{% endblock %}

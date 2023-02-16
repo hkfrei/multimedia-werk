@@ -8,9 +8,13 @@
 {% endblock %} {% block content %} {% load static %}
 <header class="angebot">
   <h1 class="heading">Referenzen</h1>
-  <h2 class="sub__heading">Nachfolgend finden Sie eine Auswahl unserer Projekte</h2>
+  <h2 class="sub__heading">
+    Nachfolgend finden Sie eine Auswahl unserer Projekte
+  </h2>
 </header>
-<div class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
+<div
+  class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}"
+>
   {% for referenz in referenzen %}
   <!-- prettier-ignore -->
 
@@ -42,7 +46,7 @@
     {% endif %}
     {% if referenz.video %}
 
-<div style="width: 100%; max-width: 550px; box-shadow: 6px 6px 10px hsl(206.5, 0%, 75%); margin: 2rem;">
+<div style="width: 100%; box-shadow: 6px 6px 10px hsl(206.5, 0%, 75%);">
 <div style="position: relative; padding-bottom: 56.15%; height: 0; overflow: hidden;">
   <iframe 
     style="position: absolute; top: 0; left:0; width: 100%; height: 100%; border: 0;"
@@ -72,7 +76,10 @@
         transform: scale(1.2);
       }
     </style>
-    <a href='https://www.youtube.com/embed/{{referenz.video}}?autoplay=1'>
+    <a 
+      href='https://www.youtube.com/embed/{{referenz.video}}?autoplay=1'
+      onmouseover='this.click()'
+    >
       <img src='https://img.youtube.com/vi/{{referenz.video}}/hqdefault.jpg' alt='{card.titel}'>
       <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
     </a>
