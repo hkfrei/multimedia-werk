@@ -55,7 +55,8 @@
   font-style: normal;
   font-display: swap;
   src: local("Roboto-Black")
-    url("/static/kartenwerk/assets/fonts/roboto-black-webfont.woff2") format("woff2");
+    url("/static/kartenwerk/assets/fonts/roboto-black-webfont.woff2")
+    format("woff2");
 }
 
 @font-face {
@@ -64,7 +65,8 @@
   font-style: normal;
   font-display: swap;
   src: local("Roboto-Bold")
-    url("/static/kartenwerk/assets/fonts/roboto-bold-webfont.woff2") format("woff2");
+    url("/static/kartenwerk/assets/fonts/roboto-bold-webfont.woff2")
+    format("woff2");
 }
 
 @font-face {
@@ -73,7 +75,8 @@
   font-style: normal;
   font-display: swap;
   src: local("Roboto-Medium")
-    url("/static/kartenwerk/assets/fonts/roboto-medium-webfont.woff2") format("woff2");
+    url("/static/kartenwerk/assets/fonts/roboto-medium-webfont.woff2")
+    format("woff2");
 }
 
 @font-face {
@@ -82,7 +85,8 @@
   font-style: normal;
   font-display: swap;
   src: local("Roboto-Regular")
-    url("/static/kartenwerk/assets/fonts/roboto-regular-webfont.woff2") format("woff2");
+    url("/static/kartenwerk/assets/fonts/roboto-regular-webfont.woff2")
+    format("woff2");
 }
 
 @font-face {
@@ -91,7 +95,8 @@
   font-style: normal;
   font-display: swap;
   src: local("Roboto-Light")
-    url("/static/kartenwerk/assets/fonts/roboto-light-webfont.woff2") format("woff2");
+    url("/static/kartenwerk/assets/fonts/roboto-light-webfont.woff2")
+    format("woff2");
 }
 
 /* === FONT END === */
@@ -174,17 +179,32 @@
 
 .button-primary {
   box-shadow: 0px 0px 14px -7px var(--color-primary-200);
-  background-image: linear-gradient(45deg, #24808a 0%, #88c4c9 51%, #24808a 100%);
+  background-image: linear-gradient(
+    45deg,
+    #24808a 0%,
+    #88c4c9 51%,
+    #24808a 100%
+  );
 }
 
 .button-secondary {
   box-shadow: 0px 0px 14px -7px var(--color-secondary-200);
-  background-image: linear-gradient(45deg, #c29b11 0%, #d4b33d 51%, #c29b11 100%);
+  background-image: linear-gradient(
+    45deg,
+    #c29b11 0%,
+    #d4b33d 51%,
+    #c29b11 100%
+  );
 }
 
 .button-tertiary {
   box-shadow: 0px 0px 14px -7px var(--color-tertiary-200);
-  background-image: linear-gradient(45deg, #f54b07 0%, #ff6d33 51%, #f54b07 100%);
+  background-image: linear-gradient(
+    45deg,
+    #f54b07 0%,
+    #ff6d33 51%,
+    #f54b07 100%
+  );
   margin: 0 auto 1rem auto;
 }
 
@@ -994,6 +1014,7 @@ section.wrapper__price-comparison {
 ============================================ */
 .stakeholder__logo {
   width: 80px;
+  height: auto;
   margin-right: 1.5rem;
 }
 
@@ -1201,7 +1222,7 @@ p.meta-contact {
   margin: 0;
   font-weight: 500;
   font-size: 1.2em;
-  color: #fff;
+  color: var(--color-dark-500);
 }
 
 h2.contact {
@@ -1277,6 +1298,11 @@ label {
 /* ============================================
 | CONTACT END
 ============================================ */
+
+/* ============================================
+| SUCCESS PAGE START
+============================================ */
+
 h1.success {
   font-size: clamp(2rem, 0.2rem + 7.333vw, 5rem);
   margin-top: 2rem;
@@ -1316,7 +1342,7 @@ section.meta-contact-success {
 }
 
 /* ============================================
-| SUCCESS PAGE START
+| SUCCESS PAGE END
 ============================================ */
 
 /* media queries */
