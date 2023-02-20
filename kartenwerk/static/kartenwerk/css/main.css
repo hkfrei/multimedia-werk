@@ -836,6 +836,11 @@ hr {
   overflow: hidden;
 }
 
+.card-img img {
+  width: 100%;
+  height: auto;
+}
+
 .card-header {
   font-weight: 600;
   font-size: 1.5rem;
