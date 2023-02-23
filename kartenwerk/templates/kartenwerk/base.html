@@ -249,9 +249,15 @@
                 >
               </li>
               <li>
-                <a href="{% url 'kartenwerk:angebot_detail' 3 %}">Drohnenbefliegung</a>
+                <a href="{% url 'kartenwerk:angebot_detail' 3 %}"
+                  >Drohnenbefliegung</a
+                >
               </li>
-              <li><a href="{% url 'kartenwerk:angebot_detail' 4 %}">GIS Support</a></li>
+              <li>
+                <a href="{% url 'kartenwerk:angebot_detail' 4 %}"
+                  >GIS Support</a
+                >
+              </li>
             </ul>
             <ul class="nav__header">
               <li class="nav__name">Company</li>
@@ -259,7 +265,9 @@
               <li>
                 <a href="{% url 'kartenwerk:blog' %}">Blog</a>
               </li>
-              <li><a href="#">Kontakt</a></li>
+              <li>
+                <a href="{% url 'kartenwerk:contact_message' %}">Kontakt</a>
+              </li>
             </ul>
           </div>
         </div>
