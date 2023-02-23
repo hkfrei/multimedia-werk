@@ -38,22 +38,22 @@
         <!-- back and save buttons -->
         <div class="button-wrapper">
           <div class="button-container">
-            <a href="{% url 'kartenwerk:angebot_detail' angebot.id %}">
-              <button class="[ button ] [ button-secondary ]" role="button">
-                Zurück
-              </button>
+            <a
+              href="{% url 'kartenwerk:angebot_detail' angebot.id %}"
+              class="[ button ] [ button-secondary ]"
+              role="button"
+            >
+              Zurück
             </a>
           </div>
           <div class="button-container">
-            <a href="{% url 'kartenwerk:angebot_detail' angebot.id %}">
-              <button
-                class="[ button ] [ button-secondary ]"
-                type="submit"
-                role="button"
-              >
-                Senden
-              </button>
-            </a>
+            <button
+              class="[ button ] [ button-secondary ]"
+              type="submit"
+              role="button"
+            >
+              Senden
+            </button>
           </div>
         </div>
       </form>
