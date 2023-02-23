@@ -136,7 +136,21 @@ class AngebotMessage(models.Model):
     preisplan = models.ForeignKey("Preisplan", on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name_plural = "Nachrichten"
+        verbose_name_plural = "Angebot Nachrichten"
+
+    def __str__(self):
+        return str(self.datum) + ": " + self.name + " " + self.vorname
+
+
+class ContactMessage(models.Model):
+    name = models.CharField("Name", max_length=100)
+    vorname = models.CharField("Vorname", max_length=100)
+    email = models.EmailField("E-Mail")
+    nachricht = models.TextField("Nachricht", blank=True)
+    datum = models.DateField("Publizierungsdatum")
+
+    class Meta:
+        verbose_name_plural = "Kontakt Nachrichten"
 
     def __str__(self):
         return str(self.datum) + ": " + self.name + " " + self.vorname
