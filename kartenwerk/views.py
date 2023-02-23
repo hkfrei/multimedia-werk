@@ -39,7 +39,7 @@ class Blogposts(ListView):
     context_object_name = "blogposts"
 
 
-class Contact(CreateView):
+class AngebotContact(CreateView):
     template_name = "kartenwerk/contact.html"
     form_class = MessageForm
 
@@ -89,7 +89,7 @@ class Contact(CreateView):
         return super().form_valid(form)
 
 
-class SuccessMessage(TemplateView):
+class AngebotSuccessMessage(TemplateView):
     template_name = "kartenwerk/preisplan_success_message.html"
 
     def get_context_data(self, **kwargs):

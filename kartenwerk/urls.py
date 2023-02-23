@@ -10,7 +10,7 @@ urlpatterns = [
     path("ueber-uns", views.AboutView.as_view(), name="about"),
     path("blog", views.Blogposts.as_view(), name="blog"),
     path("angebot/<int:angebot_id>/preisplan/<int:preisplan_id>/contact",
-         views.Contact.as_view(), name="preisplan_message"),
+         views.AngebotContact.as_view(), name="preisplan_message"),
     path("angebot/<int:angebot_id>/preisplan/<int:preisplan_id>/message/<int:message_id>",
-         views.SuccessMessage.as_view(), name="success_message")
+         views.AngebotSuccessMessage.as_view(), name="success_message")
 ]
