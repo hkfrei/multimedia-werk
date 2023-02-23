@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.core.mail import send_mail
 from django.shortcuts import render
 from datetime import datetime
-from .models import Angebot, Blogpost, Referenz, Preisplan, Message
+from .models import Angebot, Blogpost, Referenz, Preisplan
 from .forms import MessageForm
 # Create your views here.
 
@@ -40,7 +40,7 @@ class Blogposts(ListView):
 
 
 class AngebotContact(CreateView):
-    template_name = "kartenwerk/contact.html"
+    template_name = "kartenwerk/angebot_contact.html"
     form_class = MessageForm
 
     def get_success_url(self):
