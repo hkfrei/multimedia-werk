@@ -3,8 +3,8 @@ from django.urls import reverse
 from django.core.mail import send_mail
 from django.shortcuts import render
 from datetime import datetime
-from .models import Angebot, Blogpost, Referenz, Preisplan
-from .forms import MessageForm
+from .models import Angebot, Blogpost, Referenz, Preisplan, AngebotMessage, ContactMessage
+from .forms import ContactMessageForm, AngebotMessageForm
 # Create your views here.
 
 
@@ -41,10 +41,10 @@ class Blogposts(ListView):
 
 class AngebotContact(CreateView):
     template_name = "kartenwerk/angebot_contact.html"
-    form_class = MessageForm
+    form_class = AngebotMessageForm
 
     def get_success_url(self):
-        return reverse("kartenwerk:success_message", kwargs={"preisplan_id": self.object.preisplan.id, "angebot_id": self.object.angebot.id, "message_id": self.object.id})
+        return reverse("kartenwerk:angebot_success_message", kwargs={"preisplan_id": self.object.preisplan.id, "angebot_id": self.object.angebot.id, "message_id": self.object.id})
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
@@ -89,14 +89,65 @@ class AngebotContact(CreateView):
         return super().form_valid(form)
 
 
+class Contact(CreateView):
+    template_name = "kartenwerk/contact.html"
+    form_class = ContactMessageForm
+
+    def get_success_url(self):
+        return reverse("kartenwerk:contact_success_message", kwargs={"message_id": self.object.id})
+
+    def form_valid(self, form):
+        # we have to set some attributes which we do not get from the form
+        self.object = form.save(commit=False)
+        self.object.datum = datetime.today()
+        self.object.save()
+        email_message = "Dies ist eine Nachricht von der Karten-Werk Website. \n \n" \
+            + "Datum: " + str(self.object.datum.day) + "."\
+            + str(self.object.datum.month) + "." \
+            + str(self.object.datum.year) + "\n" \
+            + "Name: " + str(form.cleaned_data.get("name")) + "\n"\
+            + "Vorname: " + str(form.cleaned_data.get("vorname")) + "\n" \
+            + "Email: " + form.cleaned_data.get("email") + "\n \n"\
+            + "Nachricht: \n" \
+            + form.cleaned_data.get("nachricht")
+        try:
+            send_mail(
+                'Karten-Werk Website',
+                email_message,
+                'info@karten-werk.ch', ['hkfrei@karten-werk.ch',
+                                        form.cleaned_data.get("email")],
+                fail_silently=False
+            )
+        except:
+            context = self.get_context_data()
+            context["email_error"] = "Es gab einen Fehler beim E-Mail Versand. \n Bitte versuchen sie es nochmals oder treten sie telefonisch mit uns in Kontakt."
+            return render(self.request, template_name=self.template_name, context=context)
+
+        return super().form_valid(form)
+
+
 class AngebotSuccessMessage(TemplateView):
-    template_name = "kartenwerk/preisplan_success_message.html"
+    template_name = "kartenwerk/angebot_success_message.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["message"] = Message.objects.get(pk=self.kwargs["message_id"])
+        context["message"] = AngebotMessage.objects.get(
+            pk=self.kwargs["message_id"])
         return context
 
     def get_success_url(self):
-        message = Message.objects.get(pk=self.kwargs["message_id"])
+        message = AngebotMessage.objects.get(pk=self.kwargs["message_id"])
         return reverse("kartenwerk:angebot_detail", kwargs={"pk": message.angebot.id})
+
+
+class ContactSuccessMessage(TemplateView):
+    template_name = "kartenwerk/contact_success_message.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["message"] = ContactMessage.objects.get(
+            pk=self.kwargs["message_id"])
+        return context
+
+    def get_success_url(self):
+        return reverse("kartenwerk:index")
