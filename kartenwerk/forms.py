@@ -1,10 +1,10 @@
 from django.forms import ModelForm, TextInput, Textarea, EmailInput
-from .models import Message
+from .models import AngebotMessage
 
 
 class MessageForm(ModelForm):
     class Meta:
-        model = Message
+        model = AngebotMessage
         fields = ['name', 'vorname', 'email', 'nachricht']
         widgets = {
             'name': TextInput(attrs={'class': 'form-control'}),

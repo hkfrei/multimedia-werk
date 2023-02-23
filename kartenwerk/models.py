@@ -126,7 +126,7 @@ class Blogpost(models.Model):
         return self.titel
 
 
-class Message(models.Model):
+class AngebotMessage(models.Model):
     name = models.CharField("Name", max_length=100)
     vorname = models.CharField("Vorname", max_length=100)
     email = models.EmailField("E-Mail")
