@@ -1,11 +1,11 @@
+const hiddenInput = document.getElementById("GOOGLE_MAPS_API_KEY");
+const API_KEY = hiddenInput.value;
 // marker image
 const pin = "/static/kartenwerk/img/logomarker.png";
 // Create the script tag, set the appropriate attributes
 const script = document.createElement("script");
-script.src =
-  "https://maps.googleapis.com/maps/api/js?key=AIzaSyA4RuSmaLvSGKQdlTWFmQxetwHlh7XECk0&callback=initMap&v=weekly";
+script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap&v=weekly`;
 script.async = true;
-
 const mapOptions = {
   center: { lat: 47.29522349252075, lng: 8.790515938971136 },
   zoom: 11,

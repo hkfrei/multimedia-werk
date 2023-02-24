@@ -5,6 +5,7 @@ from django.shortcuts import render
 from datetime import datetime
 from .models import Angebot, Blogpost, Referenz, Preisplan, AngebotMessage, ContactMessage
 from .forms import ContactMessageForm, AngebotMessageForm
+from decouple import config
 # Create your views here.
 
 
@@ -95,6 +96,12 @@ class Contact(CreateView):
 
     def get_success_url(self):
         return reverse("kartenwerk:contact_success_message", kwargs={"message_id": self.object.id})
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        context["GOOGLE_MAPS_API_KEY"] = config("GOOGLE_MAPS_API_KEY")
+        return context
 
     def form_valid(self, form):
         # we have to set some attributes which we do not get from the form
