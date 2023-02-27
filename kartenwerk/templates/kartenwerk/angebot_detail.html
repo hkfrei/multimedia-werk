@@ -26,7 +26,7 @@
   </div>
 </figure>
 <header class="angebot">
-  <h2 class="heading">{{angebot.cards_titel}}</h2>
+  <h2 class="sub__heading">{{angebot.cards_titel}}</h2>
   <p>{{angebot.cards_beschrieb}}</p>
 </header>
 <div
@@ -107,7 +107,7 @@
 </div>
 {% if angebot.referenz_set.all %}
 <header class="angebot">
-  <h2 class="heading">Referenzen</h2>
+  <h2 class="sub__heading">Referenzen</h2>
   <p>Nachfolgend finden Sie eledigte Aufträge zum Angebot {{angebot.name}}.</p>
 </header>
 <div class="card-grid">
@@ -178,7 +178,7 @@
   {% endfor %}
 </div>
 {% endif %}
-<h2 class="heading">Preise</h2>
+<h2 class="sub__heading">Preise</h2>
 <p>
   Nachfolgend finden Sie Preisinformationen zum Angebot {{angebot.name}}. Für
   individuelle Wünsche können wir jederzeit einen massgeschneiderten Auftrag
@@ -228,7 +228,7 @@
 
 <section>
   {% if angebot.testimonial_set.all %}
-  <h2 class="heading">Das sagen unsere Kunden</h2>
+  <h2 class="sub__heading">Das sagen unsere Kunden</h2>
   {% for testimonial in angebot.testimonial_set.all %}
   <blockquote class="blockquote__testimonial blockquote--bordered">
     <div>
