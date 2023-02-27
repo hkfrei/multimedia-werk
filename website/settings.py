@@ -25,8 +25,8 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['karten-werk-website-rnlvbjxo5a-oa.a.run.app',
-                 'localhost', 'karten-werk.ch']
+ALLOWED_HOSTS = ['multimedia-werk-website-rnlvbjxo5a-oa.a.run.app',
+                 'localhost', 'multimedia-werk.ch']
 
 
 # Application definition
