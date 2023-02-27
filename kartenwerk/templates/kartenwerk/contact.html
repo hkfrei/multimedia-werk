@@ -9,7 +9,7 @@
 <h3 class="error">{{email_error}}</h3>
 {% endif %}
 
-<div>
+<div class="wrapper__contact">
   <h1 class="heading">Kontakt</h1>
   <address class="contact__address">
     Karten-Werk GmbH <br />
@@ -17,15 +17,18 @@
     8620 Wetzikon.<br />
     +41 79 360 72 83 | hkfrei(at)karten-werk.ch
   </address>
-  <h2>Unser Standort</h2>
+  <h2 class="contact">Unser Standort</h2>
   <!-- this input is only necessary to get the google maps api key via js. -->
   <input
     id="GOOGLE_MAPS_API_KEY"
     value="{{ GOOGLE_MAPS_API_KEY }}"
-    type="hidden"
-  />
+    type="hidden" />
   <div id="contact__map"></div>
-  <h2>Hinterlassen sie uns eine Nachricht</h2>
+  <h2 class="contact">Hinterlassen Sie uns eine Nachricht</h2>
+  <p class="contact">
+    Falls Sie eine Frage oder einen Hinweis für uns haben, schreiben Sie uns
+    doch eine Nachricht - wir freuen uns auf jedes Feedback.
+  </p>
   <section class="contact-form">
     <form action="" method="post">
       {% csrf_token %} {{ form.non_field_errors }}
@@ -44,8 +47,7 @@
           <a
             href="{% url 'kartenwerk:index' %}"
             class="[ button ] [ button-secondary ]"
-            role="button"
-          >
+            role="button">
             Zurück
           </a>
         </div>
@@ -53,8 +55,7 @@
           <button
             class="[ button ] [ button-secondary ]"
             type="submit"
-            role="button"
-          >
+            role="button">
             Senden
           </button>
         </div>
