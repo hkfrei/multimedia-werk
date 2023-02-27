@@ -39,7 +39,7 @@
 
   --fs-xl: clamp(1.5rem, 7vw + 1rem, 9rem);
   --fs-l: clamp(1rem, 3vw + 1rem, 4rem);
-  --fs-600: clamp(1.5rem, 4vw + 1rem, 6rem);
+  --fs-600: clamp(1.5rem, 4vw + 1rem, 5.5rem);
   --fs-500: clamp(0.8rem, 2vw + 1rem, 4rem);
 
   --gradient: linear-gradient(170deg, #fff, #fff, #b0e8ed, #f4df92);
