@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['karten-werk-website-rnlvbjxo5a-oa.a.run.app',
 # Application definition
 
 INSTALLED_APPS = [
-    'kartenwerk.apps.KartenwerkConfig',
+    'multimediawerk.apps.MultimediawerkConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

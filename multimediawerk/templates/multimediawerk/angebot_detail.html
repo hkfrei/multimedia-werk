@@ -1,0 +1,261 @@
+<!-- prettier-ignore -->
+
+{% extends "multimediawerk/base.html" %} 
+
+{% block title %} Angebote{% endblock %} 
+{% block bordertop %}
+<div class="site-head__bordertop-gold"></div>
+{% endblock %} {% block content %} {% load static %} {% if angebot %}
+<header class="angebot">
+  <h1 class="heading">{{angebot.name}}</h1>
+  <h2 class="sub__heading">{{angebot.subtitel}}</h2>
+  <p>{{angebot.kurzbeschrieb}}</p>
+</header>
+
+<figure>
+  <div class="hero">
+    <video
+      class="[ video__bg ] [ full-bleed ] [ feature-figure ]"
+      autoplay
+      muted
+      loop
+    >
+      <source src="{% static 'multimediawerk/video/'|add:angebot.video %}" />
+      type="video/mp4" />
+    </video>
+  </div>
+</figure>
+<header class="angebot">
+  <h2 class="sub__heading">{{angebot.cards_titel}}</h2>
+  <p>{{angebot.cards_beschrieb}}</p>
+</header>
+<div
+  class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}"
+>
+  {% for card in angebot.cards.all %}
+  <div class="card {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
+    <div style="width: 100%; box-shadow: 6px 6px 10px hsl(206.5, 0%, 75%)">
+      <div
+        style="
+          position: relative;
+          padding-bottom: 56.15%;
+          height: 0;
+          overflow: hidden;
+        "
+      >
+        <iframe
+          title="YouTube von Karten-Werk"
+          ;
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+          "
+          loading="lazy"
+          ;
+          srcdoc="<style>
+      * {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      }
+      body, html {
+        height: 100%;
+      }
+      img, svg {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      svg {
+        filter: drop-shadow(1px 1px 10px hsl(206.5, 70.7%, 8%));
+        transition: all 250ms ease-in-out;
+      }
+      body:hover svg {
+        filter: drop-shadow(1px 1px 10px hsl(206.5, 0%, 10%));
+        transform: scale(1.2);
+      }
+    </style>
+    <a 
+      href='https://www.youtube.com/embed/{{card.video}}?autoplay=1'
+      onmouseover='this.click()'
+    >
+      <img src='https://img.youtube.com/vi/{{card.video}}/hqdefault.jpg' alt='{card.titel}'>
+      <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
+    </a>
+    "
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <div class="card-header">{{card.titel}}</div>
+    <section class="meta">
+      <div class="meta-date">{{card.metadaten}}</div>
+      <div class="meta-kategorie">{{card.subtitel}}</div>
+    </section>
+    <div class="card-body">
+      <p>{{card.kurzbeschrieb}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% if angebot.referenz_set.all %}
+<header class="angebot">
+  <h2 class="sub__heading">Referenzen</h2>
+  <p>Nachfolgend finden Sie eledigte Aufträge zum Angebot {{angebot.name}}.</p>
+</header>
+<div class="card-grid">
+  {% for referenz in angebot.referenz_set.all %}
+  <!-- prettier-ignore -->
+  <div class="card">
+    <h2>{{referenz.titel}}</h2>
+   
+    <section class="kurzbeschrieb-ref">{{referenz.kurzbeschrieb}}</section>
+    {% if referenz.bild %}
+    <!-- <h4 class="referenz__title">Hier eine kleine Projektübersicht</h4> -->
+    <img class="card-referenzen-img" src="{% static 'multimediawerk/img/'|add:referenz.bild %}" alt="Erledigter Auftrag" />
+    {% endif %}
+    {% if referenz.video %}
+
+    <div style="width: 100%; box-shadow: 6px 6px 10px hsl(206.5, 0%, 75%);">
+<div style="position: relative; padding-bottom: 56.15%; height: 0; overflow: hidden;">
+  <iframe 
+    style="position: absolute; top: 0; left:0; width: 100%; height: 100%; border: 0;"
+    loading="lazy";
+    title="YouTube von Karten-Werk";
+    srcdoc="<style>
+      * {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      }
+      body, html {
+        height: 100%;
+      }
+      img, svg {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      svg {
+        filter: drop-shadow(1px 1px 10px hsl(206.5, 70.7%, 8%));
+        transition: all 250ms ease-in-out;
+      }
+      body:hover svg {
+        filter: drop-shadow(1px 1px 10px hsl(206.5, 0%, 10%));
+        transform: scale(1.2);
+      }
+    </style>
+    <a 
+      href='https://www.youtube.com/embed/{{referenz.video}}?autoplay=1'
+      onmouseover='this.click()'
+    >
+      <img src='https://img.youtube.com/vi/{{referenz.video}}/hqdefault.jpg' alt='{referenz.titel}'>
+      <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
+    </a>
+    ">
+  </iframe>
+</div>
+</div>
+   
+    {% endif %}
+    <div class="button-container">
+        <a href="{% url 'multimediawerk:referenzen' %}">
+          <button class="[ button ] [ button-secondary ]" role="button">
+            Alle Referenzen
+          </button>
+        </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+<h2 class="sub__heading">Preise</h2>
+<p>
+  Nachfolgend finden Sie Preisinformationen zum Angebot {{angebot.name}}. Für
+  individuelle Wünsche können wir jederzeit einen massgeschneiderten Auftrag
+  gemäss Ihren Wünschen zusammenstellen.
+</p>
+
+<section class="wrapper__price-comparison">
+  <div class="price-comparison">
+    {% for preisplan in angebot.preise.all %}
+    <div class="price-column {% if preisplan.popular %}popular {% endif %}">
+      <div class="price-header">
+        <div class="price">
+          <div class="chf-sign">CHF</div>
+          {{preisplan.preis}}
+          <div class="pro-ha">/{{preisplan.einheit}}</div>
+        </div>
+        <div class="plan-name">{{preisplan.name}}</div>
+      </div>
+      <div class="divider"></div>
+      <section class="price-feature">
+        {% for feature in preisplan.features.all %}
+        <div class="feature">
+          <img
+            src="{% static 'multimediawerk/img/check-circle.svg' %}"
+            alt="Preisplan Check"
+          />
+          {{feature.name}}
+        </div>
+        {% endfor %}
+      </section>
+      <div class="button-container">
+        <a
+          href="{% url 'multimediawerk:angebot_message' angebot_id=angebot.id preisplan_id=preisplan.id %}"
+        >
+          <button
+            class="[ button ] [ button-secondary ] [ button-stretched ]"
+            role="button"
+          >
+            Jetzt buchen
+          </button>
+        </a>
+      </div>
+    </div>
+    {%endfor %}
+  </div>
+</section>
+
+<section>
+  {% if angebot.testimonial_set.all %}
+  <h2 class="sub__heading">Das sagen unsere Kunden</h2>
+  {% for testimonial in angebot.testimonial_set.all %}
+  <blockquote class="blockquote__testimonial blockquote--bordered">
+    <div>
+      <img
+        class="testimonial__logo"
+        src="{% static 'multimediawerk/img/'|add:testimonial.stakeholder.logo %}"
+        alt="Testimonial Logo"
+        width="125"
+        height="125"
+      />
+    </div>
+
+    <div class="blockquote__text blockquote--quoted">{{testimonial.text}}</div>
+
+    <div class="blockquote__credit">
+      <i class="blockquote__text--credit">
+        {{testimonial.stakeholder.vorname}} {{testimonial.stakeholder.name}}
+        ({{testimonial.stakeholder.position}})<br />
+        {{testimonial.stakeholder.firma}}
+      </i>
+    </div>
+  </blockquote>
+
+  {% endfor%} {% endif %}
+</section>
+{% else %}
+<p>Es ist kein Angebot vorhanden</p>
+{% endif %} {% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-gold"></div>
+{% endblock %}

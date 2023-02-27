@@ -1,14 +1,14 @@
 # Karten-Werk Website
 
-The new Django Karten-Werk website.
+The Multimedia-Werk website.
 
 ## Getting started locally
 
 First get a copy of the app
 
 ```
-git clone https://github.com/hkfrei/karten-werk-django.git
-cd karten-werk-django
+git clone https://github.com/hkfrei/multimedia-werk.git
+cd multimedia-werk
 ```
 
 ### Start the development environment

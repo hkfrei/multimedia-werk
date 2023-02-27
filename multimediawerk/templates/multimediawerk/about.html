@@ -1,0 +1,71 @@
+<!-- prettier-ignore -->
+
+{% extends "multimediawerk/base.html" %} 
+
+{% block title %} Über uns{% endblock %} 
+{% block bordertop %}
+<div class="site-head__bordertop-blue"></div>
+{% endblock %} {% block content %}
+  {% load static %}
+  <h1 class="heading">De Chäppu und de Dävu</h1>
+  <h2 class="sub__heading">
+    Vom Orientierungslauf in der 4. Klasse zu Karten-Werk.
+  </h2>
+  <figure class="[ full-bleed ] [ hero-figure ]">
+      <img
+        src="{% static 'multimediawerk/img/Headerbild_About.webp' %}"
+        alt="Herobild About"
+      />
+  </figure>
+  <section class="text-top">
+    <h2>Die Anfänge</h2>
+  <p>
+    Als 10 jährige Knirpse trafen die beiden in der 4. Klasse zum ersten mal
+    aufeinander. Schnell entdeckten sie ihre gemeinsame Freude für sämtliche
+    sportlichen Aktivitäten - ob die Jagd nach dem Schulrekord für den 12' Lauf,
+    den ersten Platz bei den regionalen Orientierungsläufen, oder einfach nur
+    Hockey spielen auf dem zugefrorenen Teich (ja, das durften die Kinder früher noch) - Chäppu und Dävu waren stets zusammen anzutreffen und konnten im
+    Turnuntericht nur im Zweierpack gewählt werden. Auch als sie älter wurden,
+    bremste dies ihre Abenteuerlust nicht ein - sie paddelten im Kayak die
+    Reuss hinunter, schleppten Snowboard und Skier eigenhändig die Berge hoch,
+    um in unbefahrenem Neuschnee zu kurven und verbrachten - halbberuflich - sogar ein paar Wochen zusammen in den USA.
+  </p>
+    <figure class="photo__grid">
+  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto1-hor.jpg' %});"></div>
+  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto2-hor.jpg' %});"></div>
+  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto3-hor.jpg' %});"></div>
+</figure>
+<h2>Berufliche Entscheidungen</h2>
+  <p>
+    Beruflich wählte Hanskaspar den Weg des Forstwarts, was perfekt zu seinem
+    Bewegungsdrang und seiner Liebe zur Natur passte. David wählte den
+    körperlich weniger anstrengenden Weg des Fotografen. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eius id animi aperiam fuga aut.
+  </p>
+    <h2>Gemeinsam bei Karten-Werk</h2>
+    <p>
+    Heute, knapp 40 Jahre später: Hanskaspar hat sich mit seiner umfassenden
+    Kenntnis von hochpräzisem Kartenmaterial einen Namen gemacht und wird von seinen Auftraggebern so geschätzt, weil er Wald und Natur ganz genau kennt und dieses Wissen mit seiner Leidenschaft für komplexe Datenmodelle und hochpräzisem Kartenmaterial verbindet.
+     <br />
+    <br />
+    David hat einen Weg gefunden, seine Skills an der analogen Kamera ins digitale Zeitalter zu adaptieren und erstellt nun Grafiken, Logos und Youtube-Videos. Sein Sinn für Farben und Formen hilft ihm heute, den komplexen Datenstrukturen von Hanskaspar einen visuellen Schliff zu verleihen.
+    </p>
+    <br />
+    <p class="fazit">
+    Beide haben sich immer perfekt ergänzt und zu gemeinsamen Höchstleistungen angespornt - heute tun sie es wieder. Gemeinsam bei Karten-Werk.
+  </p>
+
+  <figure class="photo__grid">
+  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto1-vert.jpg' %});"></div>
+  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto2-vert.jpg' %});"></div>
+  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto3-vert.jpg' %});"></div>
+  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto4-quad.jpg' %});"></div>
+  <div class="card-tall" style="background-image: url({% static 'multimediawerk/img/about_foto5-tall.jpg' %});"></div>
+  <div class="card-wide" style="background-image: url({% static 'multimediawerk/img/about_foto6-wide.jpg' %});"></div>
+</figure>
+  </section>
+</div>
+
+
+{% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-blue"></div>
+{% endblock %}

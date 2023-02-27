@@ -1,0 +1,58 @@
+<!-- prettier-ignore -->
+
+{% extends "multimediawerk/base.html" %} 
+
+{% block title %} Blog{% endblock %} 
+{% block bordertop %}
+<div class="site-head__bordertop-red"></div>
+{% endblock %} {% block content %} {% load static %}
+<header class="angebot">
+  <h1 class="heading">Blog</h1>
+  <h2 class="sub__heading">
+    Nachfolgend finden Sie eine Übersicht über unsere Blogbeiträge.
+  </h2>
+</header>
+<main class="blog__container">
+  <div class="card-grid">
+    {% for post in blogposts %}
+
+    <div class="card">
+      <div class="blog__card-header">
+        <img
+          src="{% static 'multimediawerk/img/'|add:post.teaser_img %}"
+          class="blog__card-img"
+          alt="Blogbild von Karten-Werk"
+        />
+      </div>
+      <div class="blog-card-body">
+        <h2 class="blog__titel">
+          <a href="{{post.url}}">{{post.titel}}</a>
+        </h2>
+        <section class="meta">
+          <div class="meta-date">Datum: {{post.datum}}</div>
+          <div class="meta-kategorie">
+            Posted by: {{post.verfasser.name}} {{post.verfasser.vorname}}
+            ({{post.verfasser.position}})
+          </div>
+        </section>
+
+        <div class="card-footer">
+          <div class="kurzbeschrieb">{{post.kurzbeschrieb}}</div>
+        </div>
+
+        <div class="button-container">
+          <a href="{{post.url}}">
+            <button class="[ button ] [ button-tertiary ]" role="button">
+              Zum Blogpost
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</main>
+{% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-red"></div>
+{% endblock %}

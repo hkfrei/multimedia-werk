@@ -1,0 +1,35 @@
+<!-- prettier-ignore -->
+
+{% extends "multimediawerk/base.html" %} 
+
+{% block title %} Kontakt{% endblock %} 
+{% block bordertop %}
+<div class="site-head__bordertop-gold"></div>
+{% endblock %} {% block content %} {% load static %}
+<hgroup class="success">
+  <h1 class="success">Danke für Ihre Nachricht!</h1>
+  <h2 class="success">Wir werden uns in Kürze bei Ihnen melden.</h2>
+</hgroup>
+<main>
+  <h3 class="success">Ihre Angaben:</h3>
+  <section class="declaration">
+    <p>Name: {{message.name}}</p>
+    <p>Vorname: {{message.vorname}}</p>
+    <p>E-Mail: {{message.email}}</p>
+    <p>Nachricht: {{message.nachricht}}</p>
+  </section>
+  <!-- back button -->
+  <div class="button-container">
+    <a href="{% url 'multimediawerk:index' %}">
+      <button
+        class="[ button ] [ button-secondary ] [ margin-l ]"
+        role="button"
+      >
+        Zurück zur Startseite
+      </button>
+    </a>
+  </div>
+</main>
+{% endblock %} {% block borderbottom %}
+<div class="site-head__bordertop-gold"></div>
+{% endblock %}
