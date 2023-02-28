@@ -25,7 +25,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['multimedia-werk-website-rnlvbjxo5a-oa.a.run.app',
+ALLOWED_HOSTS = ['multimedia-werk-website-2xbrpq5qzq-oa.a.run.app',
                  'localhost', 'multimedia-werk.ch']
 
 
