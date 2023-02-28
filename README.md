@@ -17,21 +17,26 @@ Create virtual python environment:
 You can get the path to your python executable with this commands:
 
 ```
-python
+python3
 >>> import os
 >>> import sys
 >>> os.path.dirname(sys.executable)
+
+/opt/homebrew/opt/python@3.10/bin
+
 ```
 
 ```
-pip install virtualenv
-virtualenv --python C:\path_to_python\python3.9.exe env
+pip3 install virtualenv
+virtualenv --python /opt/homebrew/opt/python@3.10/bin/python3.10 env
+
 ```
 
 ...and activate it
 
 ```
-.\env\Scripts\activate
+source env/bin/activate
+
 ```
 
 ### install requirements
