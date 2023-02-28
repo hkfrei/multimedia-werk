@@ -43,7 +43,6 @@ pip install -r ./requirements.txt
 ### Then we have to create an .env file, holding our environment variables
 
 ```
-cd website
 touch .env
 ```
 
@@ -64,7 +63,7 @@ The following variables need to be defined:
 
 ### Start the server
 
-- make sure you are in the _karten-werk-django_ folder (the one which has the _manage.py_ file)
+- make sure you are in the _multimedia-werk_ folder (the one which has the _manage.py_ file)
 - from there call `python manage.py runserver` from within you console.
 - open (http://localhost:8000/)[http://localhost:8000/] to see the site running.
 
@@ -73,12 +72,12 @@ The following variables need to be defined:
 1. Create a Docker Image and save in the Google Cloud:
 
    ```
-   gcloud builds submit --tag europe-west6-docker.pkg.dev/karten-werk-website/karten-werk-website/docker.latest
+   gcloud builds submit --tag europe-west6-docker.pkg.dev/multimediawerk/multimediawerk-website/docker.latest
    ```
 
 2. Deploy to Cloud Run
    ```
-   gcloud run deploy karten-werk-website --platform managed --region europe-west6 --image europe-west6-docker.pkg.dev/karten-werk-website/karten-werk-website/docker.latest:latest --set-secrets "DB_HOST=DB_HOST:latest,DB_PORT=DB_PORT:latest,DB_PASSWORD=DB_PASSWORD:latest,DB_NAME=DB_NAME:latest,DB_USER=DB_USER:latest,DB_PASSWORD=DB_PASSWORD:latest,SECRET_KEY=SECRET_KEY:latest, DB_TIME_ZONE=DB_TIME_ZONE:latest, GOOGLE_MAPS_API_KEY=GOOGLE_MAPS_API_KEY:latest, EMAIL_HOST=EMAIL_HOST:latest, EMAIL_PORT=EMAIL_PORT:latest, EMAIL_HOST_USER=EMAIL_HOST_USER:latest, EMAIL_HOST_PASSWORD=EMAIL_HOST_PASSWORD:latest" --service-account cloudrun-serviceaccount@karten-werk-website.iam.gserviceaccount.com --allow-unauthenticated --max-instances=10 --memory=256Mi
+   gcloud run deploy multimedia-werk-website --platform managed --region europe-west6 --image europe-west6-docker.pkg.dev/multimediawerk/multimediawerk-website/docker.latest:latest --set-secrets "DB_HOST=DB_HOST:latest,DB_PORT=DB_PORT:latest,DB_PASSWORD=DB_PASSWORD:latest,DB_NAME=DB_NAME:latest,DB_USER=DB_USER:latest,DB_PASSWORD=DB_PASSWORD:latest,SECRET_KEY=SECRET_KEY:latest, DB_TIME_ZONE=DB_TIME_ZONE:latest, GOOGLE_MAPS_API_KEY=GOOGLE_MAPS_API_KEY:latest, EMAIL_HOST=EMAIL_HOST:latest, EMAIL_PORT=EMAIL_PORT:latest, EMAIL_HOST_USER=EMAIL_HOST_USER:latest, EMAIL_HOST_PASSWORD=EMAIL_HOST_PASSWORD:latest" --service-account cloudrun-serviceaccount@multimediawerk.iam.gserviceaccount.com --allow-unauthenticated --max-instances=10 --memory=256Mi
    ```
 
-Open: https://karten-werk-website-rnlvbjxo5a-oa.a.run.app
+Open: https://multimedia-werk-website-2xbrpq5qzq-oa.a.run.app/
