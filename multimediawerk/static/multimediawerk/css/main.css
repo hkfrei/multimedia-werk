@@ -50,52 +50,11 @@
 /* === FONT === */
 
 @font-face {
-  font-family: "Roboto-Black";
-  font-weight: 900;
-  font-style: normal;
+  font-family: "Raleway";
+  font-weight: 100 1000;
   font-display: swap;
-  src: local("Roboto-Black")
-    url("/static/multimediawerk/assets/fonts/roboto-black-webfont.woff2")
-    format("woff2");
-}
-
-@font-face {
-  font-family: "Roboto-Bold";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: local("Roboto-Bold")
-    url("/static/multimediawerk/assets/fonts/roboto-bold-webfont.woff2")
-    format("woff2");
-}
-
-@font-face {
-  font-family: "Roboto-Medium";
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-  src: local("Roboto-Medium")
-    url("/static/multimediawerk/assets/fonts/roboto-medium-webfont.woff2")
-    format("woff2");
-}
-
-@font-face {
-  font-family: "Roboto-Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: local("Roboto-Regular")
-    url("/static/multimediawerk/assets/fonts/roboto-regular-webfont.woff2")
-    format("woff2");
-}
-
-@font-face {
-  font-family: "Roboto-Light";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: local("Roboto-Light")
-    url("/static/multimediawerk/assets/fonts/roboto-light-webfont.woff2")
+  src: local("Raleway")
+    url("/static/kartenwerk/assets/fonts/Raleway-VariableFont_wght.woff2")
     format("woff2");
 }
 
@@ -255,7 +214,7 @@
 ============================================ */
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: var(--color-light-100);
   overflow-x: hidden;
 }
