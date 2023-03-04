@@ -15,24 +15,13 @@
   --color-dark-400: #2c2c2c;
   --color-dark-500: #262626;
   --color-dark-600: #121212;
-  --color-primary-50: #8cced4;
-  --color-primary-100: #88c4c9;
-  --color-primary-200: #49aab3;
-  --color-primary-300: #439aa3;
-  --color-primary-400: #24808a;
-  --color-secondary-50: #e4ce80;
-  --color-secondary-100: #dec469;
-  --color-secondary-200: #d4b33d;
-  --color-secondary-300: #c29b11;
-  --color-tertiary-50: #ff6d33;
-  --color-tertiary-100: #ff5a19;
-  --color-tertiary-200: #f54b07;
-  --color-alt-pink-100: rgb(244, 95, 182);
-  --color-alt-pink-200: rgb(233, 71, 165);
-  --color-alt-pink-300: rgb(205, 44, 138);
-  --color-alt-blue-50: #5187d8;
-  --color-alt-blue-100: #3574d2;
-  --color-alt-blue-200: #275dad;
+  --color-primary-50: #ff6d33;
+  --color-primary-100: #ff5a19;
+  --color-primary-200: #f54b07;
+
+  --color-secondary-50: #5187d8;
+  --color-secondary-100: #3574d2;
+  --color-secondary-200: #275dad;
 
   --error-color: #f00e0e;
   --valid-color: #0add0a;
@@ -66,22 +55,12 @@
 
 .site-head__bordertop-default {
   padding: 0.6rem 0;
-  border-top: 5px solid var(--color-primary-200);
-}
-
-.site-head__bordertop-gold {
-  padding: 0.6rem 0;
-  border-top: 5px solid var(--color-secondary-100);
-}
-
-.site-head__bordertop-red {
-  padding: 0.6rem 0;
-  border-top: 5px solid var(--color-tertiary-100);
+  border-top: 5px solid var(--color-primary-100);
 }
 
 .site-head__bordertop-blue {
   padding: 0.6rem 0;
-  border-top: 5px solid var(--color-alt-blue-50);
+  border-top: 5px solid var(--color-secondary-100);
 }
 
 /* ============================================
@@ -119,7 +98,7 @@
 
 .button:hover {
   background-position: right center;
-  color: var(--color-light-100);
+  color: var(--color-light-200);
   text-decoration: none;
 }
 
@@ -140,9 +119,9 @@
   box-shadow: 0px 0px 14px -7px var(--color-primary-200);
   background-image: linear-gradient(
     45deg,
-    #24808a 0%,
-    #88c4c9 51%,
-    #24808a 100%
+    #c33700 0%,
+    #ff662a 51%,
+    #c33700 100%
   );
 }
 
@@ -179,7 +158,7 @@
 | GLOBAL FIGURES START
 ============================================ */
 
-.hero-figure img {
+/* .hero-figure img {
   max-height: 30rem;
   object-fit: cover;
   padding-top: 2rem;
@@ -195,7 +174,7 @@
     max-height: 30rem;
     object-fit: cover;
   }
-}
+} */
 
 /* ============================================
 | GLOBAL FIGURES END
@@ -215,7 +194,8 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: var(--color-light-100);
+  color: var(--color-light-200);
+  background-color: var(--color-dark-400);
   overflow-x: hidden;
 }
 
@@ -272,6 +252,9 @@ p {
 /* ============================================
 | NAVIGATION START
 =============================================*/
+svg #logo-play {
+  width: 500px;
+}
 
 a {
   color: var(--color-dark-300);
@@ -322,8 +305,8 @@ a {
 
 .site-head {
   padding: 0 0 0.6rem 0;
-  background: var(--color-light-100);
-  border-bottom: 8px solid var(--color-light-100);
+  background: var(--color-dark-400);
+  border-bottom: 8px solid var(--color-light-200);
   box-shadow: 0 0 20px hsl(0deg 0% 0% / 20%);
   position: fixed;
   width: 100%;
@@ -331,7 +314,7 @@ a {
 }
 
 .site-head :focus {
-  outline-color: var(--color-dark-400);
+  outline-color: var(--color-primary-200);
 }
 
 .site-head__inner {
@@ -364,11 +347,11 @@ a {
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--color-dark-300);
+  color: var(--color-light-100);
 }
 
 .navigation a:hover {
-  color: var(--color-light-400);
+  color: var(--color-primary-100);
 }
 
 .burger-menu__trigger {
@@ -381,8 +364,8 @@ a {
   display: block;
   width: 24px;
   height: 3px;
-  background: var(--color-dark-300);
-  border: 1px solid var(--color-dark-300);
+  background: var(--color-light-100);
+  border: 1px solid var(--color-light-100);
   position: absolute;
   border-radius: 3px;
   left: 50%;
@@ -428,7 +411,7 @@ a {
   height: 100%;
   visibility: hidden;
   opacity: 0;
-  background: var(--color-primary-50);
+  background: var(--color-dark-300);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -526,6 +509,10 @@ a {
   box-shadow: 0 0 20px hsl(0deg 0% 0% / 20%);
 }
 
+figure.feature-figure svg {
+  margin-bottom: -12rem;
+}
+
 @supports (object-fit: cover) {
   .feature-figure img {
     max-height: 26rem;
@@ -563,8 +550,8 @@ section.column {
 
 .profil__pic:hover,
 :focus {
-  transition: transform 125ms;
-  transform: translateY(-10px);
+  background-color: var(--color-primary-100);
+  transform: scale(1.2);
 }
 
 .header__profil {
