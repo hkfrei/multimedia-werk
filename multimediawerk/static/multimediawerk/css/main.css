@@ -252,8 +252,8 @@ p {
 /* ============================================
 | NAVIGATION START
 =============================================*/
-svg #logo-play {
-  width: 500px;
+.site-head__inner img {
+  margin-bottom: 0.5rem;
 }
 
 a {
