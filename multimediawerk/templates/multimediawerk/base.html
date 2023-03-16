@@ -12,11 +12,10 @@
 
     <title>{% block title %}Karten-Werk GmbH{% endblock %}</title>
 
-    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /> -->
     <link
       rel="icon"
       type="image/x-icon"
-      href="{% static 'multimediawerk/img/favicon.ico' %}" />
+      href="{% static 'multimediawerk/img/icon/favicon.ico' %}" />
 
     <link
       rel="stylesheet"
@@ -66,22 +65,8 @@
         </div>
       </div>
     </header>
-    <figure class="[ full-bleed ] [ feature-figure ]">
-      <!-- prettier-ignore -->
-      <img
-        src="{% static 'multimediawerk/img/multimediawerk-bg-1200.webp' %}"
-        srcset="    {% static 'multimediawerk/img/multimediawerk-bg-2200_x2.webp' %} 2400w,
-                    {% static 'multimediawerk/img/multimediawerk-bg-2200.webp' %} 2200w,
-                    {% static 'multimediawerk/img/multimediawerk-bg-1400.webp' %} 1400w,
-                    {% static 'multimediawerk/img/multimediawerk-bg-1200.webp' %} 1200w,
-                    {% static 'multimediawerk/img/multimediawerk-bg-800.webp' %} 800w,
-                    {% static 'multimediawerk/img/multimediawerk-bg-600.webp' %} 600w"
-        sizes="100vw"
-        alt="Karten-Werk Artwork"
-        width="1100"
-        height="443"
-      />
-    </figure>
+    <div class="waves"></div>
+    <!-- <figure class="main-svg"></figure> -->
     <div id="content">{% block content %}{% endblock %}</div>
     <footer>
       {% block borderbottom %}{% endblock %}
@@ -160,12 +145,12 @@
               <li class="nav__name">Angebot</li>
               <li>
                 <a href="{% url 'multimediawerk:angebot_detail' 1 %}"
-                  >Web Mapping Applikationen</a
+                  >Content Creation</a
                 >
               </li>
               <li>
                 <a href="{% url 'multimediawerk:angebot_detail' 2 %}"
-                  >Geo-Daten Infrastruktur</a
+                  >Photo- und Videographie</a
                 >
               </li>
               <li>

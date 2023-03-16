@@ -26,7 +26,7 @@
   --error-color: #f00e0e;
   --valid-color: #0add0a;
 
-  --fs-xl: clamp(1.5rem, 7vw + 1rem, 9rem);
+  --fs-xl: clamp(1.5rem, 7vw + 1rem, 8rem);
   --fs-l: clamp(1rem, 3vw + 1rem, 4rem);
   --fs-600: clamp(1.5rem, 4vw + 1rem, 5.5rem);
   --fs-500: clamp(0.8rem, 2vw + 1rem, 4rem);
@@ -243,8 +243,14 @@ p {
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin-top: -580px;
 }
 
+.waves {
+  background: url("/static/multimediawerk/img/svg/waves.svg") 100% 0 no-repeat
+    fixed;
+  height: 700px;
+}
 /* ============================================
 | GLOBAL END
 ============================================ */
@@ -254,6 +260,10 @@ p {
 =============================================*/
 .site-head__inner img {
   margin-bottom: 0.5rem;
+}
+
+img .logo-navbar {
+  width: 12rem;
 }
 
 a {
@@ -509,15 +519,21 @@ a {
   box-shadow: 0 0 20px hsl(0deg 0% 0% / 20%);
 }
 
-figure.feature-figure svg {
-  margin-bottom: -12rem;
-}
-
 @supports (object-fit: cover) {
   .feature-figure img {
     max-height: 26rem;
     object-fit: cover;
   }
+}
+
+/* svg */
+
+.wave-container {
+  background: transparent;
+  height: 600px;
+}
+.wave-container > svg {
+  display: block;
 }
 
 /* ============================================
@@ -647,7 +663,7 @@ footer {
 .profil .logo-footer {
   padding: 0;
   margin: 0 0 0.5rem 0;
-  width: 4rem;
+  width: 5rem;
 }
 
 .logo__area .logo__name {
