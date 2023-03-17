@@ -37,16 +37,21 @@
     <div class="card-header">
       {{ angebot.name }}<br /><small>{{angebot.subtitel}}</small>
     </div>
-    <div class="angebot-kurzbeschrieb">{{angebot.kurzbeschrieb}}</div>
-
+    <div class="card-body">
+      <div class="angebot-kurzbeschrieb">{{angebot.kurzbeschrieb}}</div>
+    </div>
     <div class="card-footer">
-      <div class="button-container">
-        <a href="{% url 'multimediawerk:angebot_detail' angebot.id %}">
-          <button class="[ button ] [ button-primary ]" role="button">
-            Mehr Infos
-          </button>
-        </a>
-      </div>
+      <!-- <a href="{% url 'multimediawerk:angebot_detail' angebot.id %}">
+        <button class="[ button ] [ button-primary ]" role="button">
+          Mehr Infos
+        </button>
+      </a> -->
+
+      <a
+        href="{% url 'multimediawerk:angebot_detail' angebot.id %}"
+        class="button-neon"
+        >Mehr Infos</a
+      >
     </div>
   </div>
   {% endfor %}
