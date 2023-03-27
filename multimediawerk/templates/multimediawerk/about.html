@@ -4,7 +4,7 @@
 
 {% block title %} Über uns{% endblock %} 
 {% block bordertop %}
-<div class="site-head__bordertop-blue"></div>
+<div class="site-head__bordertop-default"></div>
 {% endblock %} {% block content %}
   {% load static %}
   <h1 class="heading">De Chäppu und de Dävu</h1>
@@ -17,6 +17,68 @@
         alt="Herobild About"
       />
   </figure>
+
+   <section class="column">
+    <div class="column__names">
+      <div class="header__profil">
+        <img
+          class="profil__pic"
+          src="{% static 'multimediawerk/img/portrait_david.webp' %}"
+          alt="Profilbild DSC"
+          width="120"
+          height="120" />
+        <span class="names">
+          <div class="profil__name">David Schaer</div>
+          <blockquote>Design und Cinematographie</blockquote>
+        </span>
+      </div>
+      <p>
+        Ich bin David - für Bild, Video, Design und Marketing verantwortlich bei
+        Karten-Werk. Ursprünglich gelernter Fotograf, habe ich ich meine
+        Kenntnisse der Bildgestaltung ins digitale Zeitalter transferiert und
+        erstelle Videocontent und style nun Webseiten. Als zertifizierter
+        Digital Marketing Specialist weiss ich, dass die Grenzen zwischen
+        Contentproduktion und Marketing immer mehr verwischen - ein Fotograf,
+        wie auch ein Grafik- und Webdesigner muss heute wissen, ob sein Produkt
+        performed oder eben nicht.
+        <br />
+        <br />
+        In meiner Freizeit gehe ich gerne joggen oder versenke ein paar Bälle im
+        Körbchen - zumindest im Sommer. Zudem mache ich gerne Musik und übe mich
+        auf meiner elektrischen Gitarre im Lärmmachen.
+      </p>
+    </div>
+
+    <div class="column__names">
+      <div class="header__profil">
+        <img
+          class="profil__pic"
+          src="{% static 'multimediawerk/img/portrait_chap.webp' %}"
+          alt="Profilbild HKF"
+          width="120"
+          height="120" />
+        <span class="names">
+          <div class="profil__name">Hanskaspar Frei</div>
+          <blockquote>Gründer und Inhaber Karten-Werk GmbH</blockquote>
+        </span>
+      </div>
+      <p>
+        Ich bin Hanskaspar - ein Web- und GIS Entwickler bei Karten-Werk. Meine
+        Leidenschaft ist die Integration von Geodaten in die Web Plattform. Als
+        erfahrener PHP-Engineer und Geoinformatiker bin ich in der Lage,
+        komplexe Datenstrukturen, einfach und ökonomisch darzustellen. Zudem
+        kenne ich als ehemaliger Forstwart die Flora und Fauna aus erster Hand
+        und weiss auf welche Details ich mich achten muss, wenn wir die
+        Drohnen-Daten auswerten.
+        <br />
+        <br />
+        In meiner Freizeit bin ich begeisterter und leidenschaftlicher
+        Radfahrer, der 3 Pässe zum Frühstück erledigt. Ich fahre auch gerne mal
+        mit dem Velo kurzerhand an die Atlantikküste und wieder zurück - einfach
+        weil ich es kann.
+      </p>
+    </div>
+  </section>
   <section class="text-top">
     <h2>Die Anfänge</h2>
   <p>
@@ -30,11 +92,7 @@
     Reuss hinunter, schleppten Snowboard und Skier eigenhändig die Berge hoch,
     um in unbefahrenem Neuschnee zu kurven und verbrachten - halbberuflich - sogar ein paar Wochen zusammen in den USA.
   </p>
-    <figure class="photo__grid">
-  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto1-hor.jpg' %});"></div>
-  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto2-hor.jpg' %});"></div>
-  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto3-hor.jpg' %});"></div>
-</figure>
+  
 <h2>Berufliche Entscheidungen</h2>
   <p>
     Beruflich wählte Hanskaspar den Weg des Forstwarts, was perfekt zu seinem
@@ -50,22 +108,13 @@
     David hat einen Weg gefunden, seine Skills an der analogen Kamera ins digitale Zeitalter zu adaptieren und erstellt nun Grafiken, Logos und Youtube-Videos. Sein Sinn für Farben und Formen hilft ihm heute, den komplexen Datenstrukturen von Hanskaspar einen visuellen Schliff zu verleihen.
     </p>
     <br />
-    <p class="fazit">
-    Beide haben sich immer perfekt ergänzt und zu gemeinsamen Höchstleistungen angespornt - heute tun sie es wieder. Gemeinsam bei Karten-Werk.
-  </p>
 
-  <figure class="photo__grid">
-  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto1-vert.jpg' %});"></div>
-  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto2-vert.jpg' %});"></div>
-  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto3-vert.jpg' %});"></div>
-  <div class="card" style="background-image: url({% static 'multimediawerk/img/about_foto4-quad.jpg' %});"></div>
-  <div class="card-tall" style="background-image: url({% static 'multimediawerk/img/about_foto5-tall.jpg' %});"></div>
-  <div class="card-wide" style="background-image: url({% static 'multimediawerk/img/about_foto6-wide.jpg' %});"></div>
-</figure>
+
+ 
   </section>
 </div>
 
 
 {% endblock %} {% block borderbottom %}
-<div class="site-head__bordertop-blue"></div>
+<div class="site-head__bordertop-default"></div>
 {% endblock %}
