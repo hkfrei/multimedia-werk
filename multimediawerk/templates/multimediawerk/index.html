@@ -7,8 +7,10 @@
 <div class="site-head__bordertop-default"></div>
 {% endblock %} {% block content %} {% load static %}
 <header>
-  <h1 class="heading-main">Willkommen bei Multimedia-Werk.</h1>
-  <h2 class="sub__heading-main">Wir setzen Dich ins Bild.</h2>
+  <h1 class="heading-main">Multimedia-Werk.</h1>
+  <h2 class="sub__heading-main">
+    Visuelle Lösungen für Unternehmen und Privatpersonen.
+  </h2>
 </header>
 
 <main>
@@ -19,15 +21,21 @@
           Photo- und Videographie, Content Creation, Webpages.
         </h3>
         <p>
-          Wir arbeiten eng mit unseren Kunden zusammen, um sicherzustellen, dass
-          wir ihre Bedürfnisse und Erwartungen vollständig verstehen und
-          erfüllen. Wir bieten massgeschneiderte Lösungen, die auf Deine
-          spezifischen Anforderungen zugeschnitten sind, um sicherzustellen,
-          dass Du das beste Ergebnis erzielst.
+          Wir können Ihnen dabei helfen, Ihre Ideen auf eine kreative und
+          ansprechende Weise umzusetzen. Ob es um das Erstellen von
+          atemberaubenden Fotos und Videos geht, das Erstellen von einfachen,
+          statischen Webseiten oder das Entwerfen eines einzigartigen Logos für
+          Ihr Unternehmen - wir stehen Ihnen gerne zur Verfügung und freuen uns
+          auf Ihre Nachricht.
         </p>
         <div class="button-container-main">
+          <a
+            href="{% url 'multimediawerk:contact_message' %}"
+            class="button-neon"
+            >Kontakt</a
+          >
           <a href="{% url 'multimediawerk:angebot' %}" class="button-neon"
-            >Zu den Angeboten</a
+            >Angebote</a
           >
         </div>
       </div>
