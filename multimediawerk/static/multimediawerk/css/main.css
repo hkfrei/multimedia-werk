@@ -57,7 +57,7 @@
 
 .site-head__bordertop-default {
   padding: 0.6rem 0;
-  border-top: 5px solid var(--color-primary-100);
+  border-top: 1px solid var(--color-primary-100);
 }
 
 .site-head__bordertop-blue {
@@ -100,6 +100,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  width: fit-content;
 }
 
 .button:hover {
@@ -158,7 +159,7 @@
 
 /* button neon */
 
-.button-neon {
+/* .button-neon {
   margin-bottom: 2rem;
   margin-top: 1rem;
   font-size: 1.2rem;
@@ -224,7 +225,7 @@
 .button-neon:hover::after,
 .button-neon:focus::after {
   opacity: 1;
-}
+} */
 
 /* ============================================
 | GLOBAL BUTTONS END
@@ -392,7 +393,7 @@ a {
 .site-head {
   padding: 0 0 0.6rem 0;
   background: var(--color-dark-500);
-  border-bottom: 5px solid var(--color-light-100);
+  border-bottom: 3px solid var(--color-dark-500);
   box-shadow: 0 0 20px hsl(0deg 0% 0% / 20%);
   position: fixed;
   width: 100%;
@@ -737,15 +738,14 @@ footer {
 }
 
 .profil .logo-footer {
-  padding: 0;
-  margin: 0 0 0.5rem 0;
-  width: 5rem;
+  width: 10em;
 }
 
 .logo__area .logo__name {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.875em;
+  font-weight: 300;
   color: rgb(245, 245, 245);
+  margin-top: -1rem;
 }
 
 .desc__area {
@@ -800,7 +800,7 @@ li.nav__name {
 hr {
   height: 1px;
   border: none;
-  background-color: #f2f2f2;
+  background-color: #4f4f4f;
   margin-bottom: 1rem;
 }
 
