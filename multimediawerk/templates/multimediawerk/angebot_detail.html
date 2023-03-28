@@ -4,7 +4,7 @@
 
 {% block title %} Angebote{% endblock %} 
 {% block bordertop %}
-<div class="site-head__bordertop-gold"></div>
+<div class="site-head__bordertop-default"></div>
 {% endblock %} {% block content %} {% load static %} {% if angebot %}
 <header class="angebot">
   <h1 class="heading">{{angebot.name}}</h1>
@@ -18,8 +18,7 @@
       class="[ video__bg ] [ full-bleed ] [ feature-figure ]"
       autoplay
       muted
-      loop
-    >
+      loop>
       <source src="{% static 'multimediawerk/video/'|add:angebot.video %}" />
       type="video/mp4" />
     </video>
@@ -30,8 +29,7 @@
   <p>{{angebot.cards_beschrieb}}</p>
 </header>
 <div
-  class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}"
->
+  class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
   {% for card in angebot.cards.all %}
   <div class="card {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
     <div style="width: 100%; box-shadow: 6px 6px 10px hsl(206.5, 0%, 75%)">
@@ -41,8 +39,7 @@
           padding-bottom: 56.15%;
           height: 0;
           overflow: hidden;
-        "
-      >
+        ">
         <iframe
           title="YouTube von Karten-Werk"
           ;
@@ -88,8 +85,7 @@
       <img src='https://img.youtube.com/vi/{{card.video}}/hqdefault.jpg' alt='{card.titel}'>
       <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
     </a>
-    "
-        >
+    ">
         </iframe>
       </div>
     </div>
@@ -203,20 +199,17 @@
         <div class="feature">
           <img
             src="{% static 'multimediawerk/img/check-circle.svg' %}"
-            alt="Preisplan Check"
-          />
+            alt="Preisplan Check" />
           {{feature.name}}
         </div>
         {% endfor %}
       </section>
       <div class="button-container">
         <a
-          href="{% url 'multimediawerk:angebot_message' angebot_id=angebot.id preisplan_id=preisplan.id %}"
-        >
+          href="{% url 'multimediawerk:angebot_message' angebot_id=angebot.id preisplan_id=preisplan.id %}">
           <button
             class="[ button ] [ button-secondary ] [ button-stretched ]"
-            role="button"
-          >
+            role="button">
             Jetzt buchen
           </button>
         </a>
@@ -237,8 +230,7 @@
         src="{% static 'multimediawerk/img/'|add:testimonial.stakeholder.logo %}"
         alt="Testimonial Logo"
         width="125"
-        height="125"
-      />
+        height="125" />
     </div>
 
     <div class="blockquote__text blockquote--quoted">{{testimonial.text}}</div>

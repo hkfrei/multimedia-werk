@@ -7,16 +7,20 @@
 <div class="site-head__bordertop-default"></div>
 {% endblock %} {% block content %} {% load static %}
 <header class="angebot">
-  <h1 class="heading">Angebot</h1>
+  <h1 class="heading">Angebote</h1>
   <h2 class="sub__heading">
-    Progressive Web Apps, Geoinformatik und Fernerkundung "Made in Switzerland".
+    Bewegende und bewegte Bilder, Web- und Suchmaschinen-optimiert.
   </h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum natus
-    distinctio, harum vitae modi quidem voluptatibus rem dicta perspiciatis, at
-    dolorum error expedita corporis nisi quia vel molestias iure nulla quis
-    dolor velit voluptatem iusto itaque? Necessitatibus, veniam aliquid, magnam
-    autem suscipit aperiam illo omnis recusandae facere rerum ab nam.
+    Unsere Leistungen umfassen: Erstellung von professionellen Foto- und
+    Videomaterialien, die Deine Marke und Botschaft widerspiegeln und Deine
+    Zielgruppe begeistern werden. Content-Entwicklung, die Deine Marke
+    positioniert, deine Botschaft vermittelt und deine Zielgruppe engagiert.
+    Erstellung von einzigartigen Grafiken und Logos, die Deine Marke von der
+    Konkurrenz abheben. SEO-Optimierung von Websites, einschliesslich
+    Keyword-Recherche, On-Page-Optimierung und technischer SEO-Analyse.
+    Erstellung von kleinen bis mittleren Webseiten, die benutzerfreundlich und
+    optimiert sind, um Deine Zielgruppe anzusprechen und die Marke zu stärken.
   </p>
 </header>
 {% if angebote %}
@@ -28,22 +32,26 @@
         src="{% static 'multimediawerk/img/'|add:angebot.bild %}"
         width="1000"
         height="538"
-        alt="Angebote von Karten-Werk"
-      />
+        alt="Angebote von Karten-Werk" />
     </div>
     <div class="card-header">
       {{ angebot.name }}<br /><small>{{angebot.subtitel}}</small>
     </div>
-    <div class="angebot-kurzbeschrieb">{{angebot.kurzbeschrieb}}</div>
-
+    <div class="card-body">
+      <div class="angebot-kurzbeschrieb">{{angebot.kurzbeschrieb}}</div>
+    </div>
     <div class="card-footer">
-      <div class="button-container">
-        <a href="{% url 'multimediawerk:angebot_detail' angebot.id %}">
-          <button class="[ button ] [ button-primary ]" role="button">
-            Mehr Infos
-          </button>
-        </a>
-      </div>
+      <!-- <a href="{% url 'multimediawerk:angebot_detail' angebot.id %}">
+        <button class="[ button ] [ button-primary ]" role="button">
+          Mehr Infos
+        </button>
+      </a> -->
+
+      <a
+        href="{% url 'multimediawerk:angebot_detail' angebot.id %}"
+        class="button-neon"
+        >Mehr Infos</a
+      >
     </div>
   </div>
   {% endfor %}

@@ -7,111 +7,45 @@
 <div class="site-head__bordertop-default"></div>
 {% endblock %} {% block content %} {% load static %}
 <header>
-  <h1 class="heading-main">Willkommen bei Multimedia-Werk.</h1>
-  <h2 class="sub__heading-main">Wir bringen Deine Karten ins Netz.</h2>
+  <h1 class="heading-main">Multimedia-Werk.</h1>
+  <h2 class="sub__heading-main">
+    Visuelle Lösungen für Unternehmen und Privatpersonen.
+  </h2>
 </header>
-<main>
-  <section class="column">
-    <div class="column__names">
-      <div class="header__profil">
-        <img
-          class="profil__pic"
-          src="{% static 'multimediawerk/img/HKF_portrait_green.webp' %}"
-          alt="Profilbild HKF"
-          width="120"
-          height="120"
-        />
-        <span class="names">
-          <div class="profil__name">Hanskaspar Frei</div>
-          <blockquote>Gründer und Inhaber Karten-Werk GmbH</blockquote>
-        </span>
-      </div>
-      <p>
-        Ich bin Hanskaspar - ein Web- und GIS Entwickler bei Karten-Werk. Meine
-        Leidenschaft ist die Integration von Geodaten in die Web Plattform. Als
-        erfahrener PHP-Engineer und Geoinformatiker bin ich in der Lage,
-        komplexe Datenstrukturen, einfach und ökonomisch darzustellen. Zudem
-        kenne ich als ehemaliger Forstwart die Flora und Fauna aus erster Hand
-        und weiss auf welche Details ich mich achten muss, wenn wir die
-        Drohnen-Daten auswerten.
-        <br />
-        <br />
-        In meiner Freizeit bin ich begeisterter und leidenschaftlicher
-        Radfahrer, der 3 Pässe zum Frühstück erledigt. Ich fahre auch gerne mal
-        mit dem Velo kurzerhand an die Atlantikküste und wieder zurück - einfach
-        weil ich es kann.
-      </p>
-    </div>
 
-    <div class="column__names">
-      <div class="header__profil">
-        <img
-          class="profil__pic"
-          src="{% static 'multimediawerk/img/DSC_portrait_green.webp' %}"
-          alt="Profilbild DSC"
-          width="120"
-          height="120"
-        />
-        <span class="names">
-          <div class="profil__name">David Schaer</div>
-          <blockquote>Design und Cinematographie</blockquote>
-        </span>
+<main>
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h3 class="sub__heading">
+          Photo- und Videographie, Content Creation, Webpages.
+        </h3>
+        <p>
+          Wir können Ihnen dabei helfen, Ihre Ideen auf eine kreative und
+          ansprechende Weise umzusetzen. Ob es um das Erstellen von
+          atemberaubenden Fotos und Videos geht, das Erstellen von einfachen,
+          statischen Webseiten oder das Entwerfen eines einzigartigen Logos für
+          Ihr Unternehmen - wir stehen Ihnen gerne zur Verfügung und freuen uns
+          auf Ihre Nachricht.
+        </p>
+        <div class="button-container-main">
+          <a
+            href="{% url 'multimediawerk:contact_message' %}"
+            class="button-neon"
+            >Kontakt</a
+          >
+          <a href="{% url 'multimediawerk:angebot' %}" class="button-neon"
+            >Angebote</a
+          >
+        </div>
       </div>
-      <p>
-        Ich bin David - für Bild, Video, Design und Marketing verantwortlich bei
-        Karten-Werk. Ursprünglich gelernter Fotograf, habe ich ich meine
-        Kenntnisse der Bildgestaltung ins digitale Zeitalter transferiert und
-        erstelle Videocontent und style nun Webseiten. Als zertifizierter
-        Digital Marketing Specialist weiss ich, dass die Grenzen zwischen
-        Contentproduktion und Marketing immer mehr verwischen - ein Fotograf,
-        wie auch ein Grafik- und Webdesigner muss heute wissen, ob sein Produkt
-        performed oder eben nicht.
-        <br />
-        <br />
-        In meiner Freizeit gehe ich gerne joggen oder versenke ein paar Bälle im
-        Körbchen - zumindest im Sommer. Zudem mache ich gerne Musik und übe mich
-        auf meiner elektrischen Gitarre im Lärmmachen.
-      </p>
+      <div class="hero-img">
+        <img
+          src="{% static 'multimediawerk/img/Herosection_Mainpicture.webp' %}"
+          alt="" />
+      </div>
     </div>
   </section>
-
-  <figure>
-    <div class="hero">
-      <video
-        class="[ video__bg ] [ full-bleed ] [ feature-figure ]"
-        autoplay
-        muted
-        loop
-      >
-        <source
-          src="{% static 'multimediawerk/video/Introfilm_Hero.mp4' %}"
-          type="video/mp4"
-        />
-      </video>
-    </div>
-  </figure>
-  <div class="offer">
-    <h2 class="heading">Was wir anbieten:</h2>
-    <h3 class="sub__heading">
-      Web Mapping Applikationen und Fernerkundung mit Drohne.
-    </h3>
-    <p>
-      Unsere Expertise sind Anwendungen mit User-management, Web-Mapping und
-      Echtzeit Datenbanken. Zudem sind wir auf 'Progressive Web Apps' (PWA)
-      spezialisiert. Mittels Drohnenbefliegung und neuster Technologie, sind wir
-      in der Lage 3D Geodaten zu erzeugen. Unser Spezialgebiet ist die
-      Befliegung von Wald oder Landwirtschaftsflächen um vollautomatisch kranke
-      oder geschwächte Pflanzen zu erkennen. Besuchen Sie unsere Angebote um
-      mehr zu erfahren.
-    </p>
-    <div class="button-container-main">
-      <a href="{% url 'multimediawerk:angebot' %}">
-        <button class="[ button ] [ button-primary ]" role="button">
-          Zu den Angeboten
-        </button>
-      </a>
-    </div>
-  </div>
 </main>
 {% endblock %} {% block borderbottom %}
 <div class="site-head__bordertop-default"></div>

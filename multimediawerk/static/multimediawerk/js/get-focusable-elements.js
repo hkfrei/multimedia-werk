@@ -5,14 +5,28 @@
  * @param {HTMLElement} parent HTML element
  * @returns {NodeList} The focusable elements that we can find
  */
- export default parent => {
-    if (!parent) {
-      console.warn('You need to pass a parent HTMLElement');
-      return [];
-    }
-  
-    return parent.querySelectorAll(
-      'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled]), details:not([disabled]), summary:not(:disabled)'
-    );
-  };
-  
+export default parent => {
+  if (!parent) {
+    console.warn("You need to pass a parent HTMLElement")
+    return []
+  }
+
+  return parent.querySelectorAll(
+    'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled]), details:not([disabled]), summary:not(:disabled)'
+  )
+}
+
+const handleOnMouseMove = e => {
+  const { currentTarget: target } = e
+
+  const rect = target.getBoundingClientRect(),
+    x = e.clientX - rect.left,
+    y = e.clientY - rect.top
+
+  target.style.setProperty("--mouse-x", `${x}px`)
+  target.style.setProperty("--mouse-y", `${y}px`)
+}
+
+for (const card of document.querySelectorAll(".card")) {
+  card.onmousemove = e => handleOnMouseMove(e)
+}
