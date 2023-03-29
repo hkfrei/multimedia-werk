@@ -924,8 +924,9 @@ hr {
 }
 
 section.meta {
-  font-weight: 300;
-  font-size: 0.8rem;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 0.5rem 1.25rem 0.5rem 1.25rem;
 }
 
 .card-body {
