@@ -1063,16 +1063,11 @@ section.meta {
 
 .price-feature {
   flex-grow: 1;
+  margin-bottom: 1rem;
 }
 
 .button-stretched {
   width: 100%;
-}
-
-section.wrapper__price-comparison {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .price-comparison {
@@ -1083,11 +1078,13 @@ section.wrapper__price-comparison {
   width: 100%;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  column-gap: 1em;
+  row-gap: 1em;
 }
 
 .price-column {
-  background-color: var(--color-light-50);
-  box-shadow: 0 7px 30px rgba(52, 31, 97, 0.1);
+  background-color: var(--color-dark-400);
+  border: 1px solid var(--color-dark-200);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -1098,33 +1095,12 @@ section.wrapper__price-comparison {
 }
 
 .price-column.popular {
-  background-color: var(--color-dark-300);
-  box-shadow: 0 7px 30px rgba(52, 13, 135, 0.2);
+  background-color: var(--color-dark-400);
+  border: 1px solid var(--color-dark-200);
+  box-shadow: 65px 10px 120px -30px #ff5a19;
   color: white;
-  margin-top: -1.5rem;
-  padding-top: 3.5rem;
-  margin-bottom: -1.5rem;
-  padding-bottom: 3.5rem;
+
   min-width: 350px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .price-column {
-    background-color: var(--color-dark-500);
-  }
-  .price-column.popular {
-    background-color: var(--color-dark-600);
-  }
-}
-
-.price-column:first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.price-column:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 .price-header {
@@ -1168,12 +1144,6 @@ section.wrapper__price-comparison {
 
 .price-column.popular .divider {
   background-color: rgba(255, 255, 255, 0.7);
-}
-
-@media (prefers-color-scheme: dark) {
-  .divider {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
 }
 
 .feature {

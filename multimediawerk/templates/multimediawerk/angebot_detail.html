@@ -209,7 +209,7 @@
   gemäss Ihren Wünschen zusammenstellen.
 </p>
 
-<section class="wrapper__price-comparison">
+<div class="card-grid">
   <div class="price-comparison">
     {% for preisplan in angebot.preise.all %}
     <div class="price-column {% if preisplan.popular %}popular {% endif %}">
@@ -232,20 +232,17 @@
         </div>
         {% endfor %}
       </section>
-      <div class="button-container">
-        <a
-          href="{% url 'multimediawerk:angebot_message' angebot_id=angebot.id preisplan_id=preisplan.id %}">
-          <button
-            class="[ button ] [ button-secondary ] [ button-stretched ]"
-            role="button">
-            Jetzt buchen
-          </button>
-        </a>
-      </div>
+
+      <a
+        href="{% url 'multimediawerk:angebot_message' angebot_id=angebot.id preisplan_id=preisplan.id %}">
+        <button class="button button-primary" role="button">
+          Jetzt kontaktieren
+        </button>
+      </a>
     </div>
     {%endfor %}
   </div>
-</section>
+</div>
 
 <section>
   {% if angebot.testimonial_set.all %}
