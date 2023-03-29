@@ -1369,18 +1369,19 @@ section.meta-contact {
   border-radius: 20px;
   padding: 1rem 2rem;
   margin: 3rem 0;
-  background: var(--color-secondary-200);
+  background: var(--color-primary-200);
   display: flex;
   flex-direction: column;
   width: fit-content;
+  font-weight: 500;
 }
 
 p.meta-contact {
   padding: 0;
   margin: 0;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.2em;
-  color: var(--color-dark-500);
+  color: var(--color-light-200);
 }
 
 p.contact {
@@ -1406,7 +1407,7 @@ section.contact-form {
   padding: 0.5rem 1rem;
   outline: none;
   border: 2px solid rgba(0, 0, 0, 0);
-  background-color: var(--color-light-200);
+  background-color: var(--color-dark-100);
   font-size: 1.1rem;
   margin-bottom: 1rem;
   margin-top: 8px;
@@ -1419,42 +1420,17 @@ section.contact-form {
 
 .form-control:focus {
   background-color: #fff;
-  border: 2px solid var(--color-secondary-200);
+  border: 2px solid var(--color-primary-200);
 }
 
 label {
-  color: var(--color-dark-200);
+  color: var(--color-light-200);
 }
 
 .button-wrapper {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .contact-box {
-    background-color: var(--color-dark-200);
-  }
-  .wrapper__contact {
-    background-color: var(--color-dark-200);
-  }
-  label {
-    color: var(--color-light-200);
-  }
-  .form-control {
-    background-color: var(--color-dark-400);
-    color: var(--color-light-200);
-  }
-  .form-control:focus {
-    background-color: var(--color-dark-400);
-  }
-  .form-control:hover {
-    background-color: var(--color-dark-300);
-  }
-  p.meta-contact {
-    color: var(--color-dark-400);
-  }
 }
 
 /* ============================================
@@ -1487,8 +1463,8 @@ section.declaration {
   display: flex;
   flex-direction: column;
   max-width: 60rem;
-  border: 2px solid var(--color-secondary-200);
-  box-shadow: var(--box-shadow-100);
+  border: 2px solid var(--color-primary-200);
+
   border-radius: 20px;
   padding: 1rem;
 }
@@ -1497,7 +1473,7 @@ section.meta-contact-success {
   border-radius: 20px;
   padding: 1rem 2rem;
   margin-bottom: 3rem;
-  background: var(--color-secondary-200);
+  background: var(--color-primary-200);
   display: flex;
   flex-direction: column;
   width: fit-content;
