@@ -1339,6 +1339,11 @@ p.fazit {
 /* ============================================
 | CONTACT START
 ============================================ */
+
+.wrapper__contact {
+  margin-bottom: 2rem;
+}
+
 .container-contact {
   display: flex;
   justify-content: center;

@@ -4,27 +4,26 @@
 
 {% block title %}Kontakt{% endblock %} 
 {% block bordertop %}
-<div class="site-head__bordertop-gold"></div>
+<div class="site-head__bordertop-default"></div>
 {% endblock %} {% block content %} {% load static %} {% if email_error %}
 <h3 class="error">{{email_error}}</h3>
 {% endif %}
 
 <div class="wrapper__contact">
   <h1 class="heading">Kontakt</h1>
-  <address class="contact__address">
+  <!-- <address class="contact__address">
     Karten-Werk GmbH <br />
     Hofstrasse 87<br />
     8620 Wetzikon.<br />
     +41 79 360 72 83 | hkfrei(at)karten-werk.ch
   </address>
-  <h2 class="contact">Unser Standort</h2>
+  <h2 class="contact">Unser Standort</h2> -->
   <!-- this input is only necessary to get the google maps api key via js. -->
-  <input
+  <!-- <input
     id="GOOGLE_MAPS_API_KEY"
     value="{{ GOOGLE_MAPS_API_KEY }}"
-    type="hidden"
-  />
-  <div id="contact__map"></div>
+    type="hidden" /> -->
+  <!-- <div id="contact__map"></div> -->
   <h2 class="contact">Hinterlassen Sie uns eine Nachricht</h2>
   <p class="contact">
     Falls Sie eine Frage oder einen Hinweis für uns haben, schreiben Sie uns
@@ -47,18 +46,16 @@
         <div class="button-container">
           <a
             href="{% url 'multimediawerk:index' %}"
-            class="[ button ] [ button-secondary ]"
-            role="button"
-          >
+            class="[ button ] [ button-primary ]"
+            role="button">
             Zurück
           </a>
         </div>
         <div class="button-container">
           <button
-            class="[ button ] [ button-secondary ]"
+            class="[ button ] [ button-primary ]"
             type="submit"
-            role="button"
-          >
+            role="button">
             Senden
           </button>
         </div>
@@ -67,9 +64,8 @@
   </section>
 </div>
 {% endblock %} {% block borderbottom %}
-<div class="site-head__bordertop-gold"></div>
-<script
+<div class="site-head__bordertop-default"></div>
+<!-- <script
   type="module"
-  src="{% static 'multimediawerk/js/googleMap.mjs' %}"
-></script>
+  src="{% static 'multimediawerk/js/googleMap.mjs' %}"></script> -->
 {% endblock %}
