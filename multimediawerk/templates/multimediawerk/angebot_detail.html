@@ -8,11 +8,25 @@
 {% endblock %} {% block content %} {% load static %} {% if angebot %}
 <header class="angebot">
   <h1 class="heading">{{angebot.name}}</h1>
-  <h2 class="sub__heading">{{angebot.subtitel}}</h2>
-  <p>{{angebot.kurzbeschrieb}}</p>
+  <!-- <h2 class="sub__heading">{{angebot.subtitel}}</h2>
+  <p>{{angebot.kurzbeschrieb}}</p> -->
 </header>
+<main></main>
+<section class="hero-detail">
+  <div class="hero-detail-container">
+    <div class="hero-detail-content">
+      <h2 class="sub__heading">{{angebot.subtitel}}</h2>
+      <p>{{angebot.kurzbeschrieb}}</p>
+    </div>
+    <div class="hero-detail-img">
+      <img
+        src="{% static 'multimediawerk/img/detail_programming_v2.webp' %}"
+        alt="" />
+    </div>
+  </div>
+</section>
 
-<figure>
+<!-- <figure>
   <div class="hero">
     <video
       class="[ video__bg ] [ full-bleed ] [ feature-figure ]"
@@ -23,11 +37,25 @@
       type="video/mp4" />
     </video>
   </div>
-</figure>
-<header class="angebot">
+</figure> -->
+<section class="hero-detail">
+  <div class="hero-detail-container">
+    <div class="hero-detail-content">
+      <h2 class="sub__heading">{{angebot.cards_titel}}</h2>
+      <p>{{angebot.cards_beschrieb}}</p>
+    </div>
+    <div class="hero-detail-img">
+      <img
+        src="{% static 'multimediawerk/img/detail_briefing.webp' %}"
+        alt="" />
+    </div>
+  </div>
+</section>
+
+<!-- <header class="angebot">
   <h2 class="sub__heading">{{angebot.cards_titel}}</h2>
   <p>{{angebot.cards_beschrieb}}</p>
-</header>
+</header> -->
 <div
   class="card-grid {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
   {% for card in angebot.cards.all %}
