@@ -49,6 +49,7 @@ class Card(models.Model):
     metadaten = models.TextField("Metadaten", blank=True)
     kurzbeschrieb = models.TextField("Kurzbeschrieb", default="Kurzbeschrieb")
     video = models.CharField('Video ID', max_length=50, blank=True)
+    bild = models.CharField('Bild ID', max_length=50, default="gis.webp")
 
     class Meta:
         verbose_name_plural = "Cards"
