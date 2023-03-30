@@ -34,7 +34,7 @@
     {% for card in angebot.cards.all %}
     <div
       class="card {% if angebot.cards.all|length == 1 %}full-width{% endif %}">
-      <div style="width: 100%">
+      <!-- <div style="width: 100%">
         <div
           style="
             position: relative;
@@ -90,8 +90,15 @@
     ">
           </iframe>
         </div>
-      </div>
+      </div> -->
 
+      <div class="card-img">
+        <img
+          src="{% static 'multimediawerk/img/'|add:card.bild %}"
+          width="1000"
+          height="538"
+          alt="Angebote von Karten-Werk" />
+      </div>
       <div class="card-header">{{card.titel}}</div>
       <section class="meta">
         <div class="meta-date">{{card.metadaten}}</div>
