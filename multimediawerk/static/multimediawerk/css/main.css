@@ -1232,47 +1232,80 @@ i.blockquote__text--credit::before {
 | REFERENZEN START
 ============================================ */
 
-.wrapper__card-referenzen {
+.recipe,
+.pizza-box {
   display: flex;
-  flex-flow: row;
-  padding: 1rem 0;
+  flex-wrap: wrap;
   align-items: center;
-  z-index: 9999;
 }
 
-.card-referenzen {
-  --padding-card: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1 325px;
-  background-color: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-light-200);
-  border-radius: 0.4em;
+.pizza-box {
+  flex: 3 1 30ch;
+  height: calc(282px + 5vw);
   overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  pointer-events: all;
 }
 
-.card-referenzen-img {
-  display: block;
-  width: 100%;
-  max-height: 612;
-  margin-bottom: 1rem;
-  aspect-ratio: 16 / 9;
+.pizza-box img {
+  max-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
-  object-position: center;
+  object-position: 50% 50%;
+  border-radius: 5px;
+}
+
+.recipe {
+  --modifier: calc(70ch - 100%);
+  border: 1px solid var(--color-dark-200);
+  border-radius: 8px;
   overflow: hidden;
 }
 
-section.kurzbeschrieb-ref {
-  font-weight: 300;
-  padding: 1rem 0 2rem 0;
+.recipe-content {
+  padding: 16px 32px;
+  flex: 4 1 40ch;
 }
 
-.testimonial {
+.recipe-tags {
+  margin: 0 -8px;
+}
+
+.recipe-tag {
+  display: inline-block;
+  margin: 8px;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-primary-100);
+}
+
+.recipe-title {
+  margin: 0;
+  font-size: clamp(1.4em, 2.1vw, 2.1em);
+}
+
+.recipe-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.recipe-metadata {
+  margin: 0;
+}
+
+.ref-wrapper {
   color: var(--color-light-200);
+  line-height: 1.55;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-ref {
+  width: clamp(420px, 100%, 100%);
+  padding: 1rem;
 }
 
 /* ============================================
