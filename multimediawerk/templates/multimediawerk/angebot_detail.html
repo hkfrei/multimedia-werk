@@ -117,29 +117,42 @@
       Nachfolgend finden Sie eledigte Aufträge zum Angebot {{angebot.name}}.
     </p>
   </header>
-  <div class="card-grid">
+  <div class="ref-wrapper">
     {% for referenz in angebot.referenz_set.all %}
-    <!-- prettier-ignore -->
-    <div class="card">
-    <div class="card-header">
-    <h2>{{referenz.titel}}</h2>
-    </div>
-   <div class="card-body">
-    <section class="kurzbeschrieb-ref">{{referenz.kurzbeschrieb}}</section>
-    </div>
-    {% if referenz.bild %}
-    <!-- <h4 class="referenz__title">Hier eine kleine Projektübersicht</h4> -->
-    <img class="card-referenzen-img" src="{% static 'multimediawerk/img/'|add:referenz.bild %}" alt="Erledigter Auftrag" />
-    {% endif %}
-    {% if referenz.video %}
 
-    <div style="width: 100%;">
-<div style="position: relative; padding-bottom: 56.15%; height: 0; overflow: hidden;">
-  <iframe 
-    style="position: absolute; top: 0; left:0; width: 100%; height: 100%; border: 0;"
-    loading="lazy";
-    title="YouTube von Karten-Werk";
-    srcdoc="<style>
+    <div class="card-ref">
+      <article class="recipe">
+        <div class="pizza-box">
+          {% if referenz.bild %}
+          <img
+            src="{% static 'multimediawerk/img/'|add:referenz.bild %}"
+            width="1000"
+            height="538"
+            alt="Angebote von Karten-Werk" />
+          {% endif %} {% if referenz.video %}
+
+          <div style="width: 100%">
+            <div
+              style="
+                position: relative;
+                padding-bottom: 56.15%;
+                height: 0;
+                overflow: hidden;
+              ">
+              <iframe
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  border: 0;
+                "
+                loading="lazy"
+                ;
+                title="YouTube von Karten-Werk"
+                ;
+                srcdoc="<style>
       * {
       padding: 0;
       margin: 0;
@@ -172,22 +185,52 @@
       <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
     </a>
     ">
-  </iframe>
-</div>
-</div>
-   
-    {% endif %}
-    <div class="card-footer">
-        <a href="{% url 'multimediawerk:referenzen' %}">
-          <button class="[ button ] [ button-primary ]" role="button">
-            Alle Referenzen
-          </button>
-        </a>
+              </iframe>
+            </div>
+          </div>
+
+          {% endif %}
+        </div>
+        <div class="recipe-content">
+          <p class="recipe-tags">
+            <span class="recipe-tag"
+              >{{referenz.stakeholder.vorname}}
+              {{referenz.stakeholder.name}}</span
+            >
+            <span class="recipe-tag"
+              >{{referenz.stakeholder.position}}
+              {{referenz.stakeholder.firma}}</span
+            >
+          </p>
+
+          <h1 class="recipe-title"><a href="#">{{referenz.titel}}</a></h1>
+
+          <p class="recipe-metadata"></p>
+
+          <p class="recipe-desc">{{referenz.kurzbeschrieb}}</p>
+        </div>
+      </article>
+
+      <!-- <div>
+        <img
+          class="stakeholder__logo"
+          src="{% static 'multimediawerk/img/'|add:referenz.stakeholder.logo %}"
+          alt="logo"
+          width="80" height="80"
+        />
+      </div>
+      <div class="testimonial">
+        <i class="card-ref__text-credit">
+          {{referenz.stakeholder.vorname}} {{referenz.stakeholder.name}}
+          ({{referenz.stakeholder.position}})<br />
+          {{referenz.stakeholder.firma}}
+        </i>
+      </div> -->
     </div>
-  </div>
     {% endfor %}
   </div>
   {% endif %}
+
   <h2 class="sub__heading">Preise</h2>
   <p>
     Nachfolgend finden Sie Preisinformationen zum Angebot {{angebot.name}}. Für

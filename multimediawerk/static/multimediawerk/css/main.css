@@ -274,6 +274,9 @@ body {
   color: var(--color-light-200);
   background-color: var(--color-dark-500);
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -503,28 +506,6 @@ a {
   -webkit-overflow-scrolling: touch;
 }
 
-@media (prefers-color-scheme: dark) {
-  .site-head {
-    background-color: var(--color-dark-300);
-    border-bottom: 8px solid var(--color-light-200);
-  }
-  .navigation a {
-    color: var(--color-light-100);
-  }
-  #logo__navbar {
-    filter: invert(1);
-  }
-  .burger-menu__bar,
-  .burger-menu__bar::before,
-  .burger-menu__bar::after {
-    background: var(--color-light-200);
-    border-color: var(--color-light-200);
-  }
-  .burger-menu[enabled="true"] .burger-menu__panel {
-    background: var(--color-dark-300);
-  }
-}
-
 .burger-menu[enabled="true"] .navigation ul {
   display: block;
 }
@@ -543,10 +524,10 @@ a {
   transition: opacity 400ms ease;
 }
 
-.burger-menu[enabled="true"][status="closed"] .burger-menu__panel > * {
+/* .burger-menu[enabled="true"][status="closed"] .burger-menu__panel > * {
   opacity: 0;
   transform: translateY(5rem);
-}
+} */
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel > * {
   transform: translateY(0);
@@ -1201,7 +1182,7 @@ section.meta {
   max-width: 900px;
   margin: 1em 0 2em 0;
   padding: 0 1rem 1rem 1rem;
-  background: var(--color-dark-400);
+
   border-left: 1px solid var(--color-primary-200);
   color: var(--color-light-200);
 }
@@ -1251,27 +1232,80 @@ i.blockquote__text--credit::before {
 | REFERENZEN START
 ============================================ */
 
-.wrapper__card-referenzen {
+.recipe,
+.pizza-box {
   display: flex;
-  flex-flow: row;
-  padding: 1rem 0;
+  flex-wrap: wrap;
   align-items: center;
 }
 
-.card-referenzen-img {
-  display: block;
-  width: 100%;
-  max-height: 525px;
-  margin-bottom: 1rem;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center;
+.pizza-box {
+  flex: 3 1 30ch;
+  height: calc(282px + 5vw);
   overflow: hidden;
 }
 
-section.kurzbeschrieb-ref {
-  font-weight: 300;
-  padding: 1rem 0 2rem 0;
+.pizza-box img {
+  max-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 5px;
+}
+
+.recipe {
+  --modifier: calc(70ch - 100%);
+  border: 1px solid var(--color-dark-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.recipe-content {
+  padding: 16px 32px;
+  flex: 4 1 40ch;
+}
+
+.recipe-tags {
+  margin: 0 -8px;
+}
+
+.recipe-tag {
+  display: inline-block;
+  margin: 8px;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-primary-100);
+}
+
+.recipe-title {
+  margin: 0;
+  font-size: clamp(1.4em, 2.1vw, 2.1em);
+}
+
+.recipe-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.recipe-metadata {
+  margin: 0;
+}
+
+.ref-wrapper {
+  color: var(--color-light-200);
+  line-height: 1.55;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-ref {
+  width: clamp(420px, 100%, 100%);
+  padding: 1rem;
 }
 
 /* ============================================
