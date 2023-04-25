@@ -235,11 +235,12 @@
 | GLOBAL FIGURES START
 ============================================ */
 
-/* .hero-figure img {
-  max-height: 30rem;
+.hero-figure img {
+  max-height: 45rem;
   object-fit: cover;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0;
+  box-shadow: 20px 40px 70px -38px #ff5a19;
 }
 
 .hero-figure img {
@@ -251,7 +252,7 @@
     max-height: 30rem;
     object-fit: cover;
   }
-} */
+}
 
 /* ============================================
 | GLOBAL FIGURES END
@@ -1359,6 +1360,10 @@ h2.blog__titel {
 p.fazit {
   font-weight: 400;
   font-size: 18px;
+}
+
+h2.heading_margin-top {
+  margin-top: 2.5rem;
 }
 /* ============================================
 | ABOUT PHOTOGALLERY START
