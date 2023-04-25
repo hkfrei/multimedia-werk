@@ -6,6 +6,21 @@
 {% block bordertop %}
 <div class="site-head__bordertop-default"></div>
 {% endblock %} {% block content %} {% load static %}
+
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-KHJ3DP7LYH"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag("js", new Date())
+
+  gtag("config", "G-KHJ3DP7LYH")
+</script>
+
 <header>
   <h1 class="heading-main">Multimedia-Werk.</h1>
   <h2 class="sub__heading-main">Der One-Stop-Shop für digitale Lösungen.</h2>

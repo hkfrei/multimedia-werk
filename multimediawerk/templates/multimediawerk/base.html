@@ -7,6 +7,22 @@
     <meta
       name="keywords"
       content="Massgeschneiderte Webdesign-Lösungen, Umfassende Content-Strategie, Professionelle Bearbeitung von Bildern und Videos, Responsive Webdesign, Videoproduktion für Events, Logo-Design für Start-ups, Technische SEO-Optimierung, Website-Wartung und -Support" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : ""
+        j.async = true
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, "script", "dataLayer", "GTM-MFS8HQQ")
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
     <meta
@@ -29,6 +45,21 @@
       type="text/css"
       href="{% static 'multimediawerk/css/main.css' %}" />
   </head>
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-KHJ3DP7LYH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag("js", new Date())
+
+    gtag("config", "G-KHJ3DP7LYH")
+  </script>
+
   <body>
     <header class="site-head" role="banner">
       <a href="#main-content" class="skip-link">Skip to content</a>
@@ -202,5 +233,14 @@
     <script
       type="module"
       src="{% static 'multimediawerk/js/burgerMenu.mjs' %}"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MFS8HQQ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
