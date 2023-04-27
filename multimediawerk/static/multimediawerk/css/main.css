@@ -646,6 +646,7 @@ a {
 } */
 
 footer {
+  width: 100vw;
   margin-top: auto;
   background-color: var(--color-dark-600);
   transition: background 0.3s linear;
