@@ -165,6 +165,15 @@
 | GLOBAL FIGURES START
 ============================================ */
 
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
 .hero-figure img {
   max-height: 45rem;
   object-fit: cover;
@@ -185,7 +194,7 @@
 
 @supports (object-fit: cover) {
   .hero-figure img {
-    max-height: 30rem;
+    max-height: 35rem;
     object-fit: cover;
   }
 }
@@ -217,9 +226,9 @@
 
 @supports (object-fit: cover) {
   .feature-figure img {
-    max-height: 38rem;
+    max-height: 25rem;
     object-fit: cover;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 }
 
@@ -284,8 +293,8 @@ p {
   line-height: calc(1ex / 0.32);
   font-weight: 400;
   font-size: clamp(0.9rem, 1.3vw, 1.1rem);
-  margin-bottom: 1rem;
-  padding-top: 0.5rem;
+
+  padding: 1rem 1rem 2rem 1rem;
 }
 
 #content {
@@ -1295,7 +1304,9 @@ p.fazit {
 }
 
 h2.heading_margin-top {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  font-size: var(--fs-500);
 }
 /* ============================================
 | ABOUT PHOTOGALLERY START
