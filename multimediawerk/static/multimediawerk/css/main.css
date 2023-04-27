@@ -168,7 +168,7 @@
 .hero-figure img {
   max-height: 45rem;
   object-fit: cover;
-  padding-top: 2rem;
+
   padding-bottom: 0;
   box-shadow: 20px 40px 70px -38px #ff5a19;
 }
@@ -192,6 +192,39 @@
 
 /* ============================================
 | GLOBAL FIGURES END
+============================================ */
+
+/* ============================================
+| HERO-BACKGROUND START
+============================================ */
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.feature-figure img {
+  width: 100%;
+  max-height: 38rem;
+  object-fit: cover;
+  margin-top: 2rem;
+}
+
+.feature-figure img {
+  width: 100%;
+  box-shadow: 0 0 20px hsl(0deg 0% 0% / 20%);
+}
+
+@supports (object-fit: cover) {
+  .feature-figure img {
+    max-height: 38rem;
+    object-fit: cover;
+    margin-top: 2rem;
+  }
+}
+
+/* ============================================
+| HERO-BACKGROUND END
 ============================================ */
 
 /* ============================================
@@ -514,48 +547,6 @@ a {
 
 /* ============================================
 | NAVIGATION END
-============================================ */
-
-/* ============================================
-| HERO-BACKGROUND START
-============================================ */
-
-.full-bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-}
-
-.feature-figure img {
-  width: 100%;
-  max-height: 25rem;
-  object-fit: cover;
-  padding-top: 95px;
-}
-
-.feature-figure img {
-  width: 100%;
-  box-shadow: 0 0 20px hsl(0deg 0% 0% / 20%);
-}
-
-@supports (object-fit: cover) {
-  .feature-figure img {
-    max-height: 26rem;
-    object-fit: cover;
-  }
-}
-
-/* svg */
-
-.wave-container {
-  background: transparent;
-  height: 600px;
-}
-.wave-container > svg {
-  display: block;
-}
-
-/* ============================================
-| HERO-BACKGROUND END
 ============================================ */
 
 /* ============================================
@@ -950,61 +941,6 @@ section.meta {
     justify-content: center;
   }
 }
-
-/* Detail Section */
-
-/* .hero-detail {
-  margin-top: 2.5rem;
-}
-
-.hero-detail-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-.hero-detail-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-.hero-detail-content {
-  flex: 1 0 60%;
-  padding-right: 1em;
-}
-
-.hero-detail-img {
-  flex: 1 0 40%;
-  text-align: center;
-}
-
-.hero-detail-img img {
-  max-width: 100%;
-  height: auto;
-  overflow: hidden;
-  padding-left: 1em;
-  align-items: center;
-  border-radius: 3px;
-}
-
-@media (max-width: 820px) {
-  .hero-detail-content,
-  .hero-detail-image {
-    flex: 1 0 100%;
-    padding-right: 0;
-    text-align: center;
-  }
-  .hero-detail-container {
-    flex-wrap: wrap-reverse;
-  }
-  .button-container-main {
-    justify-content: center;
-  }
-  .hero-detail-img img {
-    display: none;
-  }
-} */
 
 /* ============================================
 | DETAIL PAGES START
