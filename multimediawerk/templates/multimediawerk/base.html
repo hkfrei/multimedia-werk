@@ -7,7 +7,6 @@
     <meta
       name="keywords"
       content="Massgeschneiderte Webdesign-Lösungen, Umfassende Content-Strategie, Professionelle Bearbeitung von Bildern und Videos, Responsive Webdesign, Videoproduktion für Events, Logo-Design für Start-ups, Technische SEO-Optimierung, Website-Wartung und -Support" />
-
     <!-- Google Tag Manager -->
     <script>
       ;(function (w, d, s, l, i) {
@@ -22,13 +21,11 @@
       })(window, document, "script", "dataLayer", "GTM-MFS8HQQ")
     </script>
     <!-- End Google Tag Manager -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
     <meta
       name="description"
       content="Multimedia-Werk, der One-Stop-Shop für digitale Lösungen" />
-
     <title>{% block title %}Karten-Werk GmbH{% endblock %}</title>
 
     <link
@@ -61,6 +58,8 @@
   </script>
 
   <body>
+    <div class="button-box"></div>
+
     <header class="site-head" role="banner">
       <a href="#main-content" class="skip-link">Skip to content</a>
       {% block bordertop %}{% endblock %}
@@ -72,6 +71,7 @@
             class="site-head__brand">
             <img
               class="logo-navbar"
+              id="logo-navbar"
               src="{% static 'multimediawerk/img/Logo_script.webp' %}"
               alt="" />
           </a>
